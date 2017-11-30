@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>Docker 활용(gatling 이미지 추가하자) | crazyPig</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="naver-site-verification" content="38119926daa971d8e1c85c496d60d134205059b1">
+    
+        <meta name="keywords" content="docker,소개">
+    
+    
+        <meta name="description" content="도커란 무엇인가?(공홈) 왜 씀?08~09년 쯤 솔루션 업체에서 근무할때 일이다. 오라클 DB를 사용하는 솔루션이였고 고객사에 문제가 발생시 고객사 오라클 DB를 dump를 떠달라고 사이트 직원에게 부탁하여 로컬로 복사한다. 그리곤 고객사 오라클 버전(8i, 9g, 10g)과 동일한 버전의 오라클을 로컬에다 설치 후 import작업을 수십번은 한듯 하다.">
+<meta name="keywords" content="docker,소개">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker 활용(gatling 이미지 추가하자)">
+<meta property="og:url" content="https://chk386.github.io/2017/11/01/docker/index.html">
+<meta property="og:site_name" content="crazyPig">
+<meta property="og:description" content="도커란 무엇인가?(공홈) 왜 씀?08~09년 쯤 솔루션 업체에서 근무할때 일이다. 오라클 DB를 사용하는 솔루션이였고 고객사에 문제가 발생시 고객사 오라클 DB를 dump를 떠달라고 사이트 직원에게 부탁하여 로컬로 복사한다. 그리곤 고객사 오라클 버전(8i, 9g, 10g)과 동일한 버전의 오라클을 로컬에다 설치 후 import작업을 수십번은 한듯 하다.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://www.docker.com/sites/default/files/Whale%20Logo332_5.png">
+<meta property="og:updated_time" content="2017-11-30T14:21:13.202Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Docker 활용(gatling 이미지 추가하자)">
+<meta name="twitter:description" content="도커란 무엇인가?(공홈) 왜 씀?08~09년 쯤 솔루션 업체에서 근무할때 일이다. 오라클 DB를 사용하는 솔루션이였고 고객사에 문제가 발생시 고객사 오라클 DB를 dump를 떠달라고 사이트 직원에게 부탁하여 로컬로 복사한다. 그리곤 고객사 오라클 버전(8i, 9g, 10g)과 동일한 버전의 오라클을 로컬에다 설치 후 import작업을 수십번은 한듯 하다.">
+<meta name="twitter:image" content="https://www.docker.com/sites/default/files/Whale%20Logo332_5.png">
+<meta property="fb:admins" content="125588771441185">
+<meta property="fb:app_id" content="125588771441185">
+    
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-108825636-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+    <link rel="canonical" href="https://chk386.github.io/2017/11/01/docker/">
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9905114108043324",
+        enable_page_level_ads: true
+      });
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">개발 관련 포스트!!</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docker/">Docker</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/haekyu.cho" rel="external nofollow noopener noreferrer" target="_blank">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/docker/">Docker</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-docker" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Docker 활용(gatling 이미지 추가하자)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/11/01/docker/" class="article-date">
+            <time datetime="2017-11-01T06:00:00.000Z" itemprop="datePublished">2017-11-01</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/docker/">docker</a>, <a class="tag-link" href="/tags/소개/">소개</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><a href="https://www.docker.com/what-docker" rel="external nofollow noopener noreferrer" target="_blank">도커란 무엇인가?(공홈)</a></p>
+<h2 id="왜-씀"><a href="#왜-씀" class="headerlink" title="왜 씀?"></a>왜 씀?</h2><p>08~09년 쯤 솔루션 업체에서 근무할때 일이다.</p>
+<p>오라클 DB를 사용하는 솔루션이였고 고객사에 문제가 발생시 고객사 오라클 DB를 dump를 떠달라고 사이트 직원에게 부탁하여 로컬로 복사한다. 그리곤 고객사 오라클 버전(8i, 9g, 10g)과 동일한 버전의 오라클을 로컬에다 설치 후 import작업을 수십번은 한듯 하다. 윈도우PC에 오라클 설치 거지 같은거 다들 알지? 더군다나 여러버전의 오라클을 윈도우PC에 설치하면 피씨가 뻗어버려서 항상 새로 깔고 지우고 import하고 아주 쌩노가다였지.. </p>
+<p>우리 도커는 저런 썡노가다 작업을 획기적으로 줄여준다(=야근을 줄 일수 있다). 도커 클라스 ㅇㅈ?<br>도커는 virtual machine처럼 OS레벨의 가상화가 아니라 Linux Container(최근엔 LibContainer)를 이용하기 때문에 이미지 용량과 자원관리 측면에서 대단히 효율적이라네..</p>
+<img src="https://www.docker.com/sites/default/files/containers-vms-together.png">
+<p>딱 봐도 알것지? Guest OS가 없어서 가상화 기술보다 가볍고 빠르다.<br>docker는 docker engine 위에 application에서 사용할 binary &amp; library만 올라간다.<br>덕분에 이미지 용량도 작다. 윈도우나 리눅스 이미지 용량을 보면 알수 있지?</p>
+<h2 id="어쨋든-가상화라-불안하지-않나"><a href="#어쨋든-가상화라-불안하지-않나" class="headerlink" title="어쨋든 가상화라 불안하지 않나?"></a>어쨋든 가상화라 불안하지 않나?</h2><img src="https://i.imgur.com/g6DewR4.png">
+<h2 id="레퍼런스"><a href="#레퍼런스" class="headerlink" title="레퍼런스"></a>레퍼런스</h2><p>구글의 모든 서비스들은 컨테이너로 동작한다. 약 20억 개 컨테이너를 구동중 </p>
+<p>만약 님이 사내를 도커 도입을 하려는데 태클을 거는 개발자(팀장포함)가 있다면 그냥 그 회사 그만두고 이직 ㄱㄱ!<br>님이 재직중인 회사가 운영하는 서비스보다 1000000000만배 큰 구글님이 쓰고 있다. 무슨 말이 필요한가?</p>
+<h2 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h2><ul>
+<li>container가 하나 뚫리면 host까지 뚫릴수 있다. -&gt; 관리를 잘해야한다. (가상화의 경우 하나의 vm이 해킹을 당해도 다른 vm에 영향을 줄수 없다)</li>
+<li>host OS와 다른 OS의 container를 올릴수 없다. windows서버에서 linux서버 컨테이너를 불가 -&gt; 어차피 윈도우 서버는 안쓰지?</li>
+</ul>
+<h2 id="docker를-어따-쓰지"><a href="#docker를-어따-쓰지" class="headerlink" title="docker를 어따 쓰지?"></a>docker를 어따 쓰지?</h2><ul>
+<li>팀에서 쓸 개발환경 이미지 공유</li>
+<li>서버 어플리케이션 설치 이미지(빌드된 소스m 환경설정 파일 등)</li>
+<li>auto scaling</li>
+<li>MSA(micro service architecture)</li>
+</ul>
+<h2 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h2><h3 id="설치하자"><a href="#설치하자" class="headerlink" title="설치하자"></a>설치하자</h3><ul>
+<li>Mac : <a href="https://docs.docker.com/docker-for-mac/install/" rel="external nofollow noopener noreferrer" target="_blank">Download</a></li>
+<li>Linux : root가 아닌 사용자 계정으로 docker를 설치하자<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">sudo usermod -aG docker <span class="variable">$USER</span> <span class="comment"># 현재 접속중인 사용자에게 권한주기</span></div><div class="line">curl -s https://get.docker.com</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Command-Line"><a href="#Command-Line" class="headerlink" title="Command Line"></a>Command Line</h3><p>docker를 설치하면 client와 server가 따로 설치되며 쉘에서 docker명령을 실행하면 docker client가 server로 명령어를 전달하고 리턴받는 형태</p>
+<figure class="highlight bash"><figcaption><span>version</span></figcaption><table><tr><td class="code"><pre><div class="line">docker --version</div><div class="line">docker-compose --verison</div><div class="line">docker-machine --version</div><div class="line">docker version</div><div class="line">Client:</div><div class="line"> Version:      17.09.0-ce</div><div class="line"> API version:  1.32</div><div class="line"> Go version:   go1.8.3</div><div class="line"> Git commit:   afdb6d4</div><div class="line"> Built:        Tue Sep 26 22:40:09 2017</div><div class="line"> OS/Arch:      darwin/amd64</div><div class="line"></div><div class="line">Server:</div><div class="line"> Version:      17.09.0-ce</div><div class="line"> API version:  1.32 (minimum version 1.12)</div><div class="line"> Go version:   go1.8.3</div><div class="line"> Git commit:   afdb6d4</div><div class="line"> Built:        Tue Sep 26 22:45:38 2017</div><div class="line"> OS/Arch:      linux/amd64</div><div class="line"> Experimental: <span class="literal">true</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>주요명령어</span></figcaption><table><tr><td class="code"><pre><div class="line">docker ps <span class="comment">#컨테이너 목록</span></div><div class="line">docker images <span class="comment">#이미지 목록 조회</span></div><div class="line">docker rmi [이미지ID] <span class="comment">#이미지 삭제</span></div><div class="line">docker rm [컨테이너ID] <span class="comment">#컨테이너 삭제</span></div><div class="line">docker start|stop <span class="comment">#컨테이서 시작, 종료</span></div><div class="line">docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...] <span class="comment">#Start one or more stopped containers</span></div><div class="line">docker pull [OPTIONS] mysql:5.7 <span class="comment"># 이미지 다운로드</span></div></pre></td></tr></table></figure>
+<p><strong>docker [Options] 설명</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>-d</em></td>
+<td><code>detached mode 흔히 말하는 백그라운드 모드</code></td>
+</tr>
+<tr>
+<td><em>-p</em></td>
+<td><code>호스트와 컨테이너의 포트를 연결 (포워딩)</code></td>
+</tr>
+<tr>
+<td><em>-v</em></td>
+<td><code>호스트와 컨테이너의 디렉토리를 연결 (마운트)</code></td>
+</tr>
+<tr>
+<td><em>-e</em></td>
+<td><code>컨테이너 내에서 사용할 환경변수 설정</code></td>
+</tr>
+<tr>
+<td><em>-name</em></td>
+<td><code>컨테이너 이름 설정</code></td>
+</tr>
+<tr>
+<td><em>-rm</em></td>
+<td><code>프로세스 종료시 컨테이너 자동 제거</code></td>
+</tr>
+<tr>
+<td><em>-it</em></td>
+<td><code>-i와 -t를 동시에 사용한 것으로 터미널 입력을 위한 옵션</code></td>
+</tr>
+<tr>
+<td><em>-link</em></td>
+<td><code>컨테이너 연결 [컨테이너명:별칭]</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="MYSQL를-띄워보자"><a href="#MYSQL를-띄워보자" class="headerlink" title="MYSQL를 띄워보자"></a>MYSQL를 띄워보자</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">docker run -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=<span class="literal">true</span> --name mysql mysql:5.8 <span class="comment"># 백그라운드 모드로 포트는 3306, 컨테이너 환경변수 선언(비번 공백), 이름은 mysql</span></div><div class="line"></div><div class="line">netstat -na | grep 3306 <span class="comment"># 떳지?</span></div><div class="line"></div><div class="line">docker images <span class="comment"># 이미지 목록 조회</span></div><div class="line">docker ps -a <span class="comment"># 컨테이너 조회</span></div><div class="line">docker rm [cid] <span class="comment"># 컨테이너를 삭제, ID의 경우 64바이트인데 겹치지만 않으면 1-2자만 입력해도됨</span></div><div class="line">docker rmi [imageId] <span class="comment"># 이미지 삭제</span></div></pre></td></tr></table></figure>
+<h3 id="docker-컨테이너-로그-확인"><a href="#docker-컨테이너-로그-확인" class="headerlink" title="docker 컨테이너 로그 확인"></a>docker 컨테이너 로그 확인</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">docker <span class="built_in">log</span> [option] [container id] <span class="comment"># -f 실시간으로 로그 확인,  --tail 100 마지막 100줄만</span></div></pre></td></tr></table></figure>
+<p>로그는 stdout, stderr만 가능<br>파일로 로그를 쌓는 컨테이너의 경우 표준출력으로 변환할것</p>
+<h3 id="docker-컨테이너에서-명령-실행"><a href="#docker-컨테이너에서-명령-실행" class="headerlink" title="docker 컨테이너에서 명령 실행"></a>docker 컨테이너에서 명령 실행</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">docker <span class="built_in">exec</span> [OPTIONS] CONTAINER COMMAND [ARG...]</div><div class="line">docker <span class="built_in">exec</span> -it [container id] /bin/bash <span class="comment">#쉘 실행</span></div><div class="line"></div><div class="line">docker <span class="built_in">exec</span> -it [container id] redis-cli <span class="comment">#레디스 클라이언트 실행</span></div></pre></td></tr></table></figure>
+<h3 id="docker-volume-mount"><a href="#docker-volume-mount" class="headerlink" title="docker volume mount"></a>docker volume mount</h3><p>mysql이나 redis를 file로 관리하는 경우 해당 컨테이너를 업데이트 하려면 삭제 후 pull(run)을 해야한다. 헐 저장된 DB 데이터도 날라감????<br>host(서버 또는 내 로컬 맥북) 물리 디렉토리에 컨테이너에서 사용하고 있는 디렉토리를 마운트 해주면 이미지가 날라가도 데이터는 저장할수 있다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">docker run -d -p 1234:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=<span class="literal">true</span> -v /Users/dockerfiles/mysql mysql:5.7 <span class="comment"># -v가 볼륨 마운트 옵션이다.</span></div></pre></td></tr></table></figure></p>
+<h3 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker compose"></a>docker compose</h3><p>docker 컨테이너 실행시 많은 옵션, 환경변수넣고, volume마운트 해야하고 힘들지 않습니꽈???<br>docker compose를 이용하면 yaml방식으로 명령어를 관리하며 한번 셋팅해놓으면 쉽게 docker 컨테이너를 띄울수 있음.<br>사실 쉘을 만들어서 docker cmd를 관리하는 방법도 있으나 compose가 훨씬 편하다. compose써라.. 2번 써라</p>
+<p><a href="http://raccoonyy.github.io/docker-usages-for-dev-environment-setup/" rel="external nofollow noopener noreferrer" target="_blank">docker-compose 자세한 설명 링크</a></p>
+<h2 id="jdk9-이미지-빌드"><a href="#jdk9-이미지-빌드" class="headerlink" title="jdk9 이미지 빌드"></a>jdk9 이미지 빌드</h2><p>docker build -f jdk9.dockerfile -t docker-jdk9 .</p>
+
+        </div>
+        
+        <p>조회수(테스트중) : 0 </p>
+        [object Object]
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://chk386.github.io/2017/11/01/docker/" data-id="cjamlaauu00058dtzcv07iclu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="http://www.facebook.com/sassyPig" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/chk386" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/11/01/docker/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.docker.com/sites/default/files/Whale%20Logo332_5.png)" alt="Docker 활용(gatling 이미지 추가하자)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/docker/">Docker</a></p>
+                            <p class="item-title"><a href="/2017/11/01/docker/" class="title">Docker 활용(gatling 이미지 추가하자)</a></p>
+                            <p class="item-date"><time datetime="2017-11-01T06:00:00.000Z" itemprop="datePublished">2017-11-01</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">Docker</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/소개/">소개</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/소개/" style="font-size: 10px;">소개</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 chk386@gmail.com</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'chk386';
+    
+    
+    var disqus_url = 'https://chk386.github.io/2017/11/01/docker/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+
