@@ -3,14 +3,28 @@
 
     <url>
         <loc>https://chk386.github.io/tags/docker/</loc>
-        <lastmod>2017-11-30T14:21:13.202Z</lastmod>
+        <lastmod>2017-12-01T05:02:12.733Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://chk386.github.io/tags/%EC%86%8C%EA%B0%9C/</loc>
-        <lastmod>2017-11-30T14:21:13.202Z</lastmod>
+        <lastmod>2017-12-01T05:02:12.733Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://chk386.github.io/tags/anipang/</loc>
+        <lastmod>2018-01-15T07:43:43.457Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://chk386.github.io/tags/quiz/</loc>
+        <lastmod>2018-01-15T07:43:43.457Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -20,7 +20,7 @@
 <meta property="og:description" content="도커란 무엇인가?(공홈) 왜 씀?08~09년 쯤 솔루션 업체에서 근무할때 일이다. 오라클 DB를 사용하는 솔루션이였고 고객사에 문제가 발생시 고객사 오라클 DB를 dump를 떠달라고 사이트 직원에게 부탁하여 로컬로 복사한다. 그리곤 고객사 오라클 버전(8i, 9g, 10g)과 동일한 버전의 오라클을 로컬에다 설치 후 import작업을 수십번은 한듯 하다.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://www.docker.com/sites/default/files/Whale%20Logo332_5.png">
-<meta property="og:updated_time" content="2017-11-30T14:21:13.202Z">
+<meta property="og:updated_time" content="2017-12-01T05:02:12.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 활용(gatling 이미지 추가하자)">
 <meta name="twitter:description" content="도커란 무엇인가?(공홈) 왜 씀?08~09년 쯤 솔루션 업체에서 근무할때 일이다. 오라클 DB를 사용하는 솔루션이였고 고객사에 문제가 발생시 고객사 오라클 DB를 dump를 떠달라고 사이트 직원에게 부탁하여 로컬로 복사한다. 그리곤 고객사 오라클 버전(8i, 9g, 10g)과 동일한 버전의 오라클을 로컬에다 설치 후 import작업을 수십번은 한듯 하다.">
@@ -99,7 +99,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docker/">Docker</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docker/">Docker</a></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="https://about.me/haekyu.cho" rel="external nofollow noopener noreferrer" target="_blank">About</a>
@@ -215,8 +215,6 @@ ga('send', 'pageview');
 </ul>
 <h2 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h2><h3 id="설치하자"><a href="#설치하자" class="headerlink" title="설치하자"></a>설치하자</h3><ul>
 <li>Mac : <a href="https://docs.docker.com/docker-for-mac/install/" rel="external nofollow noopener noreferrer" target="_blank">Download</a></li>
-<li>Linux : root가 아닌 사용자 계정으로 docker를 설치하자<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">sudo usermod -aG docker <span class="variable">$USER</span> <span class="comment"># 현재 접속중인 사용자에게 권한주기</span></div><div class="line">curl -s https://get.docker.com</div></pre></td></tr></table></figure>
-</li>
 </ul>
 <h3 id="Command-Line"><a href="#Command-Line" class="headerlink" title="Command Line"></a>Command Line</h3><p>docker를 설치하면 client와 server가 따로 설치되며 쉘에서 docker명령을 실행하면 docker client가 server로 명령어를 전달하고 리턴받는 형태</p>
 <figure class="highlight bash"><figcaption><span>version</span></figcaption><table><tr><td class="code"><pre><div class="line">docker --version</div><div class="line">docker-compose --verison</div><div class="line">docker-machine --version</div><div class="line">docker version</div><div class="line">Client:</div><div class="line"> Version:      17.09.0-ce</div><div class="line"> API version:  1.32</div><div class="line"> Go version:   go1.8.3</div><div class="line"> Git commit:   afdb6d4</div><div class="line"> Built:        Tue Sep 26 22:40:09 2017</div><div class="line"> OS/Arch:      darwin/amd64</div><div class="line"></div><div class="line">Server:</div><div class="line"> Version:      17.09.0-ce</div><div class="line"> API version:  1.32 (minimum version 1.12)</div><div class="line"> Go version:   go1.8.3</div><div class="line"> Git commit:   afdb6d4</div><div class="line"> Built:        Tue Sep 26 22:45:38 2017</div><div class="line"> OS/Arch:      linux/amd64</div><div class="line"> Experimental: <span class="literal">true</span></div></pre></td></tr></table></figure>
@@ -271,18 +269,18 @@ ga('send', 'pageview');
 <h3 id="docker-volume-mount"><a href="#docker-volume-mount" class="headerlink" title="docker volume mount"></a>docker volume mount</h3><p>mysql이나 redis를 file로 관리하는 경우 해당 컨테이너를 업데이트 하려면 삭제 후 pull(run)을 해야한다. 헐 저장된 DB 데이터도 날라감????<br>host(서버 또는 내 로컬 맥북) 물리 디렉토리에 컨테이너에서 사용하고 있는 디렉토리를 마운트 해주면 이미지가 날라가도 데이터는 저장할수 있다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">docker run -d -p 1234:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=<span class="literal">true</span> -v /Users/dockerfiles/mysql mysql:5.7 <span class="comment"># -v가 볼륨 마운트 옵션이다.</span></div></pre></td></tr></table></figure></p>
 <h3 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker compose"></a>docker compose</h3><p>docker 컨테이너 실행시 많은 옵션, 환경변수넣고, volume마운트 해야하고 힘들지 않습니꽈???<br>docker compose를 이용하면 yaml방식으로 명령어를 관리하며 한번 셋팅해놓으면 쉽게 docker 컨테이너를 띄울수 있음.<br>사실 쉘을 만들어서 docker cmd를 관리하는 방법도 있으나 compose가 훨씬 편하다. compose써라.. 2번 써라</p>
 <p><a href="http://raccoonyy.github.io/docker-usages-for-dev-environment-setup/" rel="external nofollow noopener noreferrer" target="_blank">docker-compose 자세한 설명 링크</a></p>
-<h2 id="jdk9-이미지-빌드"><a href="#jdk9-이미지-빌드" class="headerlink" title="jdk9 이미지 빌드"></a>jdk9 이미지 빌드</h2><p>docker build -f jdk9.dockerfile -t docker-jdk9 .</p>
+<h2 id="docker-private-registry"><a href="#docker-private-registry" class="headerlink" title="docker private registry"></a>docker private registry</h2><p>도커 허브는 유료.<br>팀내에서 private하게 사용하고는 싶은데 도커허브는 비싸니깐 사설 hub라고 생각하면 됨(gitlab과 비슷)</p>
 
         </div>
         
-        <p>조회수(테스트중) : 0 </p>
-        [object Object]
+        <p>조회수 : 135 </p>
+        <!-- [object Object] -->
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://chk386.github.io/2017/11/01/docker/" data-id="cjamlaauu00058dtzcv07iclu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://chk386.github.io/2017/11/01/docker/" data-id="cjcfx1kq90006zyy814bbq0ap" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -385,6 +383,21 @@ ga('send', 'pageview');
     </div>
     
         
+<nav id="article-nav">
+    
+        <a href="/2017/11/30/some-company-quiz/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            어떤 회사 입사 퀴즈
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -394,6 +407,26 @@ ga('send', 'pageview');
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/11/30/some-company-quiz/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://c1.staticflickr.com/9/8460/8032434881_f93e66b0a0_c.jpg)" alt="어떤 회사 입사 퀴즈" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/11/30/some-company-quiz/" class="title">어떤 회사 입사 퀴즈</a></p>
+                            <p class="item-date"><time datetime="2017-11-30T14:22:05.000Z" itemprop="datePublished">2017-11-30</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -424,7 +457,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">Docker</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">Docker</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -434,7 +467,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -444,7 +477,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/소개/">소개</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/anipang/">anipang</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/quiz/">quiz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/소개/">소개</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -454,7 +487,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/소개/" style="font-size: 10px;">소개</a>
+            <a href="/tags/anipang/" style="font-size: 10px;">anipang</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/quiz/" style="font-size: 10px;">quiz</a> <a href="/tags/소개/" style="font-size: 10px;">소개</a>
         </div>
     </div>
 
@@ -490,7 +523,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2017 chk386@gmail.com</p>
+                <p>&copy; 2018 chk386@gmail.com</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>

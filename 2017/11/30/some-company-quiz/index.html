@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>어떤 회사 입사 퀴즈 | crazyPig</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="naver-site-verification" content="38119926daa971d8e1c85c496d60d134205059b1">
+    
+        <meta name="keywords" content="anipang,quiz">
+    
+    
+        <meta name="description" content="페북에서 우연히 채용 퀴즈를 보고 풀어봄이런 문제들을 잘 안풀어봐서 난이도는 잘 모르겠다.테스트 케이스 작성까지 총 2시간(조금 넘게?) 걸렸다.BFS로 풀었으면 더 빨리 풀었을라나? 문제입력2 4 1 2 13 4 2 3 32 4 1 2 24 4 4 1 24 2 3 3 2 출력0 0 0 0 02 0 0 0 03 0 0 0 02 0 0 2 04 0 1 3 0">
+<meta name="keywords" content="anipang,quiz">
+<meta property="og:type" content="article">
+<meta property="og:title" content="어떤 회사 입사 퀴즈">
+<meta property="og:url" content="https://chk386.github.io/2017/11/30/some-company-quiz/index.html">
+<meta property="og:site_name" content="crazyPig">
+<meta property="og:description" content="페북에서 우연히 채용 퀴즈를 보고 풀어봄이런 문제들을 잘 안풀어봐서 난이도는 잘 모르겠다.테스트 케이스 작성까지 총 2시간(조금 넘게?) 걸렸다.BFS로 풀었으면 더 빨리 풀었을라나? 문제입력2 4 1 2 13 4 2 3 32 4 1 2 24 4 4 1 24 2 3 3 2 출력0 0 0 0 02 0 0 0 03 0 0 0 02 0 0 2 04 0 1 3 0">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://c1.staticflickr.com/9/8460/8032434881_f93e66b0a0_c.jpg">
+<meta property="og:updated_time" content="2018-01-15T07:43:43.457Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="어떤 회사 입사 퀴즈">
+<meta name="twitter:description" content="페북에서 우연히 채용 퀴즈를 보고 풀어봄이런 문제들을 잘 안풀어봐서 난이도는 잘 모르겠다.테스트 케이스 작성까지 총 2시간(조금 넘게?) 걸렸다.BFS로 풀었으면 더 빨리 풀었을라나? 문제입력2 4 1 2 13 4 2 3 32 4 1 2 24 4 4 1 24 2 3 3 2 출력0 0 0 0 02 0 0 0 03 0 0 0 02 0 0 2 04 0 1 3 0">
+<meta name="twitter:image" content="https://c1.staticflickr.com/9/8460/8032434881_f93e66b0a0_c.jpg">
+<meta property="fb:admins" content="125588771441185">
+<meta property="fb:app_id" content="125588771441185">
+    
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-108825636-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+    <link rel="canonical" href="https://chk386.github.io/2017/11/30/some-company-quiz/">
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9905114108043324",
+        enable_page_level_ads: true
+      });
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">개발 관련 포스트!!</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/docker/">Docker</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/haekyu.cho" rel="external nofollow noopener noreferrer" target="_blank">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/algorithm/">Algorithm</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-some-company-quiz" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        어떤 회사 입사 퀴즈
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/11/30/some-company-quiz/" class="article-date">
+            <time datetime="2017-11-30T14:22:05.000Z" itemprop="datePublished">2017-11-30</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/anipang/">anipang</a>, <a class="tag-link" href="/tags/quiz/">quiz</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><strong>페북에서 우연히 채용 퀴즈를 보고 풀어봄</strong><br>이런 문제들을 잘 안풀어봐서 난이도는 잘 모르겠다.<br>테스트 케이스 작성까지 총 2시간(조금 넘게?) 걸렸다.<br>BFS로 풀었으면 더 빨리 풀었을라나?</p>
+<h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><h4 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h4><p>2 4 1 2 1<br>3 4 2 3 3<br>2 4 1 2 2<br>4 4 4 1 2<br>4 2 3 3 2</p>
+<h4 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h4><p>0 0 0 0 0<br>2 0 0 0 0<br>3 0 0 0 0<br>2 0 0 2 0<br>4 0 1 3 0</p>
+<h4 id="조건"><a href="#조건" class="headerlink" title="조건"></a>조건</h4><ol>
+<li>타일판은 5 × 5</li>
+<li>타일 종류는 1 ~ 4의 네 가지</li>
+<li>가로나 세로로 3개 이상 같은 타일이 연속될 경우 사라지고, 그 자리에는 위쪽의 타일들이 내려와서 메꿉니다.</li>
+<li>내려오면서 비게 된 자리는 0으로 채워집니다.<br><code>그냥 애니팡이라고 생각하면됨</code></li>
+</ol>
+<h4 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h4><ol>
+<li>주어진 2차원 배열(입력값)을 순차적으로 탐색</li>
+<li>빈 타일 위쪽에 비어있지 않은 타일이 있으면 위에 타일을 아래로 내린다.</li>
+<li>2차원 배열을 벗어나지 않고 위아래, 왼쪽오른쪽을 찾아서 3개 모양이 같은 걸 찾고 3개 값을 0으로 바꾼다.</li>
+<li>1~3을 루프 돌린다. 2,3에 만족하는 타일이 없을경우 종료./</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnyPung</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span>[][] in1 = &#123;</div><div class="line">        &#123;<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>&#125;,</div><div class="line">        &#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>&#125;, </div><div class="line">        &#123;<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">3</span>&#125;, </div><div class="line">        &#123;<span class="number">4</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">3</span>&#125;, </div><div class="line">        &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>&#125;     </div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span>[][] in2 = &#123;</div><div class="line">        &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>&#125;,</div><div class="line">        &#123;<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>&#125;, </div><div class="line">        &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>&#125;, </div><div class="line">        &#123;<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>&#125;, </div><div class="line">        &#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">2</span>&#125;     </div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">new</span> AnyPungGame(in1).start();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">AnyPungGame</span> </span>&#123;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span>[][] input;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> EMPTY = <span class="number">0</span>;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">final</span> String SPACE = <span class="string">" "</span>;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">final</span> String NEW_LINE = <span class="string">"\n"</span>;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">int</span>[][] ranges = &#123;</div><div class="line">            &#123;<span class="number">0</span>,<span class="number">2</span>&#125;, <span class="comment">//오른쪽</span></div><div class="line">            &#123;<span class="number">0</span>,-<span class="number">2</span>&#125;, <span class="comment">//왼쪽</span></div><div class="line">            &#123;<span class="number">2</span>,<span class="number">0</span>&#125;, <span class="comment">//위쪽</span></div><div class="line">            &#123;-<span class="number">2</span>,<span class="number">0</span>&#125; <span class="comment">//아래쪽</span></div><div class="line">        &#125;;</div><div class="line">        </div><div class="line">        <span class="keyword">private</span> <span class="keyword">int</span> xLength;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">int</span> yLength;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> sameTileCount =<span class="number">3</span>;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">AnyPungGame</span><span class="params">(<span class="keyword">int</span>[][] in)</span> </span>&#123;</div><div class="line">            <span class="keyword">this</span>.input = in;</div><div class="line">            <span class="keyword">this</span>.xLength = input[<span class="number">0</span>].length;</div><div class="line">            <span class="keyword">this</span>.yLength = input.length;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</div><div class="line">            System.out.println(<span class="string">"input"</span>);</div><div class="line">            print();</div><div class="line">            </div><div class="line">            <span class="comment">// 타일을 제거 할수 없을떄 까지 무한 루프!</span></div><div class="line">            <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</div><div class="line">                <span class="keyword">boolean</span> isMovableTiles = checkEmptyTiles();</div><div class="line">                <span class="keyword">boolean</span> isSameTiles = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">                <span class="keyword">if</span>(!isMovableTiles) &#123;</div><div class="line">                    isSameTiles = checkSameTiles();</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="keyword">if</span>(!isMovableTiles &amp;&amp; !isSameTiles) </div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            System.out.println(<span class="string">"result"</span>);</div><div class="line">            print();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 빈 타일이 생기면 위에 타일을 아래로 이동</span></div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">checkEmptyTiles</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">0</span>; y&lt;<span class="keyword">this</span>.yLength; y++) &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>; x&lt;<span class="keyword">this</span>.xLength; x++) &#123;</div><div class="line">                    <span class="comment">// 빈공간 타일 내리기</span></div><div class="line">                    <span class="keyword">int</span> currentValue = input[y][x];</div><div class="line"></div><div class="line">                    <span class="comment">// 첫번째줄이 아니고 0이면서 위쪽 배열이 0이 아닐경우</span></div><div class="line">                    <span class="keyword">if</span>(y != <span class="number">0</span> &amp;&amp; currentValue == <span class="number">0</span> &amp;&amp; input[y-<span class="number">1</span>][x] != <span class="number">0</span>) &#123;</div><div class="line">                        <span class="keyword">for</span>(<span class="keyword">int</span> start = y; start&gt;<span class="number">0</span>; start--) &#123;</div><div class="line">                            input[start][x] = input[start-<span class="number">1</span>][x];</div><div class="line">                        &#125;</div><div class="line"></div><div class="line">                        <span class="comment">//첫번째 행은 무조건 0</span></div><div class="line">                        input[<span class="number">0</span>][x] = <span class="number">0</span>;</div><div class="line">                        System.out.println(<span class="string">"move down"</span>);</div><div class="line">                        print();</div><div class="line">                        </div><div class="line">                        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 타일판을 순차대로 탐색하여 같은 모양의 타일을 삭제한다.</span></div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">checkSameTiles</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">0</span>; y&lt;<span class="keyword">this</span>.yLength; y++) &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>; x&lt;<span class="keyword">this</span>.xLength; x++) &#123;</div><div class="line">                    <span class="keyword">if</span>(input[y][x] == <span class="number">0</span>) &#123;</div><div class="line">                        <span class="keyword">continue</span>;</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span>[] range : <span class="keyword">this</span>.ranges) &#123;</div><div class="line">                        <span class="keyword">if</span>(validByRange(x, y, range) &amp;&amp; removeSameTiles(x, y, range)) &#123;</div><div class="line">                            System.out.println(<span class="string">"remove tiles"</span>);</div><div class="line">                            print();</div><div class="line"></div><div class="line">                            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 같은 모양의 타일을 지운다.</span></div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">removeSameTiles</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span>[] range)</span> </span>&#123;</div><div class="line">            <span class="keyword">int</span>[][] movableMap = getMovableMap(x, y, range);</div><div class="line"></div><div class="line">            <span class="keyword">int</span> currentValue = input[y][x];</div><div class="line"></div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;movableMap.length; i++) &#123;</div><div class="line">                <span class="keyword">int</span>[] map = movableMap[i];</div><div class="line">                <span class="keyword">if</span>(currentValue != input[map[<span class="number">0</span>]][map[<span class="number">1</span>]]) &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">// 타일을 없앤다.</span></div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;movableMap.length; i++) &#123;</div><div class="line">                <span class="keyword">int</span>[] map = movableMap[i];</div><div class="line"></div><div class="line">                input[map[<span class="number">0</span>]][map[<span class="number">1</span>]] = EMPTY;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 움직일수 있는 좌표의 배열을 구한다.</span></div><div class="line">        <span class="comment">// todo: 좀더 간단하게 할수 있을꺼 같은데.....</span></div><div class="line">        <span class="keyword">private</span> <span class="keyword">int</span>[][] getMovableMap(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span>[] range) &#123;</div><div class="line">            <span class="keyword">int</span>[][] movableMap = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="keyword">this</span>.sameTileCount][<span class="number">2</span>];</div><div class="line">            <span class="keyword">boolean</span> axisX = (range[<span class="number">0</span>] == <span class="number">0</span>);</div><div class="line">            <span class="keyword">int</span> move = axisX ? range[<span class="number">1</span>] : range[<span class="number">0</span>];</div><div class="line">            <span class="keyword">int</span> start, end, cnt = <span class="number">0</span>;</div><div class="line"></div><div class="line">            <span class="keyword">if</span>(axisX) &#123;</div><div class="line">                <span class="keyword">if</span>(move &lt; <span class="number">0</span>) &#123;</div><div class="line">                    start = x+move;</div><div class="line">                    end = x;</div><div class="line">                &#125;<span class="keyword">else</span> &#123;</div><div class="line">                    start = x;</div><div class="line">                    end = x+move;</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = start; i&lt;=end; i++) &#123;    </div><div class="line">                    movableMap[cnt][<span class="number">0</span>] = y;</div><div class="line">                    movableMap[cnt][<span class="number">1</span>] = i;</div><div class="line">                    cnt++;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125;<span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">if</span>(move &lt; <span class="number">0</span>) &#123;</div><div class="line">                    start = y+move;</div><div class="line">                    end = y;</div><div class="line">                &#125;<span class="keyword">else</span> &#123;</div><div class="line">                    start = y;</div><div class="line">                    end = y+move;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = start; i&lt;=end; i++) &#123;    </div><div class="line">                    movableMap[cnt][<span class="number">0</span>] = i;</div><div class="line">                    movableMap[cnt][<span class="number">1</span>] = x;</div><div class="line">                    cnt++;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">return</span> movableMap;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 타일판 바깥으로 나가는지 여부</span></div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">validByRange</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span>[] range)</span> </span>&#123;</div><div class="line">            <span class="keyword">int</span> rangeX = x + range[<span class="number">1</span>];</div><div class="line">            <span class="keyword">int</span> rangeY = y + range[<span class="number">0</span>];</div><div class="line"></div><div class="line">            <span class="comment">// 현재 좌표와 range를 더해서 0이상 또는 타일판 길이보다 작아야한다.</span></div><div class="line">            <span class="keyword">return</span> rangeX &gt;= <span class="number">0</span> &amp;&amp; rangeX &lt; <span class="keyword">this</span>.xLength &amp;&amp; rangeY &gt;=<span class="number">0</span> &amp;&amp; rangeY &lt; <span class="keyword">this</span>.yLength;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</div><div class="line">            StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span>[] y : input) &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> x : y) &#123;</div><div class="line">                    sb.append(x).append(SPACE);</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                sb.append(NEW_LINE);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            System.out.println(sb.toString());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        </div>
+        
+        <p>조회수 : 4 </p>
+        <!-- [object Object] -->
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://chk386.github.io/2017/11/30/some-company-quiz/" data-id="cjcfx1kqd0009zyy8ovgz2dmb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="http://www.facebook.com/sassyPig" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/chk386" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/11/01/docker/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Docker 활용(gatling 이미지 추가하자)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/11/30/some-company-quiz/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://c1.staticflickr.com/9/8460/8032434881_f93e66b0a0_c.jpg)" alt="어떤 회사 입사 퀴즈" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2017/11/30/some-company-quiz/" class="title">어떤 회사 입사 퀴즈</a></p>
+                            <p class="item-date"><time datetime="2017-11-30T14:22:05.000Z" itemprop="datePublished">2017-11-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/11/01/docker/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.docker.com/sites/default/files/Whale%20Logo332_5.png)" alt="Docker 활용(gatling 이미지 추가하자)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/docker/">Docker</a></p>
+                            <p class="item-title"><a href="/2017/11/01/docker/" class="title">Docker 활용(gatling 이미지 추가하자)</a></p>
+                            <p class="item-date"><time datetime="2017-11-01T06:00:00.000Z" itemprop="datePublished">2017-11-01</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">Docker</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/anipang/">anipang</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/quiz/">quiz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/소개/">소개</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/anipang/" style="font-size: 10px;">anipang</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/quiz/" style="font-size: 10px;">quiz</a> <a href="/tags/소개/" style="font-size: 10px;">소개</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 chk386@gmail.com</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'chk386';
+    
+    
+    var disqus_url = 'https://chk386.github.io/2017/11/30/some-company-quiz/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+
