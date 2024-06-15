@@ -17,7 +17,6 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'chk386', // Usually your GitHub org/user name.
   projectName: 'wiki', // Usually your repo name.
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -54,9 +53,9 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'https://cdn.outsideonline.com/wp-content/uploads/2021/06/15/camping_fun_h.jpg',
     navbar: {
-      title: 'My Site',
+      title: '여긴 어디야',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -65,10 +64,10 @@ const config: Config = {
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
-          position: 'left',
+          position: 'right',
           label: 'Tutorial',
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/blog', label: '블로그', position: 'right' },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -77,7 +76,7 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [
         {
           title: 'Docs',
@@ -122,8 +121,8 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} haekyu cho. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.synthwave84,
+      darkTheme: prismThemes.shadesOfPurple,
     },
   } satisfies Preset.ThemeConfig,
 };
