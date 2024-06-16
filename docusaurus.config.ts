@@ -3,9 +3,9 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: '아윤아 사랑해',
+  title: '아윤아 사랑해. 만화 그만봐',
   tagline: '조아윤!!! 사랑사랑해',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://chk386.github.io',
@@ -24,8 +24,25 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'kr',
-    locales: ['kr'],
+    defaultLocale: 'ko',
+    locales: ['ko', 'en'],
+    path: 'i18n',
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+        path: 'en',
+      },
+      ko: {
+        label: '한글',
+        direction: 'ltr',
+        htmlLang: 'ko-KR',
+        calendar: 'gregory',
+        path: 'ko',
+      },
+    },
   },
 
   presets: [
