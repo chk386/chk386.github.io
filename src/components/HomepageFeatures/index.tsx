@@ -3,6 +3,7 @@ import Heading from '@theme/Heading';
 import mo from '@site/static/img/undraw_docusaurus_mountain.svg';
 import mo1 from '@site/static/img/undraw_docusaurus_tree.svg';
 import mo2 from '@site/static/img/undraw_docusaurus_react.svg';
+import React from 'react';
 import styles from './styles.module.css';
 
 type FeatureItem = {
