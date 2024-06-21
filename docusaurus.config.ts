@@ -16,9 +16,11 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'chk386', // Usually your GitHub org/user name.
-  projectName: 'wiki', // Usually your repo name.
+  projectName: 'chk386.github.io', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  trailingSlash: false,
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -85,6 +87,7 @@ const config: Config = {
           label: 'Tutorial',
         },
         { to: '/blog', label: '블로그', position: 'right' },
+        { to: '/blog2', label: '블로그2', position: 'right' },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -140,8 +143,29 @@ const config: Config = {
     prism: {
       theme: prismThemes.synthwave84,
       darkTheme: prismThemes.shadesOfPurple,
+      additionalLanguages: ['java', 'kotlin'],
     },
   } satisfies Preset.ThemeConfig,
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'blog2',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'blog2',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './blog2',
+      },
+    ],
+  ],
 };
 
 export default config;
