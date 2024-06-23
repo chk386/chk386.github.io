@@ -10,12 +10,12 @@ export default function BlogPostItemWrapper(props: Props): JSX.Element {
   return (
     <>
       <BlogPostItem {...props} />
-      <MyApp />
+      <GiscusApp />
     </>
   );
 }
 
-function MyApp() {
+function GiscusApp() {
   return (
     <Giscus
       id={'comments'}
