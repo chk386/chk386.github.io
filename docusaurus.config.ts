@@ -55,13 +55,13 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -74,7 +74,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'https://cdn.outsideonline.com/wp-content/uploads/2021/06/15/camping_fun_h.jpg',
     navbar: {
-      title: '여긴 어디야',
+      title: 'Q_QoV',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -83,13 +83,13 @@ const config: Config = {
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
-          position: 'right',
-          label: 'Tutorial',
+          position: 'left',
+          label: '기술문서',
         },
         { to: '/blog', label: '블로그', position: 'right' },
         { to: '/blog2', label: '블로그2', position: 'right' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/chk386/chk386.github.io',
           label: 'GitHub',
           position: 'right',
         },
@@ -102,7 +102,7 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
+              label: '기술 Wiki',
               to: '/docs/intro',
             },
           ],
