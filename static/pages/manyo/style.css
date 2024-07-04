@@ -1,20 +1,13 @@
 @import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css');
 @import url('../common.css');
 
-.top-banner__div {
-  width: 100%;
-  min-width: 1780px;
-  height: 50px;
-  letter-spacing: -1px;
-  font-weight: 500;
-
-  font-size: var(--banner-font-lg);
-  color: var(--primary-color);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fbf5d5;
+@media screen and (max-width: 1280px) {
+  body {
+    min-width: 1280px;
+  }
+  html {
+    overflow-x: scroll;
+  }
 }
 
 header {
@@ -22,7 +15,29 @@ header {
   flex-direction: column;
   align-items: center;
 
-  & .navbar {
+  .top-banner__div {
+    width: 100%;
+    height: 50px;
+    letter-spacing: -1px;
+    font-weight: 500;
+
+    font-size: var(--banner-font-lg);
+    color: var(--primary-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fbf5d5;
+  }
+
+  .navbar {
+    position: relative;
+    min-width: 1200px;
+    width: 100%;
+    padding: 0px 40px;
+    /* max-width: 1780px; */
+
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -32,7 +47,7 @@ header {
       display: inline-block;
       padding: 0 0 0 11px;
       color: #3d3a35;
-      font-size: 13px;
+      font-size: 0.7rem;
       font-weight: 400;
     }
 
@@ -53,7 +68,7 @@ header {
 
   & .navbar,
   .logo {
-    width: 1700px;
+    /* max-width: 1700px; */
   }
 
   & .logo {
@@ -160,5 +175,6 @@ header {
         background-size: contain;
       }
     }
+
   }
 }
