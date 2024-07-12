@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklove_ayun=self.webpackChunklove_ayun||[]).push([[771],{118:e=>{e.exports=JSON.parse('{"blogBasePath":"/blog2","blogTitle":"Blog"}')}}]);
