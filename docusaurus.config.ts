@@ -88,7 +88,7 @@ const config: Config = {
           label: '기술문서',
         },
         { to: '/blog', label: '블로그', position: 'right' },
-        { to: '/blog2', label: '일상', position: 'right' },
+        // { to: '/blog2', label: '일상', position: 'right' },
         {
           href: 'https://github.com/chk386/chk386.github.io',
           label: 'GitHub',
