@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+sidebar_class_name: pink
+---
 # LLM지도
 
 ## LLM이란?

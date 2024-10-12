@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_class_name: pink
 ---
 
-# 시작하기
+# LLM을 활용한 실전 AI 애플리케이션 개발
 
 오랜만에 기술서적을 읽어 보고 정리해 봅니다.
 
