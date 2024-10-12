@@ -6,7 +6,10 @@ const config: Config = {
   title: '아윤아 사랑해. 만화 그만봐',
   tagline: '조아윤!!! 사랑사랑해',
   favicon: 'img/favicon/favicon.ico',
-
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   // Set the production url of your site here
   url: 'https://chk386.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
