@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklove_ayun=self.webpackChunklove_ayun||[]).push([[38],{4817:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"MDX Blog Post","permalink":"/blog2/mdx-blog-post","unlisted":false}]}')}}]);

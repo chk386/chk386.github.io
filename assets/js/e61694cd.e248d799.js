@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklove_ayun=self.webpackChunklove_ayun||[]).push([[1885],{259:e=>{e.exports=JSON.parse('{"tags":[{"label":"Whiskey","permalink":"/blog2/tags/whiskey","description":"Hello tag description","count":1}]}')}}]);

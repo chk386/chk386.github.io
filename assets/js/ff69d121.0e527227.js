@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklove_ayun=self.webpackChunklove_ayun||[]).push([[38],{4817:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"\uac00\uc131\ube44 \uc704\uc2a4\ud0a4","permalink":"/blog2/whiskey","unlisted":false,"date":"2024-09-24T00:00:00.000Z"}]}')}}]);

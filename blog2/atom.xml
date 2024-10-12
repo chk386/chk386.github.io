@@ -2,19 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chk386.github.io/blog2</id>
     <title>아윤아 사랑해. 만화 그만봐 Blog</title>
-    <updated>2021-08-01T00:00:00.000Z</updated>
+    <updated>2024-09-24T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chk386.github.io/blog2"/>
     <subtitle>아윤아 사랑해. 만화 그만봐 Blog</subtitle>
     <icon>https://chk386.github.io/img/favicon/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[MDX Blog Post]]></title>
-        <id>https://chk386.github.io/blog2/mdx-blog-post</id>
-        <link href="https://chk386.github.io/blog2/mdx-blog-post"/>
-        <updated>2021-08-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></summary>
-        <content type="html"><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features" target="_blank" rel="noopener noreferrer">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer">MDX</a>.</p>
-<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Use the power of React to create interactive blog posts.</p><div class="language-html codeBlockContainer_Ckt0 theme-code-block" style="--prism-background-color:linear-gradient(to bottom, #2a2139 75%, #34294f);--prism-color:#f92aad"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-html codeBlock_bY9V thin-scrollbar" style="background-color:linear-gradient(to bottom, #2a2139 75%, #34294f);background-image:#34294f;color:#f92aad;text-shadow:0 0 2px #100c0f, 0 0 5px #dc078e33, 0 0 10px #fff3"><code class="codeBlockLines_e6Vv"><span class="token-line" style="background-image:#34294f;color:#f92aad;text-shadow:0 0 2px #100c0f, 0 0 5px #dc078e33, 0 0 10px #fff3"><span class="token plain">&lt;button onClick={() =&gt; alert('button clicked!')}&gt;Click me!</span><span class="token tag punctuation" style="color:#ccc">&lt;/</span><span class="token tag" style="color:#e2777a">button</span><span class="token tag punctuation" style="color:#ccc">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><button>Click me!</button><h2 class="anchor anchorWithStickyNavbar_LWe7" id="asdf">asdf<a class="hash-link" aria-label="Direct link to asdf" title="Direct link to asdf" href="https://chk386.github.io/blog2/mdx-blog-post#asdf">​</a></h2></div></div>]]></content>
-        <category label="docusaurus" term="docusaurus"/>
+        <title type="html"><![CDATA[가성비 위스키]]></title>
+        <id>https://chk386.github.io/blog2/whiskey</id>
+        <link href="https://chk386.github.io/blog2/whiskey"/>
+        <updated>2024-09-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[참고//www.youtube.com/watch?v=G0ZjoO4JEmw]]></summary>
+        <content type="html"><![CDATA[<p>참고 : <a href="https://www.youtube.com/watch?v=G0ZjoO4JEmw" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=G0ZjoO4JEmw</a></p>
+<p>27,900원
+THE FAMOUS GROUSE
+40도, BLENDED WHISKEY
+신선한 과일향
+에어링 추천</p>
+<p>4-5만원대
+네이키드 몰트
+쉐리캐스크 : 과일로 만든 오크통에 숙성, 꾸덕함 꿀향, 과일향</p>
+<p>5만원대
+탐나불린
+쉐리캐스크</p>]]></content>
+        <category label="Whiskey" term="Whiskey"/>
     </entry>
 </feed>
