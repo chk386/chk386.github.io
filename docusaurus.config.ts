@@ -139,7 +139,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} haekyu cho. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} QQoV. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.synthwave84,
