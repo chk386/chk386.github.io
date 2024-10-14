@@ -85,7 +85,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: '기술문서',
+          label: 'Wiki',
         },
         { to: '/blog', label: '블로그', position: 'right' },
         // { to: '/blog2', label: '일상', position: 'right' },
