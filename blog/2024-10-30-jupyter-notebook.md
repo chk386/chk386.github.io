@@ -34,12 +34,22 @@ tags: [html]
 
 데이터 과학 및 머신러닝을 위한 파이썬 배포판으로, 많은 패키지들이 미리 설치되어 있는 통합 개발 환경
 
-#### 주요특징
-
 - 1,500+ 오픈소스 패키지 포함
 - 패키지 및 환경 관리 용이
 - 가상환경을 통한 프로젝트별 독립적인 개발 환경 구축
-- indows, macOS, Linux 지원 **poetry와 비슷**
+
+#### 가상환경 관리
+
+- 가상환경(Virtual Environment) 생성 및 관리가 용이
+- 프로젝트별로 다른 파이썬 버전과 패키지를 사용 가능
+- 의존성 충돌 문제 해결에 도움
+
+#### 주요 포함 도구
+
+- Jupyter Notebook/Lab: 대화형 개발 환경
+- Spyder: 파이썬 통합개발환경(IDE)
+- NumPy, Pandas, Matplotlib 등 데이터 분석 라이브러리
+- scikit-learn: 머신러닝 라이브러리
 
 ```bash
 # brew 설치
@@ -51,21 +61,88 @@ conda --version
 # 가상환경 생성
 conda create -n notebook python=3.11.0
 
+# zsh or bash profile 추가
+conda init zsh (or bash)
+
 # 활성화
 conda activate notebook
 
 # 비활성화
-conda deactive notebook
+conda deactive
 
-# jupyter notebook 설치
-pip install jupyterlab
+# 커널 조회 & 선택
 
 # 주피터 노트북 실행
 jupyter lab
 ```
 
-# 1. Anaconda 설치
+## 1:1 문의 카테고리별 카운팅
 
-# 2. 주피터 노트북 실행
+```python
+import mysql.connector
+import plotly.graph_objects as go
 
-jupyter notebook
+# MySQL 연결
+conn = mysql.connector.connect(
+    host='10.104.17.79',
+    database='cos_alpha',
+    user='cos_alpha',
+    password='zh0tmdkfvk!DB',
+    port= '13306'
+)
+
+# 커서 생성
+cursor = conn.cursor(dictionary=True)
+
+# 쿼리 실행
+cursor.execute("""
+select cqc.category_name, count(1) as cnt
+  from cos_qna a
+ inner join cos_qna_category cqc on a.cos_qna_category_no = cqc.cos_qna_category_no
+ group by cqc.category_name
+""")
+
+# 결과 가져오기
+data = cursor.fetchall()
+
+# 카테고리와 건수를 별도 리스트로 분리
+categories = [item['category_name'] for item in data]
+counts = [item['cnt'] for item in data]
+
+# 바차트 생성
+fig = go.Figure(go.Bar(
+    x=counts,
+    y=categories,
+    orientation='h',
+    marker=dict(
+        color='rgb(55, 83, 109)',
+        line=dict(color='rgb(8,48,107)', width=1.5)
+    )
+))
+
+# 차트 레이아웃 설정
+fig.update_layout(
+    title='카테고리별 건수',
+    title_x=0.5,  # 제목 중앙 정렬
+    xaxis_title='건수',
+    yaxis_title='카테고리',
+    width=800,
+    height=1500,
+    font=dict(
+        family="Noto Sans KR",  # 한글 폰트 설정
+        size=12
+    ),
+    showlegend=False,
+)
+
+
+# 차트 표시
+fig.show()
+
+
+# 연결 종료
+cursor.close()
+conn.close()
+
+
+```
