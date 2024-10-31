@@ -146,3 +146,36 @@ conn.close()
 
 
 ```
+
+# Ollama: 로컬 LLM 실행 도구
+
+## 소개
+
+Ollama는 로컬 환경에서 대규모 언어 모델(LLM)을 쉽게 실행할 수 있는 오픈소스 도구입니다.
+
+## 주요 특징
+
+- 다양한 오픈소스 AI 모델 지원
+- 간단한 CLI 인터페이스
+- 로컬 환경 GPU/CPU 호환
+- 모델 관리 용이성
+
+## 설치 방법
+
+### macOS 설치
+
+```bash
+brew install --cask ollama
+
+# 코드라마 실행
+ollama run codellama:7b
+
+# chatgpt같은 web ui
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+```
+
+### CodeGPT
+
+[intellij plugin](https://plugins.jetbrains.com/plugin/21056-codegpt)
+
+[ollama github](https://github.com/ollama/ollama?tab=readme-ov-file)
