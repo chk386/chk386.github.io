@@ -59,18 +59,23 @@ brew install --cask anaconda
 conda --version
 
 # 가상환경 생성
-conda create -n notebook python=3.11.0
+conda create -n jupyter python=3.11.0
 
 # zsh or bash profile 추가
 conda init zsh (or bash)
 
 # 활성화
-conda activate notebook
+conda activate jupyter
 
 # 비활성화
 conda deactive
 
-# 커널 조회 & 선택
+# ipykernel 설치
+pip install ipykernel
+
+# 커널 추가
+python -m ipykernel install --user --name=jupyter
+
 
 # 주피터 노트북 실행
 jupyter lab
@@ -129,7 +134,7 @@ fig.update_layout(
     width=800,
     height=1500,
     font=dict(
-        family="Noto Sans KR",  # 한글 폰트 설정
+        family="AppleGothic",  # 한글 폰트 설정
         size=12
     ),
     showlegend=False,
@@ -147,6 +152,7 @@ conn.close()
 
 ```
 
+<<<<<<< HEAD
 # Ollama: 로컬 LLM 실행 도구
 
 ## 소개
@@ -179,3 +185,181 @@ docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-
 [intellij plugin](https://plugins.jetbrains.com/plugin/21056-codegpt)
 
 [ollama github](https://github.com/ollama/ollama?tab=readme-ov-file)
+=======
+## ollama
+
+Ollama는 로컬 환경에서 대규모 언어 모델(LLM)을 쉽게 실행할 수 있게 해주는 오픈소스 프레임워크입니다.
+
+1. 주요 기능:
+
+- 로컬 환경에서 LLM 모델 실행 가능
+- 다양한 오픈소스 모델 지원 (Llama 3, Code Llama, Mistral 등)
+- 간단한 명령어로 모델 다운로드 및 실행
+- API 제공으로 애플리케이션 개발 가능
+
+2. 장점:
+
+- 인터넷 연결 없이 오프라인에서 사용 가능
+- 데이터 프라이버시 보장
+- 무료로 사용 가능
+- 커스텀 모델 생성 지원
+
+## 설치 & 실행
+
+```bash
+brew install ollama
+
+# 라마3.2 실행
+ollama run llama3.2
+```
+
+### huggingface
+
+- Hugging Face는 AI 커뮤니티를 위한 중심 플랫폼으로, 머신러닝 분야에서 협업과 리소스 공유를 위한 가장 큰 허브
+- AI계의 Docker Hub
+
+[huggingface](https://huggingface.co/QuantFactory/llama-3.2-Korean-Bllossom-3B-GGUF/tree/main)
+
+### GGUF
+
+GGUF(GPT-Generated Unified Format)
+
+1. GGUF 주요 특징
+
+- GPT-Generated: GPT 모델을 위해 생성된
+- Unified: 통합된
+- Format: 파일 형식
+
+2. 장점
+
+- 이전 GGML 포맷의 개선 버전
+- 더 나은 메타데이터 지원
+- 향상된 성능과 호환성
+- 더 작은 파일 크기
+- 빠른 로딩 시간
+
+3. 주요용도
+
+- 큰 AI 모델을 효율적으로 압축
+- 로컬 환경에서 실행 가능한 크기로 변환
+- CPU에서 실행 가능
+- 적은 메모리로 구동 가능
+- 오프라인 환경에서 사용 가능
+- 다양한 기기 지원
+- 다양한 OS 지원
+
+### 모델 파일명 의미
+
+```plaintext
+llama-3.2-Korean-Bllossom-3B.Q8_0.gguf
+|     |    |      |       |  |   |  |
+1     2    3      4       5  6   7  8
+```
+
+1. 기본 모델 아키텍처
+2. 모멜 보전
+3. 한국어 학습/튜닝 특화
+4. 프로젝트명 or 특화된 버전, 특정팀/개발자 커스텀
+5. 3b = 30억 파라미터 모델
+6. Quantization 양자화 레벨
+   1. Q8(8-bit) ~ Q3(3-bit) 가중치 압축
+   2. 레벨이 높을수록 원본 모델과 가장 유사한 성능, 메모리 사용율도 증가
+   3. 하드웨어 성능에 따라서 잘 선택해야함
+   4. 메모리 사용량 예시 (7B 모델 기준)
+```
+Q8: ~8GB
+Q6: ~6GB
+Q5: ~5GB
+Q4: ~4GB
+Q3: ~3GB
+```
+![양자화](./imgs/Quantization.png)
+[출처](https://www.youtube.com/watch?v=04jCXo5kzZE)
+
+7. 버전
+
+```plaintext
+mistral-7b-v0.1-q4_K_M.gguf
+- mistral-7b: 모델명과 크기
+- v0.1: 버전
+- q4: 4-bit 양자화
+- K_M: 중간 크기 컨텍스트
+
+llama-7b-q4_K_S.gguf
+- llama-7b: 모델명과 크기
+- q4: 4-bit 양자화
+- K_S: 짧은 컨텍스트
+
+mixtral-8x7b-v0.1-q3_K_L.gguf
+- mixtral-8x7b: 모델명과 크기
+- v0.1: 버전
+- q3: 3-bit 양자화
+- K_L: 긴 컨텍스트
+```
+
+- K(context size 관련 설정) = 1024Token
+- 8K = 8,192Token K_M: Medium context length K_S: Short context length K_L: Long context length
+
+![GGUF Image](./imgs/GGUF.png)
+
+### 한국어 특화 모델 설치 및 실행
+
+[ollama Modelfile](https://github.com/ollama/ollama/blob/main/docs/modelfile.md)
+
+```
+FROM llama-3.2-Korean-Bllossom-3B-gguf-Q4_K_M
+
+TEMPLATE """{{- if .System }}
+<s>{{ .System }}</s>
+{{- end }}
+<s>Human:
+{{ .Prompt }}</s>
+<s>Assistant:
+"""
+
+SYSTEM """당신은 제 개인 비서 입니다. 한국말로 답변 부탁드립니다.
+"""
+
+PARAMETER stop <s>
+PARAMETER stop </s>
+```
+
+## 검색 증강 생성
+RAG : Retrieval-Augmented Generation
+
+### LLM의 한계
+- 편향성
+- 사실 관계 오류 : 환각
+- 맥락 이해 한계 : 장문의 글이나 복잡한 맥락
+- 일관성 문제
+- 윤리적 문제
+
+### RAG 배경
+- RAG는 LLM의 `사실 관계 오류`와 `맥락 이해 한계`를 극복함
+- 외부 지식 활용
+    - 대규모의 구조화된 지식 베이스를 모델에 연결
+    - 주어진 질의에 대한 관련 정보를 지식 베이스에서 검색 및 추출
+    - 예를 들어 우리 회사의 공지사항 데이터를 벡터DB에 저장 후 일반적인 한국말을 할줄 아는 LLM과을 이용하여 챗봇 구현
+- 증거 기반 생성
+    - 답변의 출처를 명시하여 신뢰도 향상
+    - 검색된 지식 정보를 증거로 활용하여 특정 domain환경에서 사실에 기반한 답변 생성
+- 맥락 이해력 향상
+    - 외부 지식을 통해 질문에 대한 배경 지식과 맥락 정보 파악
+- 실시간 정보 제공
+    - 지식 검색과 답변 생성을 통합적으로 수행할 수 있는 Framework
+
+
+**고품질, 고성능의 지식 베이스 구축이 중요**
+
+### 핵심 요소
+- 질의 인코더(Query Encoder): 사용자의 질문을 이해하기 위한 언어 모델입니다. 주어진 질문을 벡터 형태로 인코딩합니다.
+- 지식 검색기(Knowledge Retriever): 인코딩된 질문을 바탕으로 외부 지식 베이스에서 관련 정보를 검색합니다. 예를 들어 Wikipedia, 뉴스 기사, 전문 서적 등 방대한 문서 집합에서 질문과 연관된 문단이나 구절을 찾아냅니다.
+- 지식 증강 생성기(Knowledge-Augmented Generator): 검색된 지식을 활용하여 질문에 대한 답변을 생성하는 언어 모델입니다. 기존의 LLM과 유사하지만, 검색된 지식을 추가 입력으로 받아 보다 정확하고 풍부한 답변을 생성할 수 있습니다.
+
+
+
+
+### 샘플
+https://server-docs.godomall.com/
+
+>>>>>>> 6727180 (blog)
