@@ -152,7 +152,6 @@ conn.close()
 
 ```
 
-<<<<<<< HEAD
 # Ollama: 로컬 LLM 실행 도구
 
 ## 소개
@@ -184,8 +183,8 @@ docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-
 
 [intellij plugin](https://plugins.jetbrains.com/plugin/21056-codegpt)
 
-[ollama github](https://github.com/ollama/ollama?tab=readme-ov-file)
-=======
+# [ollama github](https://github.com/ollama/ollama?tab=readme-ov-file)
+
 ## ollama
 
 Ollama는 로컬 환경에서 대규모 언어 모델(LLM)을 쉽게 실행할 수 있게 해주는 오픈소스 프레임워크입니다.
@@ -266,6 +265,7 @@ llama-3.2-Korean-Bllossom-3B.Q8_0.gguf
    2. 레벨이 높을수록 원본 모델과 가장 유사한 성능, 메모리 사용율도 증가
    3. 하드웨어 성능에 따라서 잘 선택해야함
    4. 메모리 사용량 예시 (7B 모델 기준)
+
 ```
 Q8: ~8GB
 Q6: ~6GB
@@ -273,8 +273,8 @@ Q5: ~5GB
 Q4: ~4GB
 Q3: ~3GB
 ```
-![양자화](./imgs/Quantization.png)
-[출처](https://www.youtube.com/watch?v=04jCXo5kzZE)
+
+![양자화](./imgs/Quantization.png) [출처](https://www.youtube.com/watch?v=04jCXo5kzZE)
 
 7. 버전
 
@@ -325,9 +325,11 @@ PARAMETER stop </s>
 ```
 
 ## 검색 증강 생성
+
 RAG : Retrieval-Augmented Generation
 
 ### LLM의 한계
+
 - 편향성
 - 사실 관계 오류 : 환각
 - 맥락 이해 한계 : 장문의 글이나 복잡한 맥락
@@ -335,31 +337,24 @@ RAG : Retrieval-Augmented Generation
 - 윤리적 문제
 
 ### RAG 배경
+
 - RAG는 LLM의 `사실 관계 오류`와 `맥락 이해 한계`를 극복함
 - 외부 지식 활용
-    - 대규모의 구조화된 지식 베이스를 모델에 연결
-    - 주어진 질의에 대한 관련 정보를 지식 베이스에서 검색 및 추출
-    - 예를 들어 우리 회사의 공지사항 데이터를 벡터DB에 저장 후 일반적인 한국말을 할줄 아는 LLM과을 이용하여 챗봇 구현
+  - 대규모의 구조화된 지식 베이스를 모델에 연결
+  - 주어진 질의에 대한 관련 정보를 지식 베이스에서 검색 및 추출
+  - 예를 들어 우리 회사의 공지사항 데이터를 벡터DB에 저장 후 일반적인 한국말을 할줄 아는 LLM과을 이용하여 챗봇 구현
 - 증거 기반 생성
-    - 답변의 출처를 명시하여 신뢰도 향상
-    - 검색된 지식 정보를 증거로 활용하여 특정 domain환경에서 사실에 기반한 답변 생성
+  - 답변의 출처를 명시하여 신뢰도 향상
+  - 검색된 지식 정보를 증거로 활용하여 특정 domain환경에서 사실에 기반한 답변 생성
 - 맥락 이해력 향상
-    - 외부 지식을 통해 질문에 대한 배경 지식과 맥락 정보 파악
+  - 외부 지식을 통해 질문에 대한 배경 지식과 맥락 정보 파악
 - 실시간 정보 제공
-    - 지식 검색과 답변 생성을 통합적으로 수행할 수 있는 Framework
-
+  - 지식 검색과 답변 생성을 통합적으로 수행할 수 있는 Framework
 
 **고품질, 고성능의 지식 베이스 구축이 중요**
 
 ### 핵심 요소
+
 - 질의 인코더(Query Encoder): 사용자의 질문을 이해하기 위한 언어 모델입니다. 주어진 질문을 벡터 형태로 인코딩합니다.
 - 지식 검색기(Knowledge Retriever): 인코딩된 질문을 바탕으로 외부 지식 베이스에서 관련 정보를 검색합니다. 예를 들어 Wikipedia, 뉴스 기사, 전문 서적 등 방대한 문서 집합에서 질문과 연관된 문단이나 구절을 찾아냅니다.
-- 지식 증강 생성기(Knowledge-Augmented Generator): 검색된 지식을 활용하여 질문에 대한 답변을 생성하는 언어 모델입니다. 기존의 LLM과 유사하지만, 검색된 지식을 추가 입력으로 받아 보다 정확하고 풍부한 답변을 생성할 수 있습니다.
-
-
-
-
-### 샘플
-https://server-docs.godomall.com/
-
->>>>>>> 6727180 (blog)
+- 지식 증강 생성기(Knowledge-Augmented Generator): 검색된 지식을 활용하여 질문에 대한 답변을 생성하는 언어 모델입니다. 기존의 LLM과 유사하지만, 검색된 지식을 추가 입력으로 받아 보다 정확하고 풍부한 답변을 생성할 수
