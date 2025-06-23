@@ -1,0 +1,77 @@
+---
+id: put-guest-order-options-order-option-no-delivery-done
+title: "비회원 상품 주문 배송완료 처리하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "비회원 상품 주문 배송완료 처리하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVe9r20YY/lduVwQ2WJbtdMPxl2F7ZgustWnS7YNtwsW+2CKypErnkGAMaetuIQl0LU5wt6Z0NIyt68BkZriQvygn/Q97T9YSyW2c4n4a1Bbo7vX747nz+7xPBzPSsHGmjL9uU5sVrTq1cDWG69SuWarJVEPHGVzRb9xA/J+d8+GO0zvhrx8hPnyM3L23zvHIefDGPfyrovPh0PnhV+fkCXIe3ncfPneOB97q6a7z6oy/GTvHPeT7POvxVwfIOR3w3yB2wPf6KFtaQs6LR3x/l++fxCu6V9F91ud/jJzBrrP/vKKXPytXI03GzIyiqC3SoHFmEJvFa0ZLIeLTXFOIqcoB6IohzqM0xNGUcunuSlVKJbzdqveLbHhu9mqdauomtbbluqFT8JEKeSm9IKWTUuEraTElpdO+Mbsg5fJSISdl81JuYsxJuYR4RMgXUjYpFouLUvqm5wZJ8nFTb3xJ2szYSn6eiP6PDxGt6DiGDZNaRJRcqkNvmG0me2jkEJrQTtYNOYQOspjEIi3KqCW6r4N12EA2L6roBd02wEsV7WcS1sTTPTnpKn666w7G8KNF77VViwIiZrVpDNu1Jm0RnOlgtm2KzDazVL2BuzFMt0jL1IQtmRJfsF3U/w7wiPx+5SYlghDTtUW38tOe87I3d+V4Ili2pqlUZ3Cfs+s6P565h0/46yFy74/48Zmg39HY3Rsj57AHG97vzwuIiX9wAkNW60FspkbYumG1rsE2jcjtH/AXf7qPz1CklI+hW8Xc0reF1e8LuRjKFpdjaKm4HJ0XbCkfBKgRvdEGKl13eUdj52iEIufjIf97jM6HTzNowwhjWCea/aEgNowgCI8CK8YGva53Qo7zdy1ZkJOpBXjglVzA3apIZpvAPGqL+FTipniFawtjF3IB75qGT16PisCvDPZHTIjGSifEyK4yTWObWpv/cbhtaeLcMN1sGG920zBlmGVxKus1U0w4D6WqrxveAVWmXTBeFs7vXBWacDziuUTR+WiHv/wdCVehF5dyAYGbPm8zOBEHbsnLt7Ol5W+KK+LmTMNmLaKLov6fxd/23J8PnF9+8hXKL3SFPkHDTEPr4JqhM+DKJ3H8JI4hcfR5y+gWU2BywiSADvSI0fF5Vp6MACGkQYSwz0yrX5hsQJ4mtLLI0OmsEZvetbRuV5jvtcEJ7LDcJJZK1gSzgJB11Rbry8F2ZRNH7viTKIqmhPW9B/KNRN8W3CNaW+xguUG33xHxbhUC/GE4N6iQ4r4X0qT0pX5foBJDer6L+CC1nQEmoOofj2ZOfZ0BLyDsc8K7WlJnlA3I9cffSkhNZxQN+V2WrQa0EIYHiOO/nt/mew==
+sidebar_class_name: "put api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"비회원 상품 주문 배송완료 처리하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/guest/order-options/{orderOptionNo}/delivery-done"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+배송중 상태의 상품주문을 배송완료 처리하는 API 입니다.
+
+## 화면예시
+[![](http://image.toast.com/aaaaahb/api-description/order/guest/[PUT]%20guest_order-options_delivery-done%20%EC%83%81%ED%92%88%20%EC%A3%BC%EB%AC%B8%20%EB%B0%B0%EC%86%A1%EC%99%84%EB%A3%8C.png?autox150)](http://image.toast.com/aaaaahb/api-description/order/guest/[PUT]%20guest_order-options_delivery-done%20%EC%83%81%ED%92%88%20%EC%A3%BC%EB%AC%B8%20%EB%B0%B0%EC%86%A1%EC%99%84%EB%A3%8C.png)
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"orderOptionNo","in":"path","description":"주문번호","required":true,"schema":{"type":"string"},"example":"121212"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"guestToken","in":"header","description":"guestToken","required":true,"schema":{"type":"string"},"example":"12121a3-123123-1213"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

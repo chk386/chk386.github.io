@@ -1,0 +1,73 @@
+---
+id: get-recurring-payments-cards
+title: "정기결제 카드 조회하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "정기결제 카드 조회하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VmFPGzcY/iuW+yVIORJSYCzfoEUr0gZR024fCJrMxSRXLndX20HNoki0SjtGu7UMwlgHKGhsVIxJGUNTKuUXYd9/mH25wCUhCcq0T4nt99738WP7eZ8iZChDYXwRPsR6nhDDyiRQIYctBpfCMI2pTgyHGbYF4zBl3bkD+D/rl7V1UT7mpy8Br70F7uZHcXAhXpy5lT9TFj/9wLerQFQrl/Xa5XlNVPeB+HjBt/f5bw0gjmru+zduZY9v7oDpxBwQhy/56w3++ngUhqHtYIJUrbm0rJbBTCMtTJrTBEU1HZE0lcEOIiiHGSYKfBFaciA/+lKOFdgwNBTiLEZpTGDnRlRlfl4W1bJcIvhp3iBYlmQkj8OQ6lmcQzBehKzgqJyUKQSwFIb4Gco5ppobG43KiauyumlIcBJ2/7ri24Zb2eKnNeA+v+AHDcXbbt3drANRKcsB39kZFhDDlGlNGJqRDmJzTMRWbJIbgK0Tkbvzhh/+4b5tgFDiXhh8sTAz9/ns11/NzoTB9EIyDOYWkiPDgk3cCwI0kZXJowweRN5uXexegJC8V/zvOris/RgHq3Y7hhVk0tuCWLWDIJCuY0of2at40OWRF1j88g6In7ZEuS42j4H7quo+rw2Nwzu5ZnmNefUDsJJZ29FmCtp0nmVtYnzjPY9BRFWO2pCFFpD8OgbkjPvDz8MTNoMRwQTcgHdJpaSObVFMVZJYNKp+2mGpyTDUbYspcZHLyHFMQ/d2FHlCVUyxGwgiBBW6tqgYYDhHA4H28hOsMyUMROkIM5pQlFzMe1x27q2LNk+lpI4BpWwhK2+aaNnEiq9rDuYf8Fffu3tbzWDFj0MMeTCsEChg5XPLN52L9w0Q72uiXBUb+2K/HMw9JpN5aO1bp+LnG+5evTMJwRmDSmG8j9ittw349l/86EAcNNq2G4vGJrTopDY2CX10s1b6vpEx2O0Tn2yIk3V+8h0YF4fv+O9nvagdi90dh6WSrMMM5s30Un9t4tOxybtTU7HxwAX1Trtvz5Dra8jMq8yLxZTPdUpyFk5dXRM5THUccgr6662tezEKrbfSOn8/UZB8L/CawpR62IG6sWHqTkx+MtVZNzaw7pIi1uNWtsys7bdXr4uyrBxEukmLtBotxWSt1WXzxFS6w5hD45EIVeKEHGMUa5bujOp2zpMCw1ppXmH/GG0iVUpTwV13BIhfG/ysHvJCRsDlxTqvfgAqVLmDNnOw5nf2OIyOyu6rJeenE8kHC4+8N2hTlkOegPi6eYP/uDYfcqUTSfFamP53m+M/G4afsYhszoYS/CazRf88Fm+4+rD5/qiyZVm5XxVVLC4jih8Ts1RS00/zmEgdWpR/1xAx1BNTI5nd7xTqCNMGVQvX2t+Th9BDv02MgDbDdCP+VVxos1+tl+Y1s6Fq3s4s9QETMGX/Hc2Q9qgPvIAvGxJeb0fUp2zAbQ1ZtrcB6lO23V8Nu+GBzqYPgl5Wqg1LM3RagnVYYK3Lqiidu5LSz2alCpX+Bfw6NLw=
+sidebar_class_name: "get api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"정기결제 카드 조회하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/recurring-payments/cards"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+모든 정기결제 카드를 조회하는 API 입니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"array","description":"","items":{"type":"object","properties":{"cardName":{"type":"string","description":"카드사 명 (nullable)","example":"NH농협카드"},"priority":{"type":"number","description":"카드 우선순위","example":1},"cardNo":{"type":"number","description":"카드 번호","example":1},"registerDate":{"type":"string","description":"카드 등록일","example":"2025-06-16"},"cardEndDigit":{"type":"string","description":"카드 마지막 4자리 (nullable)","example":"1234"}}},"title":"recurring-payments-cards-591638824"},"examples":{"get-recurring-payments-cards":{"value":"[{\"cardNo\":1,\"cardName\":\"NH농협카드\",\"cardEndDigit\":\"1234\",\"priority\":1,\"registerDate\":\"2025-06-16\"},{\"cardNo\":2,\"cardName\":\"NH농협카드\",\"cardEndDigit\":\"5678\",\"priority\":2,\"registerDate\":\"2025-06-16\"}]"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

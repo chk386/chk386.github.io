@@ -1,0 +1,74 @@
+---
+id: delete-recurring-payments-card
+title: "회원의 모든 정기결제 카드 삭제하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "회원의 모든 정기결제 카드 삭제하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9le9LGzEYx/+VEN9U6LVO9qrv1BVWcGuxbnuhZcRrtIfXuzNJxa4IKnUbKnNO69ym0jEH4hSKK6NC/6Im9z8suda11dnKDfaqzXNP8nzy/PimABmaozAyBSewniPEsOYSKJ/FFoOpIExjqhPDYYZtwQictgYGAP+10qisiOIJP1sHvLIN3I0rcVQVa+du6WLacj9viS/vxdEB4GenfLcMRLnUqFUalxVRPgTiqsp3D/n3OhBrF9Lglg74xh4YScSAOF7nm2/55klo2oJBaDuYIBU3lpaR09jEDGvkGlFzmoxU0xFJS3cHEZSVLkRdpQAtuZDbnsu1Qg9CQ/FnMEpjAm9eS0Xnl0VRLspPBC/kDIJlUEZyOAipnsFZBCMFyPKOOpMyBQCXgxAvoaxjKtuD0JA0/Amrm4Zki6X7xBVv6m5ph59VgLta5Ud1lcX9mrtRA6JUlAu+t+cXiGHKtCaGZqQ72RwTsVmbZPuw3SRy97b48Q93uw4CibEgeBIfjY1HX76IjgbBSDwZBLF4ctAvbGKsE9BE1lwOzeF+yduvif0qCMje4j9roFH5EAHzdjfDLDLpfSHm7U4IpOuY0kl7Hvdrnma/A/FxRxRrYuMEuK/L7mrFN4dXuWZ4jXnxO7CSGdvRRvPaSI5lbGK88gakX6JKX7vIAnEkdw8DaXHfffKfsFGMCCbgL7wpdSR1bItiqg4ZHnqofrqxlHFZHiiHNmO3R9wbZZaR6/DtYQ+3hp1isng96Tliqrsz5tBIOExVgpBjhLBm6U5It7MejmHN2t51DOax20RmSlPOt9IFxLc6P68FPJdB0Kiu8PIpUK5KpdoiJTcuttQlAodCUgG05NORRPJxfFLlybEpyyJLBW3V7j7C2FZF+eUmWgHqtsWUMP9fJW71AMNLLCzVw1Ad2Ux7oVWrKXi7VnKjVy2Z/YzMhXIqFGYQxc+IubyszAs5TPLSLv8uImKgGVWaqZQ8vNXJqrxpg6oP7d68MyWBiVYbD4IuQf8r/jzOdz0Pi8jMKS9v2HzFvJ+Y94DpeDT+ncanfPfA63g3fOLdrdg9wna8Bj7D3i3QPcJ267/fC/dV3h4Ed0l9myXVIZ6PouPRyagU1N9i9vDa
+sidebar_class_name: "delete api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"회원의 모든 정기결제 카드 삭제하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/recurring-payments/card"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+회원의 모든 정기결제 카드를 삭제하는 API 입니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

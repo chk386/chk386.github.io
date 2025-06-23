@@ -1,0 +1,74 @@
+---
+id: delete-wish
+title: "위시리스트 삭제하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "위시리스트 삭제하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1ldtOG0cYx19lNLkx0voAlFz4zqSWipTGqCbNRYyqYT3gDevdzcwsDVlZMqnTIoOaJsKUpCaiKqmqlEhW6lau5CfyzL5DZ9YGrw3YaKP6xpqdw/f7jn8PMrRBYfohfGDQElzVYBFTnRgOM2wLpmHBunUL8H+qvVZV1E75++eAt14Av/6vOG6LZ2d+40PBEs2a2Gvy389E/dSvd/i7LhDPPoiTpt844vUDkFleAuLtc763y/dOEwULatB2MEHKxFJRGiliEzMc/1YRaNBBBJXlmigsD1pyIc+ozXs2lfuG4nrsYrINx2klCeAfd/2jjtwi+LFrECwNMOJiDVK9hMsIpj3Ith31pOWW1zCBFQ3iJ6jsmOrbrDanzctPF3a/lhzq8YHdEkZFeWfcsHKRf6yJk9pNDFNGDGtjzHAiFTarmwa2mIzOZLvih67feMnft4C/0+bHXZWVw45MAhCNmlzwg4OoQAxTFu9jxI1imM0xEVu3SXkK2ziRf7DP3/7pv+iC2PIdDXyZW1y6m/3mQXZRA5lcXgNLufxMVNjlO2FAE1kbLtrA04J32BGHbRDrdVr8rw7otV6lwaY9yrCOTHpTiE07DIF0HVO6Ym/iacXjv9kXv/wExM8vRa0jewj435/4O63IHEHm+ubjLLAfwsqXbCe+uB3PuKxkE+Np0IXTAtX4dYQslkPy9hxQ/f7j6+gBW8SIYAKu4F1VT1LHtiim6pG5VEr9jWKpjxrUbYvJGlXbyHFMQw88Sj6i6ox3GcRee4R1puYMUVOIGX0Luu32HxkdDlfnShwfAdE+BmpmAvHdjv9qV+wegZj4u8n3q2A2leq1mrKgqrz+ToXnwuXZSmX8RbnNDGaez7jbCwsLn83fnk+FQkX7vg+HpFxuIdNVd7xCH70A03MVWAl+GpTzs2QPR2swVZm8B5ODIUsx2TqfsC4xVe4Zc2g6maSqQJBjJHDc0p2EbpeDdBjWuh2EZ8BqE1kpcXX4UoyA+K3Lzzqx4MgM6LWr/OQPoI4qKRgqgby4NZiuaZhKyAkYz9/LLOe/yK0o5x2bsjIKkjio3TGhGaqM7OBxCm9YGP+XiA0qheEnLClnoqH6rB9MbxDuh0FKlaqWpDNq7XlriOL7xKxU1Oe+jKkkFA2K1sxQB13rTeyrQbPNgBG9uxJnE2+PiOd52QQ53ULEUEYlwKo8O+j+yDQjIjiBZiipQxotagRuJIATYEJC++k0ESVvAl5IayPiXa9yE8yGFDSi2etFbYLZUc2M6vBUtZpAcJ08jrD0j2YkrMNCe5fkR/XYxST+PHs3u5KVE/o/g193Zg==
+sidebar_class_name: "delete api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"위시리스트 삭제하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/wish"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+위시리스트를 삭제하는 API 입니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"wishNos","in":"query","description":"위 번호","required":true,"schema":{"type":"number"},"example":"1,2,3"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"count":{"type":"number","description":"회원의 총 Wish 상품수 (최대 100개 가능)","example":1}},"description":"","title":"wish655543630"},"examples":{"delete-wish":{"value":"{\"count\":2}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

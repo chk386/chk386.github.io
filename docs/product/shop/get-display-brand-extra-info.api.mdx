@@ -1,0 +1,80 @@
+---
+id: get-display-brand-extra-info
+title: "브랜드 추가 정보 조회하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "브랜드 추가 정보 조회하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVl9PG0cQ/yqr48WO7mwDqhK5iioT0QapxahA+4BRtT4v+OB8d9lbIxzLErROSwEpTWpTRExkJKI2aZAscCJHol/It/cdOnu28dkOBrnqU+sXa29nZ37z7zeTlxhetaXokjRFsZGSlmUpRWyVahbTTEOKSmNjyHm/1axt8eKp8+YJcmpPkbv7gR/X+fdv3fJZwkC+X8IYEw8a+87LivNrBfH3JfG0WnYu6oif1Nyjfbd86OyWUGxuhr984uztOHunoYSh+B8dlfj5GXLOd9zDhpDl7yrO/haajDRrFdT8sM9/30Kg1tl95ZZfX6kAJMJ4PLa48HAC8VqjeVHtYLyDluI4y9ITwu5yIM2YZUfD4ZSp2iE7bVrJXEg1Q+s0/FmW6iGLahlMc7M4Q+6LV+GxcEtr2DJtppieJoWZ68QIIufVJQIz/Og1eMZ/e4vcH6vudo0fFyFWlWbjZ6f2gh8D4PO/+FFNFliajRo/qSOsqsS2F4QaBP7xvSqaByzKVE6JgQWTao+xyAJyTiAo5RNebPDdU59+Xi06e+BgnZcv/ZG4g8hm8BpdUTRFMCUUMQKutCC0XEkYkiyZFqGe4EwKkr9KmJLSbEvHOSUp6kMhm4xiRTNWTBC2MIUQMUJFAeUlAw7wqP3Aq6dZ0wY5TRTSoyyhOam/vMAFvlfxJb+VdZCj5FFWowRgMJolsmSraZLBUjQvsZwl7BjZTJJQqSBLZBNnLF18G5fRhIwm4eMVnG8AnrDVhpEmOAWv+nFAWYDpIsC5jWmbUc1Y7TMdivjNqrpGDAZRHG6X/wSZe+a8qSF3u+4cX4q+Omi4uw1IeBEOTqk0KiAvwS0YipbyY4P0sBWTZm7A1o/ILUGS/nSfXgbmHsjoq/jUzJfT3307PSWjWHxeRjPx+eCoWOce+PHp2FjN4lVyU+wOGvygjgLQTs5Fo1l7HkXrpoyAHfiLX6IIukpB/HAbZGS0ZonD8SUIeufHaXE+fdZ8dwbnIAoYWV3HSZ30urCCdfu2PhBDKiyLx7ZlGjaxhfhEJCL+enGLj7KkmgaD1IhrbFm6pnptF16zTeNTNY2pTdj9xYXPlXtCYgAAphQPdpMIGCMZ2ydoJteIykSzUtHbTGsB623Swa66fZ9eBWDciwbQw4xgh4FYDWj0RgNqzQa/nr6bQgH0Mo3pPm5pkZGtXJlTxiPj9yYn734yOelLiufpUA6D+w2sZ4XqpXyiLyoJ8ElOdH2Cc0Ka7p4KywKchw9YMG22GdMjRpaGQ7itL9yCG+5GB0qK0I0OccLMEVXeHkpiHinY0kJEMVQL5lLGq6sO3k4oIJ+prMoUIT4QXMR/2Haf7wTaQsFmfcup/oGEbO/khZcbbYKMSpFQJDSuzM/G5uYfxhdEIMW8y2BD2G33Zv9sR/3DHbqxH06+W+z/7xP/rX2izQEMSj8MrQB0DlXl1Xu+3SVLna4D6VafSH4egcpPQ5CEXD6fxDZZpHqhID63FgrRP6BAUHeXr6+tvsDXbWoPousZ7aOY10nuo7tNhz68Ht3AVBNIANUyvGnPrZEh9iwlQ1B1V5wuGnnUsNxqIRkCxrf4/HM0o60gQ9D5Vp8R0f1rW8cQ1L6FqAd16zYGTWcx390N+4So1KuB9cU0EH3hb9Bl0DI=
+sidebar_class_name: "get api-method"
+info_path: docs/product/shop/product-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"브랜드 추가 정보 조회하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/display/brands/extraInfo"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+            
+### 브랜드 추가정보 조회하는 API입니다.
+- 브랜드 요청 번호는 최대 30개 까지 가능합니다.
+
+ ### OAUTH2 참고사항
+* [Oauth2 API](https://docs.shopby.co.kr/?url.primaryName=auth/#/OAUTH2/post-oauth2-token) 를 사용하여 토큰을 발급받은 경우,
+* 기존 accessToken 대신 Shop-By-Authorization 로 액세스 토큰을 전달해야합니다.
+* ex) Shop-By-Authorization : Bearer test-access-token
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"displayBrandNos","in":"query","description":"전시 브랜드 번호","required":true,"schema":{"type":"number"},"example":"1, 2, 3"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼(PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko, 지원: en - 영어, jp - 일본어, zh - 중국어) (nullable)","required":false,"schema":{"type":"string"},"example":"en"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json;charset=UTF-8":{"schema":{"type":"array","description":"","items":{"type":"object","properties":{"displayBrandNo":{"type":"number","description":"전시 브랜드 번호","example":1},"extraInfo":{"type":"string","description":"추가 정보","example":"추가 정보"}}},"title":"display-brands-extraInfo-1018337533"},"examples":{"get-display-brand-extra-info":{"value":"[{\"displayBrandNo\":1,\"extraInfo\":\"ExtraInfo\"}]"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

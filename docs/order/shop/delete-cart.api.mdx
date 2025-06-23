@@ -1,0 +1,76 @@
+---
+id: delete-cart
+title: "장바구니 삭제하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "장바구니 삭제하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNle9P20YYx/+V0/VNkOwk0E1b8y6wSENiDVro9qJB0+EcxMWx3bsLKrMiQZduCKr1hxKabaQCjUoro1LUZVMm5S+Kz//D7mxDHCBJ5b1p3kR39/iez/Pjnq8DGdqgMHMfLiDC4KoCS5hqRLeZbpkwA4vmrVvA/Wdn0Nnh9VP37AlwO8+At/8vb3f543Ov+a5o8tdv3E5j8Pe5e7AH3LO37kmbv3rO60cgeuK+6QP++B0/PvKaLXe/AbLLi8LgiTw6OE0WzaKpCYS7ljRc0inzWk1+1HdPxDXHdfdA+OryZh94zbeXn0AFWjYmSMIulgRuCRuYYVVeJM5sRFBFrIkM0IGmWAibwIs41mWAD6uYbMOrYY+G9H7Pa/WEDcEPqzrBwhEjVaxAqpVxBcGMA9m2La+mjOjmBqwpED9CFduQe7PKnHJbbF36/0bwSC8hQBmjEibXCGR23Pd1EXpsx8l01K1m6NhkIkuT/fKf+l7zhXvWAd5u1233ZZ0Pe95+D/BmXSzcRiMuEMOUqQGGqpeibLaB2LpFKlPYrhJ5jafu6z+9Z32QWF5QwFf5+cWl3Hff5uYVkM0XFLCYL8zEhV1eiAIayNyoog08LXmHPX7YBYlBr+P+1QODzssM2LRGGdaRQT8UYtOKQiBNw5SuWJt4WvN4vz7lvz0H/NULXu/x/VPg/Xjs7XZic/iVC9yrzPcfwSqULVud31azVVa2iP69/xqnJap5MkKWyCPx9RwQO97Pv8RP2DxGBBNwA++qvJLalkkxlZfMpdPybxRLbipQs0wmelQeI9s2dM2PKPWAShvnOoi19gBr/rwhchoxPfCgWdXgktDMrFbWxtaKt1uAd9tATmHAf9j1Xu7xvRaMxDZbq139VBwznRkXQ02d/fyT2599mr5zJx3JCg3CHM5FsdxCRlV+5RQDyqK8Htb8nwLFyCxbw2nqD1JWFutUOFcpJlsXQ7VKDFlmxmyaSaWo7AVk60msmpqd1KyKn3ndXLf8TIS0FhFNoUrja+kA/Pe+e95L+CYzYNDdcY//ANJUCsZQL8SHW+EgzcB0Ugw7tXA3u1z4Mr8ig7ctyirIr1fYpiMj/VKIxEu9iuAMG+Djl7+wtxh+xFJiiuryZQY1ccKq3fd7Qyp7WeRErh1nDVF8jxi1mtwOFFDWsqRTtGZE3tzYvCS+Dp/nDLhZKm/k2sTbUf296EK/RbYQ0aVzAbIqTMO5EZtqRD4nwAzFeEijxM3EB0nnpMwMJfr/08QUywl4EZWOiTdeHye4jWhvTLfj5XCC21G1jRvwVJ2bQDBOWEdYAtOsgLVZ5OyacMk3djnYv8gt5VZyYuD/B7i00E4=
+sidebar_class_name: "delete api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"장바구니 삭제하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/cart"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+장바구니 목록에서 장바구니를 삭제하는 API 입니다.
+
+cartNo를 List형으로 전달해야 합니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"cartNo","in":"query","description":"장바구니 번호","required":true,"schema":{"type":"string"},"example":"1,2,3"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"count":{"type":"number","description":"회원의 총 Cart 상품수","example":1}},"description":"","title":"cart-1843750990"},"examples":{"delete-cart":{"value":"{\"count\":1}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

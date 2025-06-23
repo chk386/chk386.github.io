@@ -1,0 +1,79 @@
+---
+id: get-configuration-naver-shopping
+title: "네이버 쇼핑 설정정보 조회"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "네이버 쇼핑 설정정보 조회"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVt1OG0cUfpXRcmOiXRvoTXAVVQbRBrXFKEB7gVE1rAd7Yb27mR0jiGUJqJNSQCJEGCjByKi0aVIiWcFUruS+kHf2HXpmvZg1xhBR9aaqJcuemTNzvvP3nZOTGE7ZUnRaGjaNOS2VpZhppiHNyFKS2CrVLG8ZlXp6kPPHSqOywgunzrvnyKlsI3fjT16q8rUzt/g+YaDAJ2HwH+puccd5V+H7L3nhCME1Xi66xSPkwL9S1flQQE0Z/wjB1zmvOr/UET+puIdbbrGM+PoB4sfrfOPC2Vx3Nk/DCQMU9QCYeGxq8vEA4pVa47x8CeEBmo7jLEsPoNj46EwozZhlRyORpKnaYTttWrPLYdUML9DIZ1mqhy2qZTBdHsMZ8kjcivREmq9GLNNmium9pDBzgRi9yMO1dsYP37rFA75/htwXZXe1wksFcMVRo/ajU3nNSyuo8eEvfliRBZZGrcJPqgirKrHtSfEMcrZW+GYZTQAWZWhZiYEGk2rPPJ8j5wTcVDzhhRrfOA28z8sFZxMMrPIi+OttyxMPEFnq7fJWFA0RTAlFjIApTQhNUxKGJEumRZqBHk1CbFOEKWow/IqBFwlVhMsszUjBBQtTcBMjVORKTjJgARe/gbVID1nSRI6kCU4SKl1PHYgFgnCDGXBEydOsRgmoZTRLZMlW0ySDpWhOYsuWeNNmVKjMyxJZwhlLF3v94T7YaKlVdY0YDKDfrreVgshdrTqlusjVvZq7UQMvF0QK7u7eF5Dn1SYMRUsGsVk6ZnMmzdyB7Toid3fLOf7d3a6Hxodl9HV8aPSrke++HRmSUSw+IaPR+ETvfbGODwfx6dhIZXGK3OW7vRrfq6IQ5LBzXmtUXkXRgikj/maFv34ZRZDKCuIHqyAjo3lLLEp1EPTWz9JifbrTuHgP614UMrK6jmd10m7CHNbtj7WBGFJ+Rly2LdOwiS3EB/r6xE87brEpS5DMDEIjjrFl6ZrqZXVk3jaNT9U0pjZhj6YmP1ceCokOAObsPFGZSHoq6oRpTX121rJMyuwxURsTl6VxdW3WNHWCjQ5XduW7/TNgVClgpggqmI1TlJDkpDls6joAAS3D47E4FWG6WxuIIv5z3TmrAXfyNzvI2f6Jlw46lXnuF9qAN8BXvo++JMudoehuUeP8wn1xAcGv8V9L7tppUMENL+fz15+CC0xjnjh4O5lVmX0rFSkDg58M9j0cfNgfSBAvPHeSGMgsYj0rVOUSN0cz4RdWohM7HN24K2S7xitx6WawXHxkCTg0bfqc69EqS8Micml7pM2CSAcN24QuXnIwtDBRv36PE0IKtrQwUQzVgjaX8SpGM+ZML6DtTvbe7Igr4t+vuq/WQ75Qb6O64pR/Q0JWNFR+/NzvPXBz0af+qNQX7gv3KxNjsfGJx/FJERbRPjOQm9EW63SpgWbL9/v9dTi5qzL+f/r4T00fPrswssQi0C+hD0HSeOmc8ytiusUGTTYPTKaydK0qIMvT4DFxKZebxTaZono+L7afZgkFOpuGv4uYaqIFiRUo87ueKKOkZouDq4bUNQlDT/ze1YvaRpobzVkQRBoYkC6px+vF99L5cePMLWACY9M/R3O/AeYWdIHB6Z7o/rWZ5RbUgXGqDXXzNAaZb7HA2R3TiGDsVof4YgTINP83friuVQ==
+sidebar_class_name: "get api-method"
+info_path: docs/product/shop/product-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"네이버 쇼핑 설정정보 조회"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/products/configuration/naver-shopping"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+            
+쇼핑몰에서 설정한 네이버 쇼핑 설정 정보를 조회할 수 있습니다.
+
+ ### OAUTH2 참고사항
+* [Oauth2 API](https://docs.shopby.co.kr/?url.primaryName=auth/#/OAUTH2/post-oauth2-token) 를 사용하여 토큰을 발급받은 경우,
+* 기존 accessToken 대신 Shop-By-Authorization 로 액세스 토큰을 전달해야합니다.
+* ex) Shop-By-Authorization : Bearer test-access-token
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼(PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko, 지원: en - 영어, jp - 일본어, zh - 중국어) (nullable)","required":false,"schema":{"type":"string"},"example":"en"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json;charset=UTF-8":{"schema":{"type":"object","properties":{"supportsNaverShopping":{"type":"boolean","description":"네이버 쇼핑 설정 여부","example":true},"agreedToCollectingCPAOrder":{"type":"boolean","description":"CPA 주문수집 동의여부","example":false},"authenticationKey":{"type":"string","description":"네이버 공통 인증키","example":"authenticationKey"}},"description":"","title":"products-configuration-naver-shopping-293908981"},"examples":{"get-configuration-naver-shopping":{"value":"{\"supportsNaverShopping\":true,\"authenticationKey\":\"authenticationKey\",\"agreedToCollectingCPAOrder\":false}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

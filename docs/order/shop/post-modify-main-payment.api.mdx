@@ -1,0 +1,76 @@
+---
+id: post-modify-main-payment
+title: "주 결제수단 설정하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "주 결제수단 설정하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVVtPG0cU/iujyQtIXpuGKJUt5QGoo1CR2o1JKxWjalgPeIP30tkxxLEsQeS0FKMmaTG51ERui6okpZKVoMqR+EXe2f/QM7sLrK9E7kstZLyzZ875zu37ypiTNRsnlvDtUpqU8HIE56itMs3immngBM4aV64g55+tTmtLVI+ct4+Q03qM3N0P4vBEPDx2639nDfHHKeq8a4lmQ+w8d2qvxWEVgbFo1t36G6e249SOolkD7GpN8fKN+HDi/NIQL7ZQ531V/L7n7O6jQR46rW34Q52TLefP47AjHMGmRRmRCOdzgNEyba7oZk5bLSk60QzFIiWdGhwMLcKITjllMscyNuABLnwFzzK9CNZkjnlKcpTh3tRn0vPIeVcVzSq8YvS7osYohOOsSCPYVvNUJzhRxrxkSZ82Z5qxhisRTO8T3SrIs0+iU3BwHlYtaIAKII+OK344detPnbct5G6fOIenstIHbXe3jUS9Cg/O/v64gDiFSvkwFC0XxmYVCF81mX4Jtl5E7v6e8+ov9/EpmkjPRdDt1Oz8QvLbr5OzETSTykTQfCozOS7Y9FwYYIEYa0WyRi8r3kFbHJygiU675bxvwxD9nEDrZjeGVVKwPxbEuhkGQVSV2vaiuU4vGx735Z749QkSz56KalvsHiH3+6a73Robh9c5P7zCvfghWJm8aSmzJWWmyPMm0x54q3FZoeq/dSGbSBG4fRXBifvTi/ELNksJowwNwLvsu4QXs2auJN2opsHlnsJPYlkFTfWAx+7ZEmG5P565co+q3lozyQBco7Z8C+vut6QPWV/SsD21HVFrQJbi2RNRbQCdNdyDH916A2WSyc/QJjjjQX8vklpYmE7G49e+VPUHmZu3pj6f075J3dy8cQNXKr0h4B7XuHdLL0kmGsRM169/Go/Hp6anQ7XzUxlGZfBugxSK0m05e55xFieyOIsrgKMioTBqW6Zh+76uTl2T/7rhyUNpCaSYN8/I0yNKnoenmI85NphNbco2zqi0yApyuDi37EQsZssJJJYWpYqhWlHV1L1+y07eueh58qyg4Z6NKK6c4FXTa2tQUpPBLCsyWl9vpYg4x+0Jz2TS043mayRNETC5ePUoEBC4uBHwfwJPRYGjlcwXM+nMrdSijCjroRNvloLt6hWnc217DiTTCyM01P9T7Qw2hNP7PAasr0km8btZDqZgKZhcMB40B9DXvBwasCuXV4hN77JCpSKPodEMFnsJfm4QppEV2bOlZfAfkJAcnJxmyxcXtDK0fhN3AgaaRF1aPDCDdVrqUvazbfF4cqyYH6fDI8CE9P6/oxlTeUfAC0n+mPCGi+2IsCEhHzPscG0dEbZbusdN+FLRHIFgmEp3YfFN5/yIyqL0dmHRJ5KSY8+ZPJ3KLILxSiCusLryDiObUsvh29Mm08vK0wfvrHzRjwT2fcrPv61S1a4=
+sidebar_class_name: "post api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"주 결제수단 설정하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/my-pay/modify-main-payment"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+주 결제수단을 설정합니다.
+
+신용카드와 계좌는 주 결제수단을 각각 관리합니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"payToken":{"type":"string","description":"이니시스에서 발행한 SEED wpaytoken","example":"LL3E994QcmzSFH0JCiZOFw=="}},"description":"","title":"my-pay-modify-main-payment667999033"},"examples":{"post-modify-main-payment":{"value":"{\"payToken\":\"\"}"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

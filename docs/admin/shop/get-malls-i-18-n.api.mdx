@@ -1,0 +1,72 @@
+---
+id: get-malls-i-18-n
+title: "현재 몰의 다국어, 환율 설정 조회"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "현재 몰의 다국어, 환율 설정 조회"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vv9P20YU/1dO11+I5BA8tVIbqZooQxtjXVBoh7Qkmw7nSFwc2z1fEFkaiU7pNkGljilBoQuMSmjqOipFazoFib8oPv8Pe2cb4oRAGZOWX+L35e593rt3n3dVzEnBwckMvk8MA+cUnKeOxnSb65aJk/jGDeT+vdHvbIj6ofvmGXI7L5C3eSz2uuL7I6/5Nmt6rbrYP0Lum47YayF367D//q3Y6SrI222J9msEC8VBE4lXHe/lc7FXD7+8ZsvdbKDphTkk9p+5Wz/BykmsYMumjMjgc3kIX6A8XgJgTlxXb5tgtgkjJcopk5ir2AQB3L4CWeJVsC5BFynJU4ZHc5Gx3L/q4qAOJkYfl3VGIQhnZapgRyvSEsHJKuYVW+7pcKabBVxTMF0nJduQOnVyChRnYTVDpyYHoJfHFT+eeM1tKBDynnbdvRNZvJ2et9lDolkHwW00rguIU4fHAxhxPR/FZhuEr1is9AFso4i8xnN3/0/vxQmaWJhR0P3UvbkvZr9dmr2noOnUooLmUoux64JdmIkCNIhZKJMC/VDxdnrQTWii3+u473r9zi9JtGoNQ1ghhnNVDKsWruXkYse2TIc60v2jqSn5NxxXKhWsWSaH2kozsW1D1/zWTDxypE/1fEhr+RHVuOxTJhuZ60GE01ydiCthjFTOpXt2f8J7g6PgM/OpnCwXpyXnfJ7gaZZL8irPp5LIa7aDjUD/9WdJJA63z+TPp0HeO4F6BvLslyC3nkohV4NyaWXGqKnpV8Dr/fDe222EYL95kpkJllbSYYEn6LpWhOzpA+vufHpJQadymnB6V42Ny+eCIg52Gpf7OFhDxXu4+EnQCoP4kX2gcstjuk9FwU6RNGLAcccI2lEcboRGSAy0x3VJd3Q9hlQEwZCkN7Ag91UbqerUlPj15yggqarJ32hMcOI69zGH1Ac9yEy/84ihf+d/xNWbN9Xb6q07d25FGtyv0whngmaNGGW5XTVrIpQddGMWoyTKgGY+BZ85JTAPTj+0+8ukZVAE3wLr0ktZrIyaZWl9B1VaaiiXNWu4FuYK5F20Qmr3+ZwXQUj4gBPjMgUnh7K1U8YvM0OSBee2k0wknKJlx4mtT9K4qdmTmlXyr7durgRNEtaR5Eu6GZfO5074CZJqOYfc/Q30MYqQdaPu/tbxSXG34f4BN/KgLfa3xVYbLlddvGzAFZPrBuML0g1oClyb7rsu6nc33N+PJvzwMV86eH0Wb2jsrYUT7HTGYNtyeIn4xxcS5r8atKN5VgdU9v/P9PCOcbrOEzCXgO4hQf8gq2EDZIJW92fBmBaAIy1CPaRftbpMHPqQGbWaVD8uU1YBPXyuEaaTZXnemRzsH84T2TN53ZGGwai4sDQT6XCqxNDQa2FsBqu0MvT2OL1m/pS7VsyrvRQuARN5kfx3NNd8G1wCL/IouSa8C58Dl0SNvDSGogbWaU2jNo/Yzg16yShntPXp7APgsn8A3B9/Dw==
+sidebar_class_name: "get api-method"
+info_path: docs/admin/shop/admin-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"현재 몰의 다국어, 환율 설정 조회"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/malls/internationalization"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+현재 몰의 다국어, 환율 설정 조회을 조회하는 API 입니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko)","required":false,"schema":{"type":"string"},"example":"ko"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"languages":{"type":"array","description":"다국어 설정","example":"[KO]","items":{"type":"string","enum":["KO: 한국어","ZH: 중국어","JA: 일본어","EN: 영어"]}},"currencies":{"type":"array","description":"통화 설정^|[CurrencyResponse(exchangeTo=KRW, exchangeRate=1)]","items":{"type":"object","properties":{"exchangeTo":{"type":"string","description":"통화","example":"USD"},"exchangeRate":{"type":"number","description":"1 통화(exchangeTo) 당 기준통화(KRW) 비율 ex) 1 USD 는 KRW 로 1100원","example":1100}}}}},"description":"","title":"malls-internationalization-1441815995"},"examples":{"get-malls-i18n":{"value":"{\n  \"languages\" : [ \"KO\" ],\n  \"currencies\" : [ {\n    \"exchangeTo\" : \"KRW\",\n    \"exchangeRate\" : 1\n  } ]\n}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,79 @@
+---
+id: get-products-url-shortening
+title: "상품 번호와 쇼핑몰 번호에 해당하는 단축URL 조회하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "상품 번호와 쇼핑몰 번호에 해당하는 단축URL 조회하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVd9rG0cQ/leW9YtddHeS26aJoBSlhCZQbBPbT5YfVqe17+LT3WZ3ZawIgdwqrWsF+gOrSd24yOBCElIQqQgKuP+Qbu9/6OzdWTlLaWjTt9J7ubvZ2Zlvv/1mpokl2Ra4uIFXeFCt2xJv5nCVCpu7TLqBj4t4bg6FL9vjQVt1zsJn91E4+BZFh6/UyVB98Tzq/Vb2UeYp++rL/eiHg/DFQfRopH5qI/X1edT7Pnw2QKnt4Xco6g3D7quo9yg8PEJh94l62Vu//TlSp4Po+EFqLq3cUr/cD7sHYfes7EOWOUCyXFpfu7mI1GA0/r1/kf89tLFM6tJZ1Hs25x0pmShaVjWwhSmcgFUaph2YO9z6pM49k3G3RnhjidTox3qXNWclUS0WCGkEcSRDBjvUX0Dhr+cI0qjjp4BKPXyOoq/60f5AnXSAh8fj0Tfh4Gd10kbjF3+o40FOYxmPBup0iIhtUyHWdBgUPmirbh+tAhbjesMoQYaAu/eIZhiFp4+R6p2qzkgdnmXiq34n7MIBh6oHBD5NiDB1Brq38Bexiug6JZxyJCkcJYGQHKXs4xwOGOWx460qXOw2lQZLbl0YwIwBXHFJfdffBl9GODAkKdfqaGIffmBP6r8UgIer1cGIdPC0ZLISgEVO79ZdTiGn5HWaw8J2aI3gYhPLBtNRheQ6aSuH6R6pMU/bCvnCtSvvwwPmSXrbc6kvAX2a3aGkSvls/onkov1heHKutfrjKDocAdEd+AmPjt4VVkxsAsNwq7i1qeMIFviCCr11MZ/Xr8t4tDGH7cAHdqVeJox5rh1fhXVHaJ/mbPqgcodCQeY06XBx0k0ywE3NYpxmYFJTOAteVwYUBvGYQ4wtlwtZI55nUsO3GZRIzRIWqXxavbEFh25Nh4RI0pVeRgXCmMhhSj9G4Wr+6gdXCtc++jBDXwz/baqD5V3i1XWKZlkftIyL5X+AuoxbAFw/OQzadYJU5rGcQadFbF2ktpoT7C1rRvyC8t0L5cd844umovuJQZj7On2sAdffCuJbucyQjspmLgcl9TGfOi2Mh+2w/wRp30tdz4SdGkayK2/mzYKxulRaWb25vKZp1f2qRmLxpPWRBEb/rvlCA5uG3Hwt3v/nwX9nHqQ9RNI9aTGPQEsFVaX9JSmYjUmtg3sx2/2nagZqwAG69I5ms0IEXedeq6XNd+uUN8AOn7uEu6SiCwTqquoK/Q0lukU8Qd+iuPnbaadeQFOT5Y0HSI3Eb+j6SfsJfO7QxqUJ1toE53SCvDugvzVq3ogzwZMZaROseuIlqyW4MiYzazOTQ3efSa/77AY0htafga4lAw==
+sidebar_class_name: "get api-method"
+info_path: docs/product/shop/product-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"상품 번호와 쇼핑몰 번호에 해당하는 단축URL 조회하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/products/{productNo}/url-shortening"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+            
+상품번호와 쇼핑몰 번호에 해당하는 단축URL 조회하는 API입니다
+
+ ### OAUTH2 참고사항
+* [Oauth2 API](https://docs.shopby.co.kr/?url.primaryName=auth/#/OAUTH2/post-oauth2-token) 를 사용하여 토큰을 발급받은 경우,
+* 기존 accessToken 대신 Shop-By-Authorization 로 액세스 토큰을 전달해야합니다.
+* ex) Shop-By-Authorization : Bearer test-access-token
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"productNo","in":"path","description":"상품번호","required":true,"schema":{"type":"string"},"example":"101963333"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"url":{"type":"string","description":"단축URL","example":"http://alpha-firstmall.e-ncp.com/s/abCdEfg"}},"description":"","title":"products-productNo-url-shortening-1808461975"},"examples":{"get-products-url-shortening":{"value":"{\"url\":\"http://alpha-firstmall.e-ncp.com/s/abCdEfg\"}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

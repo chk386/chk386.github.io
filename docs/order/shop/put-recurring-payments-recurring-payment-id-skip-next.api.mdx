@@ -1,0 +1,75 @@
+---
+id: put-recurring-payments-recurring-payment-id-skip-next
+title: "정기결제 회차 건너뛰기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "정기결제 회차 건너뛰기"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVdFuGkcU/ZXR5AVLLLhRn3izrUi11BYU0vYhtqoJjM0K2N3MDFYoQrIj0ka2VdetcZ3GRFh1JddNpU1CKirxRczsP/TO7iYsYCDdvvVpd6927jn3zr3nNLAg2xxn7uO7tFBjzLS2c6RepZbAm0lcpLzATEeYtoUzeMO6dQvJv3aH7q5qXcrrJ0i6R8jb/1t1eurxS6/954aluu1h3x2+dlX3XHXOkDy4VJ1D5P1yqNwr+dsADV/1ZOupfO7Ko5a86CDIBGe89u/y4Cn8nNqwNix5fSV/6qLJXEGSUQbgAcdfDd+8Vd09dT6QF+dhOqQOztHt5Y8Tlr1mWwKqWUKqcywP3qpOC1ifec/ORpA4iW2HMqLLXC9CoU5NGOxdOwwn6AefDhlm0eBl0zEs+khAFocwUqWCMt3QBrbgA7KxicYCRBKbuqEOESU82WUIMPqwZjIKVASr0STmhRKtEpxpYFF3dEoudD7cbCbfo3wJqDpBmLpESZGyqeQruXUkX7dUt/VvYJKYPiJVp6JjH6WWcQS2UDHHSpqBq74beO1jee0ib68nOwM9Mad9b7+PVLsFH/LkJC4hQbkwAhpwH1FuToWILZtVF3CbZOSdHMoXf3hHA5TIrSXRZ9nV9U/vfP3VndUkWsnmk2g9m1+KSza3FiVYIdZ2jWzTRc077avTHkrAMsg3fTR0f8ygsj3OYYtU+IeSKNtREqRQoJzfs8t00fDo/Xv+A1I/H6tWX+1fIu/brrfnxubh31wAbwgfP0IrX7IdY7VurNREyWbmN/52LmpU+2KMWSJL4PRtBBHv+2fxG7ZKCaMM3cB3U6fkjm1xynUS0Bz9GKelg7CqGKShZPv6YvNALmD9Mzg9LTXpxrRoNNNaatKh1HDKdt7pTI1VdE+EcHgmnea6ccQxU9SwCk6qYFd9mqa1ZftlmsKvyWbQQUP/PNVGpH4dyJf9hP/LEhr2dmX3CulfEeiHevFkpJs7oepk8HIKlMHIf76Sy3+Svaf7p6usEkuDhncaFfRpNe+7k0wauBCo9//bfMLJE3CzadAsU+9BcKmNcEbu4+kZgYOZG61Fjwk8/EGBiy/pYYMMjcYDwukXrNJs6vDDGmV1iMPrDmEmeaCnAoapaHL9PtqQmTeSuBsu0xKaVUQYJFZdzwqp1GhgcGVav9kYm5twKtzu2GzGTO5GXgH+yDLfU9MCFAvzwwxuDpmIkf53NjEtbQ69iJfGpDfbxebARhwyJuxs05oDO+6JcQte6EZzGMyyvxGXzYih5LJ5kNzmP1RA3cA=
+sidebar_class_name: "post api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"정기결제 회차 건너뛰기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/recurring-payments/{recurringPaymentId}/skip/next"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+정기결제의 다음 회차를 건너뛰도록 설정합니다.
+
+모든 정기결제의 회차 건너뛰가 성공적으로 설정 시 204(noContent) 응답을 반환합니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"recurringPaymentId","in":"path","description":"","required":true,"schema":{"type":"string"}},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

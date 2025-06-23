@@ -1,0 +1,74 @@
+---
+id: post-payments-naver-wish-list
+title: "네이버페이 찜 등록하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "네이버페이 찜 등록하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VW1rG0cQ/ivLBooNOr2kiXEEpdiuoYLGEpHbfrBMWJ3WvovvrbsrJeIQOK1CjVMamtrGH+qQUn8oaQpqaooK/kW+u//QmTspOvlFNgq9D3e3u7M7zzwz+4xPFduUtLhGV1iLiwpr0/UMbXCpC9NTpuvQIq05t26R4J/ts9522D0O3jwjQe8FiXb/DY9Owm/fRvt/1pygewyj4F03+vEQfkjY+yU86pLg57+CX4+i/cNgd48sVEokfPUseL4TPD/O1hyaoa7HBUM3pQY48lypNI+1be4oqTkISHtsSkOzTKnA2mOC2VxxgYB96sAAdn0FYwSaoSaiNThrcEHPB4HOAV74ugtLgn/TNAUHn0o0eYZK3eA2o0WfqraHZ0olTGeTdjKUP2G2Z+FcIZuHifdudcsEmIB7st/w+9No/6fgTY9ET0+Co1Pk7KAf7fZJuN9Fyvb2pgWkONCVwNDMRhqbZzG14Qr7GmznEUV7PwSv/ohenJKZylKG3C8vlr5Yfvj18mKGLJSrGVIqV2enBVtZSgO0mLPZZJv8OvIO+uHBCZk56/eCv/vkrPeySLbccQwbzJI3BbHl0s56shm4W3Qbbdygu44CDvGXeZ5l6nFF5h5JxOBfPNmtP+J6XI8C61eZXOIqjBpNXa24KVOnadcvi+u7p9HLneDdTnTYpymAhdsfdzrnjcFAmSrGf9Xd0Apzc3N37hXm5++mAk5QTbxTYNBiVhPP9mujCGoJFNrBB/mSnuvI5MDb+Tx+xjHiZCZNpOJPVA7K0LyGwpuG6gqoD2lwrgqFwly+cOfu/L2pQzWU8mQxl4svEGzIxrZZ3bVzelMq1+YihxtxX8X1ml7WMZxPq5+XKw9Ln33iw7JuMLz7nY9Kq8v348kBdzCXsAbYQKoMd6hrsXwpA0a5IcRc7DaXVjjJRWsob01hpbBKw/U05plZrjm6h1jjUsYifTAq5+VhJY2VI+YSL9pGUpoDhmNKNTz3Qh5I+Ntp8LY/E5vMkrOT7eD17wRNUcRHGg4bWwP1LdJ8FhRSq64sVICpVUwOxm2zuAIG9/6SNjHqEXDLzyNJXc7/sw0NqjJVtIA+5t8fZG3tfUGCeZw3+I4yB5kwMMlg5/t1JvmXwup0cBpSI0Bl1uC3xYTJ6sj92jqcP9A8THXDlLgwUrMrSZh5MBC+WTLW0S6NYIu3x/rjsP5jJZ7K58262QQwqa754Wim7F8T4KUa55Twrm5ZE9ym2uGY22R1KTlcW8UDRhYXetVox4Kuc0+lbNNO11PKVClXV8GsPuiEtttAa8EeY4uFdyzJbhxmLLHxnD/CW6SJZ3z+A5qW95A=
+sidebar_class_name: "post api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"네이버페이 찜 등록하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/payments/naver/wish-list"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+네이버페이 찜을 등록하는 API 입니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"productNo":{"type":"number","description":"상품번호","example":123}},"description":"","title":"payments-naver-wish-list-1666491885"},"examples":{"post-payments-naver-wish-list":{"value":"{\"productNo\":123}"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"text/plain":{"schema":{"type":"object","description":"","title":"payments-naver-ordersheet1116014589"},"examples":{"post-payments-naver-wish-list":{"value":"https://test-pay.naver.com/customer/wishlistPopup.nhn?SHOP_ID={merchantId}&ITEM_ID={productId}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

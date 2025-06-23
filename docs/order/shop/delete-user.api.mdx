@@ -1,0 +1,74 @@
+---
+id: delete-user
+title: "회원서비스 해제하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "회원서비스 해제하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJytlN9OGkEUxl9lMt5gsgvW9Io7sCQl0UKKbS+UNOMywoZld52ZJVJCog22jZpaG7H/1NDUJq21CWlJgwlPxO6+Q2cWqotVMNveADNzOOc335zzVSFDeQqjC3CukkYVmJVgDlOFqCZTDR1G4aI+MQHsX2u91ppTP7ZPNoDd2gHu5plz2HaenrqN74u6+37b+fDKqR/YZ3Vn89j+3AVuo+00D9zGV3vrhb11HF7UoQQNExMk8iZzPHMOa5hh2aKY8DMTEVTiayJgqlDnCx7zkK8FhwRVAVPAKOdFDzPG0klg/6g7zTo/InjFUgnmFRixsASpUsAlBKNVyCqmyEkZUfU8rEkQr6KSqYm9W+EpvnFeVtFUrDNOObqu87zrNnbtkxZw19v2YVdIst9xNzvAadT5wt7bCwrEMGVyH0NWc342U0Ns2SClMWyXidy9bfvom7vTBaH0jATmUvHkbOLxo0RcArFURgLJVGYyKGx6xg+oIT1voTweJ95+x9lvg1Cv07J/dkCv9ToKisYwwzLS6E0hioYfAikKpnTeKOJxzdNvXuC82XXqHd69wH3WdNdbgTm8l+uXl5lX34eVKRimHK/IMYsVDKI+8aZhnFCNj0NkoRTi/54GfMd9+S64YHGMCCbgCt6sSElNQ6eYiiTTU7fF1zCW2KzxhHxoC8bFPHujzAp8HSlVZBNVIoMB55/lP9NtEU3clzGTRiMRKkRBphrGsq6YYcUoeQiqvmx4V1CZx2sQro4sgv+SCDifuvZpJ+SFTIJee81ufgEiFHBvcI42Bi7E/1geOEoUToX51MuZe7F05m5qXmhjGpSVkC6KDt7rkrOd29pb3rWXKapQMXTGB/Y/u+bgCRleZRE+/KpoqL6C1YHUC7AvNQ/2xObiFfhVxEG1uoQofkC0Wk1sr1iYVPg+/1lGREVLQtmFLE84aD7xOjmVioOLdrr2mqH7g86bBEMefCVyEVeGHL2MNEtEefMRqObN/HcEjM/n/50moOOOwPNZfUC86012RFmfgQcse72njig7bNlBLzzWLEcQXOfOFyxZn9/dScwm5hPcA38DcQ+nQQ==
+sidebar_class_name: "delete api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"회원서비스 해제하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/my-pay/user"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+회원서비스를 해제합니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

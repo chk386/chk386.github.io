@@ -1,0 +1,77 @@
+---
+id: put-profile-order-options-order-option-no-confirm
+title: "상품 주문 구매 확정하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "상품 주문 구매 확정하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJztlu9P20YYx/+VmytLQYrjEIoGeTMlLNKQ1iYadHsBETqSC7ZIbNe+INIoEqyhQ4DWUSUsbKWiarQfHZMilk6ZxF+Ez//DnnMMcVIIlfdqUvPGd0/O93zu/Dzf56kKFK9ZQnxJeFBJm3liCtmwkCdWzlQNquqaEBeWtXv3kP331mVni9Xb9tsdZHeeI2fvH3bSZd+eOc0/lzW702HPXrP2YRh5w+O6/eYAsafbztOX7KR1NXpzYZ/12EkdXb47s39tO8dNdtpE7Lxl/wI7tey9Bkpk5hF7tWPv79r77ciy5vp3jhv2713W2mX7L5e1pU+WsiGFUiMuy2oJr5EI1bFFIzm9JGP+U1ZlbKiS7yCyzk8nlyr951Lm0WJWjEUNUy+oRbLiWiXdXWqt5HStoJol+F9MzYkzU+LMpJj6XJyNiTMznjExJSbnxFRSTMyJyb4xISan+ZQbPxUT991XZsXZaXd9FAYRQ1v7DJepvjk5HZ343x5hYlkTwoJuEBNzZ/N5iBKjTCWPRBoiGZpJmi55ZLCDgU1cIpSYPACrggYT2Mldn3aXP9RhlcqD0MBUEUYj04um1ju207LPd51WD5aY5HFZNQkwUbNMwoKVU0gJC/GqQCsG39+ipqqtCbWwQDZxyShy22RsCgzXCF8DEnfhOVcI5pkx6p4Hqn1eZ6f1wG4jUb/bXFElGoXrHO+XfXfhNA/ttx3kbHftkwueh0c9Z6+HWLMOE7vRCApEiUWlPoak5v1sRhHTgu5+tnFso0RO48B+9Yfz/AKFMnNh9CCdnP8ytfJNKhlGifRCGM2nFyaCwmbm/IBFrK2VIY/uuryjHjvqotBlr2P/1UOXnRdxtK4PMxRw0fpQiHXdD4FzOWJZi/o6uSt4nJ8O2M8/IPbjIav32F4bOc9One1OYA73y/XdS9T178NaUHRDSlakRJkquqk+cdP2rotqvh4iC6VBuJQYAovz/XHwC0sSbBIT3cCb5VtaBmgGsfgmseh9/hjG4sYabAi6oeie8LhSAvoQF2RPguQhCZKrQ5pSkwcSZBFz40p/ymaRXwdosgWibPE7AwWOEEnLGVyXXUJVK+juCVVavFYriS9+7wZRX59C7pIJdNndsk9/Q3wpr3GDEgcvbniCExeiERAFaeFhIrPwRXqRX52hW7SENe7U+5y8lr7Y9bb3Kinql1KooRDZoyhVAU5MIak/lvOP5fyWcu6lLCWbVAaxV7mA9FOi6mXXkuCx8eLvp4N5fLRqX6UYpIwCAczfrlZXsUUemcVajZsfl4lZATsMN7Cp4lWeT5CGedXi44Gs3BrKoa88BZpAN7YCNx7JM2KtwvMOF8t8BsN1Unmv+ahl4QVPHwOjDbUJNyL1XQ+ajmsqLuHBruODWoQxML5W5L/TBGwKxuD5upGAeLf3AWPc+nqMgG5vL/tj3A53FUEPfGc9H0NwWwMxYMn6SjIoGdTofwF7WH0x
+sidebar_class_name: "put api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"상품 주문 구매 확정하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/profile/order-options/{orderOptionNo}/confirm"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+배송중, 배송완료 상태의 상태주문을 구매확정 처리하는 API 입니다.
+
+## 화면예시
+[![](http://image.toast.com/aaaaahb/api-description/order/myorder/[PUT]%20profile_order-options_confirm%20%EC%83%81%ED%92%88%20%EC%A3%BC%EB%AC%B8%20%EA%B5%AC%EB%A7%A4%ED%99%95%EC%A0%95.png?autox150)](http://image.toast.com/aaaaahb/api-description/order/myorder/[PUT]%20profile_order-options_confirm%20%EC%83%81%ED%92%88%20%EC%A3%BC%EB%AC%B8%20%EA%B5%AC%EB%A7%A4%ED%99%95%EC%A0%95.png)
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"orderOptionNo","in":"path","description":"주문옵션번호","required":true,"schema":{"type":"string"},"example":"123"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

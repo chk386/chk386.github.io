@@ -1,0 +1,73 @@
+---
+id: get-app-card-cards
+title: "[개발중] 앱카드 간편결제 카드사 목록 조회"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "[개발중] 앱카드 간편결제 카드사 목록 조회"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVd1qG0cYfZVhcmPD6i/UIehOMaY1tLGp0/bCa8p4NZY2Xu1uZkcmZhG4RabGDk3TSm4JtlGoKY3rwjYVRQH3hTSz79BvVitpJdmyq15UFxIz82nOme/nHB9zUvJwfh0XXHeRsCLe0HCRegYzXW46Ns5j3b53D4m/9rrBnqyfi4t9JIKXKDx8L0/b8uvLsPm7bstvrsLmK3ERyB+/k/UTBPvy9duw2ULy4Cckzw7EYQPJ5h/yfVv8AMfRDwQhcfFWvDmVp3Uk3wTh6xdh80Qcnaexhh2XMqIoLBeBRInyFHHdlAEUoy8PQlzCSIVyytQDfGzDAkLV6aJTpBBgKv7PqpTt4vFXKf6t5pAJBDD6rGoyCnBbxPKohj2jTCsE533Md111tceZaZdwTcP0Oam4ltq7n334EHYG8J8DHQURo5cpKVI2AV9YXUbiXV226iPAnFXviptLZ5OwhmVSm0OupuMOCoXCr9ri9ErV8LgTHnagOnVYiEZjVkKcejzVo5Eyi0lurkX4lsMqt3AbZxQ2Xoiz38KXV2hudVFDn6w8Wv546csvlh5pqLCypqHllbX5WcmuLiYJWsQuVUmJ3pa84448bqO5bicQf3ZQN/g+j7ad+ZlbZ9vBtQ31Z891bI96Kvx+Nqt+RoHVpoYNx+aQXHUMo2CZRjQemaeeivEnIZ3Np9Tgak6YGiZu9hB60zMMI4yRyfnoBvXw2073XSBb/XlF4pdLeXgOpVF54rTi3Q3scZTk8UxMJDehCfs4mSZ51AJZ6J2rBA4G/NY7r3mEApB/N9RVk1OsPuN3QBg3eRQ0KkCpXO5B7oOFhQcLuURZo1dfo1awu0OsqrrG13s10JVq6YPnwFKPeOhY0weJi3aTGdChZ2o9qoAK8ld2YoGMFJGXYZHpg2f6UulRttPXySqzVI9z7nr5TMYrOy6QNdM0ZRtu2nAqUVOa9pYTJTh+u8NgIlIqeCLLSP58JS47c1HIPOq290TrV6RCEcicPNsXRwexqO/E4pjH2TQIWGrtcWF17aOVJyqBruPxColaOR7L9W5wIoITef5qI2EeNxS15ySxjYxz9IfD83/5WdypnD7nGRBE0Bl4c1QKPy7b+qDBsBZPKRSiDGlRZ76/STz6GbNqNbXdczVVzqLpkU0roT03vvwaz7uW1TbdHfXRfudGnbFDmKkAAXwDgmOt/HdM5j6NBXMejTjhFDpDXx2y0WbEvJsLTsvN0G3/O5sZfW8KvYThzkjvZqubApuw0RHY3mnBMKjLE2cTJqa6ayBoHy6BKtT+AYYnTEo=
+sidebar_class_name: "get api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"[개발중] 앱카드 간편결제 카드사 목록 조회"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/app-card/cards"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+쇼핑몰에서 사용할 수 있는 앱카드 카드사 목록을 조회한다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"cardCode","in":"query","description":"특정 카드사","required":false,"schema":{"type":"string"},"example":"2088"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"cards":{"type":"array","description":"간편결제 카드 리스트","items":{"type":"object","properties":{"cardName":{"type":"string","description":"카드사 명","example":"신한카드"},"cardCode":{"type":"string","description":"간편결제 카드사 코드","example":"2088"}}}}},"description":"","title":"app-card-cards-1161455651"},"examples":{"get-app-card-cards":{"value":"{\"cards\":[{\"cardCode\":\"2088\",\"cardName\":\"신한카드\"}]}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

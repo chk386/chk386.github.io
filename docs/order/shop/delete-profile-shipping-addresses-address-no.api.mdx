@@ -1,0 +1,77 @@
+---
+id: delete-profile-shipping-addresses-address-no
+title: "배송지 삭제하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "배송지 삭제하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVmFv2kYY/is3V0hEwphEW9fxZYIUaZG6Eo1s+wCousAFWzG2ez6iMISUVrSLkmptN8jSLakSLdO2rpVYhyYm8Yty9n/Ye8YFExKovE+rFiHl/Prunudev+/zXENiuGJLybyUUzXL0oxKqlymxLalYkwqE7tENYtppiElpYJx7Rrif+2cd3ec1hl/8QDx7mPk7v3tHPec+y/dzquCwb/7g58e8ydH8K7rPDx1ftnhPw+Qc/+Vc3Lkdg75XhulVleQ8/wB39/l+2fxguHt6z5r8996zuGus39UMPLv5YtRlTErqShaFVdInJnYZvGSWVWw+FPXFWxpcoCgYtIyoYrtn0LGw2Mo+ZuZW5m1TDGylLCouaHp5M7FOcSGl5FMOpJOiF9mOXLjeiS1KAapDyM3Et5bCC5FUje9YCLy0XLcMiof4xoztxc/SCz8F9guFAwpJpkWoVhQWCnDNy0TnTAi+1jyNNabkWyYsNjCFFdhARUV05AMeIBN/Cm3xQxNVIqFmSpdLJ9RQSD+etc97MMESu7WNEqACKM1EpPskkqqWEo2JFa3xM42o8BGasYkso2rli5ii/A4gv4CqIjtfWCVYEjrFLSoOP665Zy0QoPGE0HYkq4Rg0EGZ+M6Xw/czlP+oovcez1+PBCNctB39/rI6bTggbfbYQkxYjN5SEPWykFulo7Zhkmrc7hdZOS2H/Hnv7uPByi6uhxDn2bTK7cyd77MpGMolc3F0Eo2txCW7OpykKCOjUoNumRe8g76zkEPRc/7Xf5nH513v02iTXOSwwbW7bclsWkGSeBSCUp2zdwk84rH/eGR8+MT5Hz/1Gn1nb0z5D48ce91Q/PwvtwQXmYefoBWTjUtOV2XUzWmmlT7yuvUeYnqnE4wi2ZBltQlBBH3m2fhE5YmmBKKLuFbFFvalmmAQIhNlhLvi3+TtESwCRuCXqjmWGs8FQF5SEqKrzpTKkhspTHSlCYssAndeqM5NaqLVIDa2iC3tsgXaGucyEbJEorrsdOMDdM7nca8o3hqK4vJU9lDzk8D/rIf9aYsoPPeDj/5FYmpwqjGPgULt3yxSUqJOAiCnLudWs19kl0TabNMm1WxIUD9TznWu5H7QSlfxG9IJdNg0MX/G+w7YrB+RzGyzRTQYk3097BqG37l5yUfWpT2FDgEk2NHhWJWobTEokZjHdvkc6o3myJ8t0ZoHeIw3MJUw+ui0qFBypotxuNmv7Leop/5urCALjHnS8/hB7FRF/2A9Zp4guEmqU9cBJpFmOzrVWhSE7Z9KZ0h7PgSMGIkJDUU5ttZ9gwygavBv2cT0qRn0AvcDkLSu9qXZ8AGPD8k7NU2PAN20uXDHniuv85gcJWhj7kUAxY5FCewzX8Au44pkA==
+sidebar_class_name: "delete api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"배송지 삭제하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/profile/shipping-addresses/{addressNo}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+등록된 배송지를 삭제하는 API 입니다.
+
+## 화면예시
+[![](http://image.toast.com/aaaaahb/api-description/order/shipping-address/[DELETE]%20profile_shipping-addresses%20%EB%B0%B0%EC%86%A1%EC%A7%80%20%EC%82%AD%EC%A0%9C.png?autox150)](http://image.toast.com/aaaaahb/api-description/order/shipping-address/[DELETE]%20profile_shipping-addresses%20%EB%B0%B0%EC%86%A1%EC%A7%80%20%EC%82%AD%EC%A0%9C.png)
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"addressNo","in":"path","description":"배송지 번호","required":true,"schema":{"type":"string"},"example":"1"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

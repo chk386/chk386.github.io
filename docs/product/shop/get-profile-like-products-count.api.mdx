@@ -1,0 +1,81 @@
+---
+id: get-profile-like-products-count
+title: "회원이 좋아하는 상품 수 조회하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "회원이 좋아하는 상품 수 조회하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVlFPG0cQ/iur5cWu7myDVDV1FVUG0QapjVGB9gGjajkv+OB8d9lbIxzLkkmdlgJSQoQBAY6gIkqTEslK3NSV6B/y7f2Hzp4POJNgR6R9Su7Fnt3ZmW9mZ77ZEuZk3sHJaTzOrDndoHhGwVnqaEy3uW6ZOIkHBpD7utJuVET12H1+H7mNB8hb+1vUm+LeiVd7kTFR6MuY3t6G2H8I20j8ti5qVa+2665tIfHTivdoFYnVXffJKRJHDdALtlLjY+LxfXd91V0/zpgZ0z06aP/VEvUWAiveflXsPHSfbiBvtyVeHyBA4q498WrPOgciRNOo40xai9SMytNoABCnU1OTt4aQaLTarw7PcH6CptOkwHND0uNMJMe57STj8aylOTEnZ9mzxZhmxRZZ/MsCM2I20/OEFW+TPL0pT8UH4h2rcdtyuGr5llTu+0V+TPdOxN4ziEnsnCDv50NvpSHqVcjXQbv1q9vYF/UKar/8R+w1FIml3WqIoyYKwUfuRkWsH6IJwKIOF9UUeLCYfpfIm0CQFSRqR6LaEmvHIfvisOquQ4BNUTs9z0pMeqDL0StsJdEwJYwyxCmE0oHQCSVjYgVbNmW+4lgWCmCectXuVIdq6ItUCtmCxh1VswomB32bMMgSp0xWUgmbIMC570GWJaRgXdZRjpIsZfhyecFVIPdlFaKALUbvFHRGwStnBapgR8vRPMHJEuZFW9p0ONPNeVxWMF0meduQa4OxBCycu9UMnZockPf2K36BbG26zxvIW2m69VNZz9stbw2KrlYFwd3aui4gP6kdGKqeDWOzDcLnLJbvg+0yIm9rw338h/fgNDI+oqBv08Nj34z++MPosIJS6QkFjaUnotfFOj4SxmcQc75A5mm/3G23xHYTRaCE3VetduNREi1aChJPK9D5SQSVrCKxuwI6ClqwpVA/BUVfvpuT8vFm+88XIEdRxCwYBpk1aHcIc8Rw3jUGaoZjCDVUvzT7TIXEzmZXU73XtYd7CZdnpCnHtkyHOvL0UCIhf7phyEUFa5bJoWDkNrFtQ9f8BowvOJb5hZYjzKH85tTkV+oNqfEGHmt2gWp+KzLZvFzv+JPtmh3xu/RC1yzkZ992qT5bi70tydE4FNhgoly+rAz7XOd+2D2oYfDGZ4OJzz9NJBKhTPnA+nEKqCwRoyDtlzKhMDI+HFz2PwUD6eSsgKN8HuI5EOKB5XiX5fgZWzmULZ1RFRC9rI9gEsghoBJbj1HV1GwYBnn/CnVzzvLzdxGxtKhK9TfSGAy6SKAUbTcr7uHvSOp2DboYnFwKGDKJE7FEbFCduJ0an7iVnpTZkkMmT0zpNyjsvoP1YqpCY14GVrqosI8j/cMb6UHvc7rM4zCFdEmZneovBW0zfdbJoN3VOD45ydaBVshBnqRqqTRLHDrFjHJZLt8pUFaEdfi7RJgu6VxK4CKgXtlrWd2RGxfkfmV9Rr4L+DeKup4Hbw1ikRa7HhtnvOHPhGv5fLenQQ8woSfI+6O53mOgB7rQI+Sa6P63+d8Ddehp8h/k9MrJ3wNB98OiC0RHIQUKNg/t9RnkcracT7CvR4H2y/8ChKGkQw==
+sidebar_class_name: "get api-method"
+info_path: docs/product/shop/product-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"회원이 좋아하는 상품 수 조회하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/profile/like-products/count"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+            
+회원이 좋아하는 상품 수를 조회하는 API입니다
+
+로그인 이후에만 호출 가능합니다(accessToken)
+
+ ### OAUTH2 참고사항
+* [Oauth2 API](https://docs.shopby.co.kr/?url.primaryName=auth/#/OAUTH2/post-oauth2-token) 를 사용하여 토큰을 발급받은 경우,
+* 기존 accessToken 대신 Shop-By-Authorization 로 액세스 토큰을 전달해야합니다.
+* ex) Shop-By-Authorization : Bearer test-access-token
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼(PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko, 지원: en - 영어, jp - 일본어, zh - 중국어) (nullable)","required":false,"schema":{"type":"string"},"example":"en"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":true,"schema":{"type":"string"},"example":"test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json;charset=UTF-8":{"schema":{"type":"object","properties":{"likedCount":{"type":"number","description":"좋아요 수","example":10}},"description":"","title":"profile-like-products-count1871095000"},"examples":{"get-profile-like-products-count":{"value":"{\"likedCount\":10}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

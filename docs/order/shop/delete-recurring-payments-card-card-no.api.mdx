@@ -1,0 +1,73 @@
+---
+id: delete-recurring-payments-card-card-no
+title: "정기결제 카드 삭제하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "정기결제 카드 삭제하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1ld9OGkEUxl9lMr3BhAVresUdWpKaWCFi2ws1zbiMsnHZXWcGIyUkarBt1NTagv2nhqY2aawmxJIGE56InX2HzsAqiwrYbXrDsmdn5vvNOTPfyUOGFimMzMAprGYJ0YzFBMplsMHgXBCmMFWJZjHNNGAEzhr37gH791qzusaLx/bJJrCru8DZuuCHNb5x6pTPZg1eKTfr1eZ5lVcOAL+o2e8P7O8NwDfORMApf7S3SiCaGAf8aNPefm1vH4dgEJoWJkiKjKeETArrmGGFXPIoVhuIKioiqfaPYYppFiIoI4YSyZ+HhngR0+X3SflZk8wWYml4fSMiQPByViNY6DGSxUFI1TTOIBjJQ5az5DKUSW1YKASvVn4qlOQC7tJpjFKY3Fhc7s4+L/JK8W9kghCvooyly9j90DD0yKq6JnYvUtNfl79qOOU9+6QKnPWafdiQRdmvO1t1wMtF8WKXSn6BGKZMaWMoWsrLZumILZgkM4DtOpFT2rGPfjq7DRBIjAXB4/jo+ETs+bPYaBBE48kgGI8nh/zCJsa8gDoyFrNoEQ9K3n6d79dAQJxd+1cdNKvvImDJ7GZYQDq9K8SS6YVAqoopnTaX8KDD43ze4V/eAv5hjxfrfOsYOC8rznrVN0ercm15hbX0PVjJtGkpozklmmVpk2gvWldwUKLKX7vIAnEkZo8AEXHefPKfsFGMCCbgFt45uSS1TINiKhcZGX4gH91YMiiuKhR2kDY7JtIyCWEAERi+aSdh6RThfNsvCmIoxWTl0kyyRJdJYMyikXCYykwhSwthxVCtkGpmWlyasWC29qWx1iZMIlKmyME38gb4t4Z9Wg+0hgyBZm3NrvwAcqi0wy43XHFtJgKHQ8IKlORkNJF8FJ+WCbNMyjLIkKJuEW8x3I7bii/XSfJQNQ0m/f0/GrpbaIZXWVhYhCaPXTulebcgM/BmQcREWQzxiLgmLnKcFjuWw/P5eUTxE6IXCjK8nMUkJ+Li7woiGpqXBRB1S2lU/u+cvp6bD0y5B3UI9CJ2g8jIybIgPYvbzWMJ5zqNpjAnRrq3xTdBV9O4laWt2WlBVzjyQvvSvFvD6APjaUz/TuOzRfTB8/Qmn3i9u0IfWU/H8Snbuwn0ke3uMX43PNDd+xD0aicdljmPQT+MTcSmY8K0/wCjeRyF
+sidebar_class_name: "delete api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"정기결제 카드 삭제하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/recurring-payments/card/{cardNo}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+정기결제 카드를 삭제하는 API 입니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"cardNo","in":"path","description":"","required":true,"schema":{"type":"string"}},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

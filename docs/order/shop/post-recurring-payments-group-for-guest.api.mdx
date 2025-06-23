@@ -1,0 +1,75 @@
+---
+id: post-recurring-payments-group-for-guest
+title: "정기결제 선물하기 수령자 주문 토큰 발급하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "정기결제 선물하기 수령자 주문 토큰 발급하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVl9P21YU/ypX7gtINgFaTSRvgNCGtDURYdsDQdPFuSQuie1d39BmUSQ6pRuDbrQTYdAVlKp0WjsqRQxtRsonyrW/w861HewQknQZL+Mh3Nzcc87v/P9VJIZzlpRYkZaIWqJU03MpXC4SnUmrspQllko1k2mGLiWkjH7nDuJ/bbWbW07tlL97gnhzD7k7l87xhfPtmVt/n9GdRr1tN1H7vOk0XiKn1uBnLbd+KO6c1y1+ZiPnVdN98dR58Ra53zXcx03nuAZ6XrbtH+Ad39lHs6lF5Jw84bvbfPd0IqOD0t2Gc/6+/bfNX1/y82330JYR2OS/1WTEL2u8ueXf8jctT7Lxxq1fOPUWcutvAzWSLBkmoVi4spgFZ0zDYgrt+KyYvtOWkqNGyVTWDarkSsRiIGdiiouEESrCVJF0+ALy9Fq4PhZy9w14r4lYmZjlpesBhAtKvi5plAACRktEliw1T4pYSlQkVjaFXosJpVK1Kl+Z+gJMCwWB6jzBWUJ7lIuw8fOa06j9GzOyRB7holkQd1MTk1LErFrQwC8I1mC7zveQ4Of8XRO5jy/4cUsUw4Ht7kCm6zWRpf39UQExSIDiw1C0bBSbWcAMclQcgu06Inf/KT/5w91robHUvIw+S84tfrrw1ZcLczKaTaZltJhMj48KNjUfBVjAeq6Ec2RY8A5s5+ACjUF/8D9t1G7+nEAbRjeGdVywPhTEhhEFgVWVWNaysUGGFY/oyF+fIeeX507NdnZOg94cGYeXOd+8wjz7EVjpvGEqc2VltsTyBtW+8ZpyWKDqr7qQjSUxSE8juHF/Oho9YHMEU0LRDXhXfZXww5yRLQs1qqEzMRjhiE2zoKke8NgDSyCs9Noz1h4Q1ZsgVMwephFL/Gpiy3po0GwvsutOR2eb1NWp03fvCT/8gA5T44/KLgXu0Y9t2+Z7R2LQ9E4pprFC15AL52OfuedPy3vxmXh86qN4JMa+yx84bOHpJi6UhOlKxvMuIyU6BzlzFTrvNvxSBS+qwhFKLNPQLd/o9OSk+NftnLiUbyuTHmi/vYYm4aqhwiR44p1yu800KFMzM/GZmcn49N3byUToqBd5r1si6K8yAMZgU+aNzoL1ticswoQU67UZq/RxohrrrF6L0M3O3i3RghgPjJlWIhazxAzBpjZBFF01J1Sj6HWsyOBS2LULnVhHu87vnk7zRFtBjKB1w8tlEHkQIFQRxnoSGvCZMe/JOGpfbPHG70g8FQwmJDAguBks8IQ0OQFLVknfn02lP0kuC4siTEXsFVAAyKdQNzKo7UPeuHROnnW4lF9UIX2CR9dxRsbW/53ABQ3GyCMWAwKgiaXil0UlKLOVG1oFBBP9yZpfaVA5eVGuoKBSWcMW+ZwWqlVxDaVEYfivwHETUw2vibKAasxqljiH26Zv0MeWgsU0jvr5EFxivSyKJWg7OG6Q8gCmWV0F0WBdjgypizXeCM4HEXLQK3xio49k88MY4wAwEWb639GMyBEHwIuQ0xHh9aeFA8xGKOeIZvuzwAFmu0nmqA4PpXcDEPTjk11Y/KfzvkVlWWgLX/SQgFBiFtwz2cC3q5Gtl0qml+HxWkAZi0bWW+D4oWCo8On1teFFwNvH3l0lzF1C8nWKv38AkxRATg==
+sidebar_class_name: "post api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"정기결제 선물하기 수령자 주문 토큰 발급하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/recurring-payments/{recurringPaymentGroupNo}/guest"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+정기 결제 선물하기 주문 조회용 토큰을 발급하는 API 입니다.
+
+신청그룹번호, 이름, 비밀번호를 입력해야 합니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"recurringPaymentGroupNo","in":"path","description":"","required":true,"schema":{"type":"string"}},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"password":{"type":"string","description":"비밀번호","example":"1234"},"name":{"type":"string","description":"이름","example":"홍길동"}},"description":"","title":"recurring-payments-recurringPaymentGroupNo-guest49899169"},"examples":{"post-recurring-payments-group-for-guest":{"value":"{\"name\":\"name\",\"password\":\"password\"}"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"guestToken":{"type":"string","description":"토큰","example":"guest-token"}},"description":"","title":"recurring-payments-recurringPaymentGroupNo-guest-1889880923"},"examples":{"post-recurring-payments-group-for-guest":{"value":"{\"guestToken\":\"test-guest-token\"}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

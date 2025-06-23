@@ -1,0 +1,73 @@
+---
+id: delete-app-card-pay-cards-card-id
+title: "[개발중] 앱카드 간편결제 카드 삭제"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "[개발중] 앱카드 간편결제 카드 삭제"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFldFuGkcUhl9lNLnBEgtu1CvusItUpLRYxW0vHFRNlrFZedmdzAxWKEJyItJWdpTUrXGTlkSu6kpVmkg0QRWWeCJm9h16ZlmbxTEQbSv1itnD2T3fnDPz/y0syY7AuS2cZ2yd8CqupHGVCps7TDq+h3P4tnfjBlJ/74/7+7pzpl4+RKr/BAUH5/r5QD94FXRf3/aC7kAdniN9PlA/9pDuduA/dXysn+0j/Xykz58G3afq4BiN+53g8XD8pq9Pe1G2+n2E9IPXEAi6PXV4lsFp7DPKiSlfrAJAlbpUUoswZtlAaDHSDBdi8uhU4Q1GOKlDFjd7aWEPHuBNYnuyaP52zEYYkTV8dXczROO3HX3anfJDNqd3Gw6nwCF5g6axsGu0TnCuhWWTmRpCcsfbwe00pvdInbkmJqmQlilu4NrpS54vgM+UjYBqlFQpfwcpv1FE6g2QdJLW/yCzGi9ruw6NN2JOXf3tKOgeqZd9FNwfKBgbzPdkGBwM/6OGTDCutIS5RG77vL6E7SpRcPxIvfgzeDJCqY31NPqktFa8Vfjqy8JaGuVL5TQqlsorSWE31uOALvF2GmSHLmveyVCfDFBqPOyrt0M46D/k0K4/y7BNXPG+ELt+HILYNhVi09+lyw5P8PMj/cv3SP90pDtDfXCGgm9Og/v9xBzRUTblLRnWj2GVaz6z1ppWviFrPne+Du/sskZ1f50hS5UIvH0TQSR4/Cx5w9Yo4ZSja3gr5pOC+Z6gwnzk5uqH5mcWywTb8EEQkZo/VZ1QWkA2cjh7oT/ZS/3JtiYC04YsQfnehfo0uGv2LyUTuWxWmCYR5mSo5dksY/v1EMnxtv1wS44M+X0O3bJM8jstQ/q3kXo1TIUpK2g82FenfyCTikAr9IuH6vC7SDn3IoXJ4dUMqIBV/jS/Uf64tGl6xXwh68QzRaP5bY37PdXv6bOjCtzxvyL5vkakI4W+StbCtu9JuNT/j01Ep0HSezILOuKYszlpfiua2ha+mFo4yGhusM5F1gCDqEFbTGardYcI+jl3220TvtugvAlxWO4R7pA7Zkow3KojzHp6Oud2JPVZdJBX0DKXuXYnUZB4TTNY4jbMEyx3aXPqbe0KZEZXLTHejONcyzKpOfWvSxyjBolqvp/bLICJudq/p0noLwvwYsaWEG++pSwoG7OrhGXnO8iCsrMGlXTDS61hAcE8L5qyVGLq/lHhVmGzAIr/D5incEg=
+sidebar_class_name: "delete api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"[개발중] 앱카드 간편결제 카드 삭제"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/app-card/pay-cards/{acntId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+해당 카드 아이디와 일치하는 간편결제 카드를 삭제한다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"acntId","in":"path","description":"간편결제 계정 아이디","required":true,"schema":{"type":"string"},"example":"test-acnt-id"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

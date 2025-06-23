@@ -1,0 +1,77 @@
+---
+id: put-recurring-payments-card
+title: "정기결제 카드 우선순위 변경"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "정기결제 카드 우선순위 변경"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVltPG0cU/iujyQtIXhtoepHfACEVqQ0WkPYBo2pYD3iD99LZMY1rWSKV0yJAJWlYQlMTOSqRKE0li1iVI7l/yDP7Hzozu8a74AtyX8sDsDNnzvfNOd+cc8qQoi0XptfgMtaLhBjWVgaVTGxRuJ6AOezqxHCoYVswDbPWvXuA/b3baezy6jm7fApY4wj4+x/4WZP/8M73/spavO51Wo3OVYPXa4B/aLIXNX52CvirBq/W+V6N16rsbRuw97udq39875TtH4PZzCLgr5+ygz12cJ7MWlmLXV6wF/Uh56V5/a3vNbnXBr73R+RswAAEFPjLZ4AfnPuHFyGWQBW+EgNcS3N23GBnguHBOT875LU2e1MLnSnggxo7qvpel5yIRbDrsWddFjABbQcTJMO2mBOBc4pUI93wak4QX1fTEckJWwcRZGKKiUxDGVriQ5z5SnzLsCegIWOfxyiHCbyZEhk6dlXl9arYIvjbokGwQKSkiBPQ1fPYRDBdhrTkSJ8ulQRgJQHxY2Q6Bbk2nZwSC9ewesEQ3BZzI3D5T23fe84uG8B/0hThkgo4afn7LcC9qvhgx8fjEqLYpVpAQzNyUW5OAdFNm5gjuN1k5B8fstd/+kdtMJGZT4Avl+YWv1j45uuFuQSYXVpJgMWllclxyWbmowQLyNoqoi08KngnLX7SBBNCpux9C3Qav6TBth3nsIkK7l1JbNtREkjXseuu2tt4lHj8V4f8N/E+Xj7n1RbfPwf+j3X/SWNsHipzAbxGFX6E1kredrS5kjZbpHmbGN+r1zEqUN6bGLOJJSROzwCx4v/86/gBm8OIYAL68F0PXIqNOTtXkm5026KyGop/keMUDF0RTz1yJcPybTxECCrduom8KMWmGzG0Nx5hncr3T2S1oAZWuw4xRHhoKWJpFc2NftFRBShWv2DkltPiyrLCPLDv7Ipd7fmnrbiTinBDDariNqCGaV3O2scffXZ/aurTT6Yj8Q5uNaQCiu0dVChKgLVyNuScFdiJ7HU0suo+0d2Z+O5MZR1WKootwa5jW24APDN1X/6JX1cuSktRdfN2WKBVIaZ58ZG6TTQlYVPXqREyw2SnW7CLpCAlTKnjplMpV+ocOUYSa5buJHXbVKqSelnuKWuhG+C1aManexmblocMazNIXhh/m4hXokmEWxkE/Pc2e9eaUCaToNPcZfULIE1le+11V3FwJ+wsaTiVFNVfW3kwm1n5fGlV5syxXWoipezw3fZp6DHJha38JqHIw/l/brj73BA+U4of05Rod4YsoYHAyqE81/q8QhjoRtWSUEtCPXmRS2lfLm8gFz8khUpFLgsNEqG1NfHvDiIG2lAyXBc4YRWWmswZrtzo1dWByZ1YDkvwJIgNI31vso1LsdGm++5VoxgL826DyBAykYHnv7MZc/QYQi8y84xJb/C0MQQ2MsmMCTt4uBgCG59dxr3wyKlhCINBY0qMS2A6HyBqq9Jbz+LWlCAr+XWnyTxcFbYb4XBh2jnVV9F3cpYRv9WkYKtLqfal1sq9dKRh4FL+/As7W8oF
+sidebar_class_name: "put api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"정기결제 카드 우선순위 변경"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/recurring-payments/card/priority"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+정기결제 카드의 우선순위를 변경하는 API 입니다.
+
+모든 카드의 우선순위를 입력해야 합니다.
+
+정기 결제에 실패하는 경우, 카드의 우선순위에 따라 다음으로 결제를 시도할 카드가 결정됩니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"array","description":"","items":{"type":"object","properties":{"priority":{"type":"number","description":"카드 우선순위","example":1},"cardNo":{"type":"number","description":"카드 번호","example":1}}},"title":"recurring-payments-card-priority-538400761"},"examples":{"put-recurring-payments-card":{"value":"[{\"cardNo\":1,\"priority\":1},{\"cardNo\":2,\"priority\":2}]"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

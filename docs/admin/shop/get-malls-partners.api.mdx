@@ -1,0 +1,72 @@
+---
+id: get-malls-partners
+title: "몰과 계약한 파트너 목록 조회하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "몰과 계약한 파트너 목록 조회하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VltvGkcU/iujyYstgSFNK0W8VHbqVpbi2kp6k4xVDcsAGy+7m53BMaJITotTy0aKXYGbRrFLVPdiN5VQoBWV6B9iZv9DzywLXsA2K1fqE8yZ2XO+c/9KmJMsw4k1vEwMA69HcJoyzdFtrlsmTuBbt5D4a7vX3JaVU3G+g0TzOXL3/pbHbfn1G7f+R9IU581eq4t6rYqs/+PWXyG3WnX3OqKyi8T5mXh9LI8rSL5uui+rbv2F2Kuh+dUlebIj9nfF/ukcjmDLpg5R9pbSYDFLeTQPWFjUJg43qcPgCfwlecrVIbFWwiYc4OlncFYwI1hXWHOUpKmDx10Ac0i8rchGBa4c+rigOxQMcadAI5hpOZonOFHCvGgrnYw7upnF5QimWyRvG0p2ey4OgqFZzdCpyQHs9Xblt123fgjhQe7TtjjuqpgddSA0SNYrcBC12k0Bccp4tA8jqqeD2GyD8Izl5KdgG0fk1qri5Hf3eRfNrN6LoOWVhaX7i19+vrgQQfMrDyNoaeXh7E3Brt4LAjSImS2QLJ0WvKOOPGqjmV6nKVqdXvO7BNqwRiFkiMHCYtiwcHldfcxsy2SUqefvxOPqZ9SuEkawZpkcYquuiW0buuaVZ+wRU29KkyaJ45DihA/KRU7zLPDQSj2iGlcF7aiq53ofil/pH1uBp2Yhn7oscxfd9XbXfdHBATfj4LP1RCnyYj0ekXFVorrtHr6SJweqsWfMgmGQlEFngxoDwcyQrRF8Vyj9cP4LH9l0lQO3Q6F1qwfi19OwaK1MRtfofDoNKWf3SYoa0y3ARJPf78iTn5H8qSufVa9QrVl5m5jFcKjlN08hFKEgpwpMNwHtA5rVQeqVXJiID2AfhI67ZRpgaZk4G5SDaME3/AHVDBLervvsT7nf8NOy3+i1GmHtQ/PoIfLRr0+kRuVZTR53QxRUzjJpGOx91eHwlkEx17knG11MUZgWd9+9cyf+XmDaeA19yRID6SYxCkrLGiolTYSSwQZIYpQASRJH+leXV8P4q0Atjl+FSbL3jfJ+8M1E14xr9abAuHA4vryL2wNlT65wzUv/hI5+6obipFlG6yr4Xvxh9+csnx14dIDn4BDzQhwL8ARGnc0BSSg4htovnNssEYuxnGVHia3P0aip2XMQOG8j6GamXy5+gkk6r5tR9XiiZr5CSqzYizjZRu+jwH6vVcSPTW+P/lATZ20kGzBWD+U+kCFY9S9rihaNsB7wub/Z4GldtNqo194Wv7yZ8czPeqfGb0N7I2xp0yc9A1qCbYvxPPEWk79jp1KyCz4GKMYdLV2sv/+F/vmdyukWjwF9AVYATnnJK/mJXuv3HR5uDKaIag78VnelUoow+qljlMtK/LhAnSLI4e8mcXTV1+oEOn2qoWojrTN1ccEirozAzAOfcMyiESJ5KeoNWhyhpYOG9wjQjWyGI5HXgAmQ1f+O5oa08Rp4Ab56Q3hXMsVrrAZI6IjV/u28plGbB+4mOKCaHMOR9NHiJzCn/gVZsz9l
+sidebar_class_name: "get api-method"
+info_path: docs/admin/shop/admin-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"몰과 계약한 파트너 목록 조회하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/malls/partners"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+몰과 계약한 파트너 목록을 조회하는 API입니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko)","required":false,"schema":{"type":"string"},"example":"ko"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"array","description":"","items":{"type":"object","properties":{"partnerNo":{"type":"number","description":"파트너 번호","example":0},"ownerName":{"type":"string","description":"대표자명 (nullable)","example":"string"},"faxNo":{"type":"string","description":"FAX 번호 (nullable)","example":"string"},"partnerName":{"type":"string","description":"판매자명 (nullable)","example":"string"},"officeAddressLabel":{"type":"string","description":"사업장 주소","example":"string"},"companyName":{"type":"string","description":"상호명 (nullable)","example":"string"},"businessRegistrationNo":{"type":"string","description":"사업자 번호 (nullable)","example":"string"},"onlineMarketingBusinessDeclarationNo":{"type":"string","description":"통신판매신고번호 (nullable)","example":"string"},"email":{"type":"string","description":"대표 이메일 (nullable)","example":"string"},"phoneNo":{"type":"string","description":"대표번호 (nullable)","example":"string"}}},"title":"malls-partners-200843305"},"examples":{"get-malls-partners":{"value":"[ {\n  \"partnerName\" : \"\",\n  \"businessRegistrationNo\" : \"\",\n  \"companyName\" : \"\",\n  \"onlineMarketingBusinessDeclarationNo\" : null,\n  \"officeAddressLabel\" : \"\",\n  \"faxNo\" : \"\",\n  \"partnerNo\" : 1,\n  \"ownerName\" : \"\",\n  \"email\" : \"\",\n  \"phoneNo\" : \"\"\n} ]"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

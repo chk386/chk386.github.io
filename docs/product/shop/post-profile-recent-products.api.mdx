@@ -1,0 +1,83 @@
+---
+id: post-profile-recent-products
+title: "최근 본 상품 등록하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "최근 본 상품 등록하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVl9P21YU/ypX5iVMcRIYfWikaQKEVKSNoEK3B4Imx7kQg2N71w4ljSKFLd0YILV0BBAQFCRQ166VMpp2qZR9ofj6O+wc2yEOlFDR7a1+SHyuzz3nd/6fgmBJi6YQnxOmmb6gqFSYDwtpaspMMSxF14S4MDBA7Heldr3Ey6f2y8fErj8hzsZ7Xm3wn145lddJjQSepMbfHrX/bhH7TZPwn9ecZ+vE/v0v+6TqVPbtjR0yOj3Jjx/bm+v25mlSS2r2CbA3eRW4qw3nsMz3ntrPt4iz3+TvjgiotTfOQpIsU9Oc1ZepNuhUXnRvB5TdibXrR77K9vst/rxEePnIPkeJ8EJ4rcSPz3pukwEwLjH6YPbeMOH1ZvtNrWPSF2QuIeWszDDinQ9lLMsw49FoWpfNiJnRjVQ+IuuRZRb9OsfUiMGUrMTyU1KWfoW3ogNRT2rU0E1L1F1JouXCJ/ZZi4AafvACPML3XhHnl5qzVufVMrj2qN38za4f8mqJtM//4Qf1MGJpN+v8pEECXiD2Volv1sgMYBHH8uIoaNCZ8kjCoBHwKeGVE15u8o3TgHxeK9ubYGCDV1oXjoigBro6eI2sOBmjEqOMWBRM8SB4piQ1ISzoBmUu42QacsU11/AySWRUpppLpnOyZQKzITFwkUUZZlxB0ICAS98BjakWFhTMtwyV0pQJl9MQ4kAwmLUyfGL0x5zCKKi0WI6GBVPO0KwkxAuClTdQpmkxRVsUimGBrkpZQ8WzoUgMDi7UyqoC8AB2f738V3DVtv2yTpy1hl1tYd7vNp0NyNdKGQh7Z+e2gFyPejBEJR3EZqiStaCz7A3YLiNydrbs4z+dJ63Q9HiYfJsYm/xm4ofvJ8bCZDQxEyaTiZnB22KdHg/iUyVtMSct0pt8t9vkuw0SgvyFCm3Xn8XJsh4mUJr88GmcQBqLhO+vAU+YLBlIVFvA6NKPMkifbrffvgZ6kIS0nKpKKZX2mrAgqebH2kC1oA2BarrJzQdbgJfwve2eivqksAcLSSjOe6Lgw5iezuN9WdcsyAt8lQxDVWS3yKJLJiIqXFWkp5aobGGNMSxJS6EmfvWLb0oPsGq5bOpDwfKb9fk69F4hAHgoFosVi5fZgcNSLNegawpevDM8cnfky5G7wwH7PVT92gR8X5HUHAouJLsGJD0gsaJQxAcdZhq6ZnoSh2Mj+NcLEQ+RE1pORu+0J7cNWRmgoj6C6NVGZVK20ulS0OAxNfwJgM1flAwlQkVNNmAIZN3oYVzudyM40fFdTwRcR2KqLXjh6LoPOUQUfSUq/kAL+UyD7UbJrv1BkLdnlEbg5orfSONCLBKLDIkzU6PTM/cSs+h+ND0rubnj53+fOQ31ehlIICM/bwSfN4I+G4HfZSy6akVhjinYdL0iKviVN9fpGG4H7a09qKUMVikwFQopyaQPmFos4jEUF4PWOAevKxJTcBQgBcL9to3FmlZM/NAdDNcmcei+37sHSc9q8UH4yzTfs6h0GpQ7T26l8+PWij5gAuvLp6O53SLRB11ggbkluv9td+iDOrDW/Ac+vXZr6IOgdynpAeExjHuqxFmU0eW4siPgULqYe9OJmVlgTvm7RVZP4x0mPcQChF93muuuOe40dc8KXXfEBU8mPv8CJHXvVw==
+sidebar_class_name: "post api-method"
+info_path: docs/product/shop/product-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"최근 본 상품 등록하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/profile/recent-products"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+            
+최근 본 상품 등록하는 API입니다
+
+로그인 이후에만 호출 가능(accessToken)합니다
+
+최근 본 50개 상품까지 서버에서 저장합니다
+
+ ### OAUTH2 참고사항
+* [Oauth2 API](https://docs.shopby.co.kr/?url.primaryName=auth/#/OAUTH2/post-oauth2-token) 를 사용하여 토큰을 발급받은 경우,
+* 기존 accessToken 대신 Shop-By-Authorization 로 액세스 토큰을 전달해야합니다.
+* ex) Shop-By-Authorization : Bearer test-access-token
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼(PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko, 지원: en - 영어, jp - 일본어, zh - 중국어) (nullable)","required":false,"schema":{"type":"string"},"example":"en"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":true,"schema":{"type":"string"},"example":"test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"productNo":{"type":"number","description":"상품 번호","example":1000}},"description":"","title":"profile-recent-products-524943492"},"examples":{"post-profile-recent-products":{"value":"{\"productNo\":10000}"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

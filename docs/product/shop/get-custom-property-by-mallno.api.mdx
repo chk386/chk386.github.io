@@ -1,0 +1,81 @@
+---
+id: get-custom-property-by-mallno
+title: "상품 항목 조회하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "상품 항목 조회하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVm1PG0cQ/iur5Ysd3flsVPXFUlQZRBukNrZq0qjCqDqfF3xwvrvcrRGOZQlSp6WAlCbCFBEcgUSbQolkJW7lSvQP+fb+Q2fvDnOHE5NQ5UtV+4O9u7Mzz8w8OzN1TOUFG6dn8WTVpkYF5SzDJBat4TkBl4itWKpJVUPHaTw2hpw/V/udVdY8ck4eIqfzCLkbf7F2lz04dVsvCjoKfQo6+27NfbKO4MQ5OWbtJmKHHXdvy23tOhvbKJObZs8eOpvrzuZRQQfpB6ds75j9fAo20E30DWLtHoqocJ5v+Sra/q0Ev4bGAFY2c2fm1jhinV7/1cE5mBtoNitXaXmcm5qLlSk17bQklQzFTthlwyzWEoqRWLKkT6uWljAttSJbtdtyhdzkt6QxydcqmYZNRcPTJFJjiehx5Pxyhny84AxARu73B+5ah/vodPb7vR+dzlPWXkX9l3+zvY7AsfR7HXbYRbKiENue4WqQs7XKNg9QHrCIEzUxAxYMS70v83Aj53AfsdYha/bYxlFIPztoOpvgYJe1ztzW8SASNxBZib9BVxpNENkiFqIEXPEh+K4UdCxgnm9PcLoEWV4gVFQ8KohmQAWxWBMrsqbpBkibsgUxosTipKljHRZw62tYc5YIWOVUKRO5RCx8mUGQCOS8bIIPcGSRe1XVImCTWlUiYFspk4qM03VMaybXaVNL1RdwQ8BkRa6YGt9LJZKwMTCraCrRKeAebZf9ALF67Jx0kLvWddpnnLI7PXcDCNZqwsLZ3r4uIC+kPgxRLYWxmZpM5w2rcgW2y4jc7S3n2e/uo7NYblJAX2Ynpr+Y+vbu1ISAMtm8gKaz+fh1seYmw/g0WV+oygvkqtjt9NhOF8WAwM6rXr/zJI2WDAGx56vs6U9pBDwWEdtdAxkBLZp80T4DQW99v8zXR4/7f7yAdRzF9KqmyUWNRF2YlzX7bX0gOm7M8cu2aeg2sbn4eDLJf6K4+aaAFUOnkBp+LJumpioe0aVFm8vUh00axUWiUE5zn/uqb8F/ELnIXnBDtiy5Nhw1r3D5dYsHmJKKfbUZeGAXMnq1UnxdPkKa4TGtu7s9HApQCqK1LGvVd8QIeUW8xB623x9az8Yw4OQA8nDqRzoP+sKK8GfSXdyAjxAw/J2UQUOLKGOb++zXLU9f4/JFEKQq9cQgIqWqQu1LJRMiJH74QfLj1CcfJVMhAntxG11hQSAIBq4XhohX4EW3AKGHPymh4HkKfwsB3gKGPT/9Eclk8nzfE85L+QIvBYPjVOQYAgnHc/D1/Qf8UPHLRtAevCZAy7CQzt2XhtwHIZtYy+dtAlosLzFBD+btV5RNNUFEXTGhDVe8R63q8z6losEVufhQ9oLZIBYIxfvdVefgN8RlI7NFAm4uB90pjZOJZCIl5m9ncvlb2RmeGd7eK7JXDYLCGBk6LoYWKICXQdQv6sv/09F/dDoKagglK1SClg6tEkjj0bkePIPZQRXgDWfoIQCxyxAkLlevF2Wb3LG0RoNv36sSqwb7c7z+WSpvjHwF+oNezF9OSbX5wUWbfCMDY18FHTWOIoPWaz1YIrXI2HZec7wJ4Vo2327IGgEmNMz9ezTXG6tGoAuNc9dE994mqRGoQ0NeBLV/mgGymzR0NjQj8bI8qP2fT0HFbPwD86bamQ==
+sidebar_class_name: "get api-method"
+info_path: docs/product/shop/product-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"상품 항목 조회하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/products/custom-properties"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+            
+상품 항목을 조회하는 API입니다
+
+사용여부 = Y 인 상품 항목만 조횝니다.
+
+ ### OAUTH2 참고사항
+* [Oauth2 API](https://docs.shopby.co.kr/?url.primaryName=auth/#/OAUTH2/post-oauth2-token) 를 사용하여 토큰을 발급받은 경우,
+* 기존 accessToken 대신 Shop-By-Authorization 로 액세스 토큰을 전달해야합니다.
+* ex) Shop-By-Authorization : Bearer test-access-token
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼(PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko, 지원: en - 영어, jp - 일본어, zh - 중국어) (nullable)","required":false,"schema":{"type":"string"},"example":"en"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"customProperties":{"type":"array","description":"상품항목","items":{"type":"object","properties":{"no":{"type":"number","description":"상품항목 번호","example":1},"values":{"type":"array","description":"상품항목값 목록","items":{"type":"object","properties":{"no":{"type":"number","description":"상품항목값 번호","example":101},"value":{"type":"string","description":"상품항목 값","example":"F/W"}}}},"name":{"type":"string","description":"상품항목 명","example":"시즌"}}}}},"description":"","title":"products-custom-properties-640819701"},"examples":{"get-custom-property-by-mallno":{"value":"{\"customProperties\":[{\"no\":1,\"name\":\"시즌\",\"values\":[{\"no\":100,\"value\":\"S/S\"},{\"no\":101,\"value\":\"F/W\"}]}]}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,79 @@
+---
+id: get-brand-tree
+title: "브랜드 트리 조회하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "브랜드 트리 조회하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVt1OG0cUfpXRcGNXu7ZBqRRcRZWJaIPUxqhAe4Gtarwe8MJ6dzM7RjiWJaBOSwEpTQoUERyBRH9IiWQRWrkSfSHv7Dv0zO4a1iZASlWpF/XNembOnPnOOd/5qWFOZh2cnsYjjJhFnFdwkToa022uWyZO44EB5P6+1Gkticah++oJcltPkbf2h2ieipVjb+t1zkSRX8502xvuyz33+z2Qars/HSNx0PJ2N7ytHXdtE2XGx8TLJ+76qrt+mDPh7gDoz2amJh8MIdFqd97sd7W+h6azpMJLQ/JOPlbi3HbSyWTR0pyEU7LsQjWhWYl5lvywwoyEzfQyYdWHpEzvyVvJgWSgNWlbDlctX5PKrXlqxpH74xmCZ8TuEaASPxwj7+t9b7klmg2wbq/T/tZtvRDNJdQ5+VPsthSJpdNuiYNTRDSNOs6kVIPcjSWxvo8mAIs6UlUz8ILF9MdE+g25B3tIbB2IRlusHUb0i/2Guw4GnoqtM2/rKHBEQr5AF+NX6EqjEUoYZYhTMCWAEJiSM7GCLZsyX3CsCOGapVwtyEiqnFEKxzZh4BROmQxyDZuwALHPYS3jq2BdBrlESZEy3B978DxyTxoAGo4YfVTRGYVHOKtQBTtaiZYJTtcwr9pSp8OZbs7iuoLpIinbhtwbTKRg4/xZzdCpyQHo9e+Kb8A5z9xXLeQtn7rNM0m27TbwCXzagIW7uXlbQL4PAxiqXoxisw3CZyxWvgFbPyJvE/j+q/f0LDZ+X0GfZkfGPhn98ovREQVlshMKGstOxG+Ldfx+FJ9BzNkKmaU3+W67LbZPUQwY675pd1rP02jeUpD4eUm8+C6NgLgqEjvLIKOgOVsummcg6K8fl+T68Fnnt9ewjqOYWTEMUjBorwkzxHDe1QZq4npeXnZsy3SoI8WHUin56cUtNxWsWSaH0MhjYtuGrvnMTs45lvmBViLMofze1ORH6l0pcQkAYYxUL3lEOozTshMRtApzVOMyO5hMH64HwEwrImNWyoW3+Peivrknq95OG0esHaxLaZuX/o6a4EKfFq2kG0UGzrvJOFnB9qBuddVFjbVMmp3xs77XbEmqcKdgWQYlZnTrPIr9JtTzdUAWsLFf+pJ5R5ui2b6ABZ0jaiJ2V3YghbyVQ1yXSrnO/e2i7kAaVoMK5vglTB0cvjOcen/47p1UhFm+fX21DnYWiFGReqZrOQhmDnyp5HzE8Dd34fMchm3f76FI192wnM7X8xKUjwsKZ8kKy6pfS2VocTKEmQxgJsNK61C20C2z0JNkioZNS/Yrldh6gqqmZkPfKvtJoZszAeFC64GMxYrGVSl+yaNIfLXsPV+NhULxzumSu/8LkrI9XTUBNxfC6p7GqUQqMahOPMyMTzzITkoHyn5YJj6xwsJydceGGtKPo3aRov+PBv/10SDMUU4XeRIIq8s8D6hZC7k83U05kA7YLK9JPgM/S+AfKVKrFYhDp5hRr8vtRxXKqjJRgGiE6bI/+GmjdFuSTABQKw8uusWVLIp9FjaWOOqZN94Kfp5We6aXbsL75epWb77brHENmMhM88/R3G66uAZdZKq5Jbp/baC4BnVk1ulBHZxmgOc2j5zdMCrIWnteyT8ehTJY/wsG1UNr
+sidebar_class_name: "get api-method"
+info_path: docs/product/shop/product-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"브랜드 트리 조회하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/display/brands/tree"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+            
+브랜드 트리 조회하는 API입니다
+
+ ### OAUTH2 참고사항
+* [Oauth2 API](https://docs.shopby.co.kr/?url.primaryName=auth/#/OAUTH2/post-oauth2-token) 를 사용하여 토큰을 발급받은 경우,
+* 기존 accessToken 대신 Shop-By-Authorization 로 액세스 토큰을 전달해야합니다.
+* ex) Shop-By-Authorization : Bearer test-access-token
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼(PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko, 지원: en - 영어, jp - 일본어, zh - 중국어) (nullable)","required":false,"schema":{"type":"string"},"example":"en"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json;charset=UTF-8":{"schema":{"type":"array","description":"","items":{"type":"object","properties":{"no":{"type":"number","description":"브랜드 번호","example":1},"depth":{"type":"number","description":"브랜드 depth","example":1},"children":{"type":"array","description":"하위 브랜드","items":{"oneOf":[{"type":"object"},{"type":"boolean"},{"type":"string"},{"type":"number"}]}},"name":{"type":"string","description":"메인 브랜드명","example":"나이키"}}},"title":"display-brands-tree-1949059840"},"examples":{"get-brand-tree":{"value":"[{\"no\":1,\"name\":\"브랜드\",\"depth\":1,\"children\":[]}]"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,75 @@
+---
+id: delete-user-by-key
+title: "마이페이 회원 서비스 해지하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "마이페이 회원 서비스 해지하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJztlV1PE0EUhv/KZLgAkt0WjVe9A2wi8YNG/LgAYoZ2oBu2u8vulNg0TSqpSgoR0BYbBVJjDYoYq1ZTkvqHOrP/wTPL2m5Fqqm33uxmTs7sefbMe97JYkaWHByZxdczMZLB8wpOUCduaxbTTANH8JwxNIT4t3y7nheFGj96iHh9C7nFE7HfEGvHbvnDnOG+2BQvt0Vhj58URLHG37SQW26Iw7xbfsc31vlGLTRnzBn8cB02uU8q8ESnexB/9om/2keitoOGIcw/Nv0Q397zc8TBQ/8jw3y/xYslxN+VxMYefB+gEF+riEpNhtufv4sXdfF8mx9uKpKAb5yg8diUx/PoKwRQH9IqEusVJA7WRfGrXw8r2LSoTWQrphLQjATVKaNq2qG2upBRl2kGUixikxSEbdnGLDZg0Um96mVospEraWrLRW97/TZ0iII4e1VRzYv9Cgp+y6Yrac2mQMPsNFWwE0/SFMGRLGYZSxZ2mK0ZSzinYHqfpCy9C+Px5pQO4h1AlhQ+YJKSBLXPEEIDEf9cENXCoNUvhMaCZeO6Rg0G/exfVzxuueUdflRH7oMGHLzU227TLTaRKBekVEqlQYEYdZh6iqFqiSCbpRO2aNqpP7D9SuSWNvnBe3erhUZikwq6Pj0xdS167250QkHj0zMKmpqeGR0UNjYZBNSJsZQmS/RPzdttit0GGmk36/xLE7XrTyNo2exlWCS687cQyybOzcvNjmUaDnVk+sWxS/LVW1gGc7AVBiJpdkfGGxOWhHU4lVEtkgnLGQp3ZggWqz8HKG3r8scYs5xIOOwkTUsllhaiqhG3QnEz5ZFoxqLpMWvMAzRtaIMqk8/0AonXLX7cHPFSRlG7kefVt0imSnPougtsXPUnIoLHQqBadebGeGzmyvQt2QzLdFiKGLKofxa/87Ozg1yBM/iVKYvjpsFAfv8N1hcdo/dZGKYPRA299iSQ9SUzi08lA8lSNPDyZQMySMKhyIxsdoE49Lat53IyfOq1UkwJzSELekDu557DyE1/MkbPP8vzTPm3PyERe++BVaKnZZ6n4FViaxINMOch2x/kgZl7bLoPT9f0uzTKgDX/zqL7wASugn+nGdCU++AFboMB8c734T5lAx7fo5iOp16OXoveioLP/gASUDga
+sidebar_class_name: "delete api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"마이페이 회원 서비스 해지하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/my-pay/user/by-key"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+회원서비스를 해지합니다.
+
+마이페이 회원 등록 중 '이미 등록된 회원입니다.'라는 메시지가 나오는 경우에만, 해당 API를 통해 회원서비스를 해지할 수 있습니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"deleteKey","in":"query","description":"회원 서비스 해지할 유저의 deleteKey","required":true,"schema":{"type":"string"},"example":"delete-key"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

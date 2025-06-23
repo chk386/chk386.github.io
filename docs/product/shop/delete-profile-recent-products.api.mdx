@@ -1,0 +1,81 @@
+---
+id: delete-profile-recent-products
+title: "최근 본 상품 삭제하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "최근 본 상품 삭제하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVd9P21YU/leuzEsy2QlFe4o0TaGLVKSORAvdHgiaLs6FeDi2e32NSKNIoUs3FpBaKgIISBUkqq4dSFGbdpmU/UPx9f+wcxOXOOkIKN1eqvKCjnPuOd/58Z2vKDG8akuxRSlFzRVNJ9KSLGWJrVLNYpppSDFpagq578rdZplXztxXj5DbfIy86l+83uIPz73aRcZAgb+Mwd+edP/sIPdNG/GfN72nW4g/vOCNE6926Fb3UDw1x589cre33O2zjJEx3FNwb/M6eNdb3nGFHzxxX+wg77DN350gSOtWn4ewqhLbXjDXiBH2ai8Hr9EUwEvG7y3cmUG82e6+abwH9QVaTGKH5WZExqVQjjHLjkWjWVO1I3bOtJYLEdWMrNHo1w7VIxbV8pgW5nGefCVeRaei/ahRy7SZYvYiKawHALnPO1DTOT96CTXxg3Pk/dLwNpu8XoHmnHTbv7nNY14vo+7rv/lRUxZYuu0mP22hQB3I3Snz7QZKAxZltqDEIYNJtQdYtB1BVxCvnfJKm1fPAvF5o+JuQ4EtXutcNiIiMpCN8BWxYmiWYEooYgRK6UPol5IxJFkyLUJ7jnNZmHaW6IQRxepvg0KJSgwmzKyjMhvcLUyhSYxQsTVFyQADnvkO8yZ4aGJr7juEFqTRXfIXwn29BfOFXym572iUQGJGHSJLtpojeSzFihIrWCKu4eSXCZVKskQ2cN7SxbdbYF4m/h6AiNh+2hzBWfAfzQsrAEkr0L2bJLUZ1YzVkaSR6WBaVdegL9Cx8Xn5rzClXfdVE3mbLbfeEaTZb3tVWPZaBQx3b29SQL1h9mEoWjaIzdIxWzFp/hpso4i8vR332R/e404odVtG3yZn5+4mfvwhMSujeDIto7lkOjwp1tTtID4dG6sOXiXX9W6/zfdbKATUgVvSbT6NoTVTRvxFmR8/iSFgkIL44Sb4yOgnSxj1Djj27Ac5YZ/tdt9egB1GIcPRdbysk+ESVrBu37QGYgRrCBD5ujYf7QBexA92h8j8UWMPclgqLYlQtmUaNrHF65npL8W/YRjiYwkiAXVz5oDoPUKzHNhRn/LRDylvE7r+nu9wLEWt/jUVh1TBlhYhiqFacFDzPTiasWL26tCYHrgOinD/oEG+SoR8p3C3VXYbvyPhOyQWEXi57rM9Jk1HpiO3lPR8PJW+k1wQPRKHOo8Nkdcf0hglgqUaBVKUVNNgUPpnzfvkNc8nGCMbLArnUhPc7q920efDouTzoUfUYUbAhuegQ8KpWFzGNrlH9VJJfO6rnuBJVrPFvRkcmSt3LfSdfwfCaFQe/xXmGimMCO461h3h1+PeOqaayAwolsDbv0oTQxpSzjF4Bjo8QCNP2oYbqeYYMAF1/ng0k+nkuNEN9HlCdP+bNI5BHVDt/6CnV4riGATDmju09Jeq9k3ibmIhAUr3DwtHV3c=
+sidebar_class_name: "delete api-method"
+info_path: docs/product/shop/product-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"최근 본 상품 삭제하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/profile/recent-products"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+            
+최근 본 상품 삭제하는 API입니다
+
+로그인 이후에만 호출 가능(accessToken)합니다
+
+ ### OAUTH2 참고사항
+* [Oauth2 API](https://docs.shopby.co.kr/?url.primaryName=auth/#/OAUTH2/post-oauth2-token) 를 사용하여 토큰을 발급받은 경우,
+* 기존 accessToken 대신 Shop-By-Authorization 로 액세스 토큰을 전달해야합니다.
+* ex) Shop-By-Authorization : Bearer test-access-token
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"productNo","in":"query","description":"상품 번호","required":true,"schema":{"type":"number"},"example":"1"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼(PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko, 지원: en - 영어, jp - 일본어, zh - 중국어) (nullable)","required":false,"schema":{"type":"string"},"example":"en"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":true,"schema":{"type":"string"},"example":"test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

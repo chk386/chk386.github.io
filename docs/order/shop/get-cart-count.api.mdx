@@ -1,0 +1,74 @@
+---
+id: get-cart-count
+title: "장바구니에 담긴 상품 개수 가져오기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "장바구니에 담긴 상품 개수 가져오기"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNlVtPG0cUx7/KaPJipPWFtFUTvxmEWqS2RnHSPmBUDevB3mDvbmZnUejKErROgyBKSIQJTezIqESqUipZrdtuJX8i7+x36JmxCWsT28h9KS9mz1zO71zmfzzMSdHB6VW8SBjHaxouUEdnhs0Ny8RpnDdv3EDBXzu99o6onQXvHqGg/QyF+/+IZkd8fx7Wf8ubwWmj97cvmn5w2ECi0RKtHdE8QeLN26B91PvzPDjYEy8PUXDQ6fkdJH7YDV/soV67IfZOgrddJE7b4asnYf2k57fheC2sN1BmZRnOP4KTwcFZIm9iDVs2ZURSLReAq0h5XAfiuG65JodlmzBSoZwyGYyHTfiAbV/DtwxEw4aMpkRJgTI8GqT0FvxeE60aLDH6wDUYBSecuVTDjl6iFYLTHubbtrzT4cwwi7iqYfqQVOyytM0nUmB471YvG9TkADrZr3jcDevPg3dtFO52gmZX5vTYD/d9JOo1+AiOjmYF4tSB3CiMuFGIstllwjcsVpnCNkoUHj0J3vwaPuui2Mqihr7MLix/sfTtN0sLGspkcxpazubmZoVdWYwClolZdEmRTkvesS+OOygGXRP84UM/vUijTWuYYYOUnetCbFpRCKLr1HHuWpt0WvNA74rXh0i8fC5qvtg/Q+GPrXC3PTOHqlzffZwr/xGsXMmy4wvb8YzLSxYzvlMPYlqi6qdDZLEsgdM3EVjCpz/NnrAFShhl6AO8a/JKx7ZMhzrykpuplPwZxpJGDeuWyaFH5TKx7bKhq4iS9x25x7sKYq3fp7p670wKAjf6HvoqcLnNdCvrY2ulxKnTRFLxBnIEUoQjsc1Xq6NHYZkbXAWudGf+1scfffpJ6vbtVCQrimVEmsCyRcquPOjl+6B56QFX1Z+GQbVK1kDTlJDxEnwk5RXJC3VzKNu6kDaXlWWxObeddDLpyI4gtpGgcVO3E7pVUfk3zA1L5WPAbDFojbjcfCUpSPzcDc79mNoyh3qdnaD1C5JbpQxfqjAc3BrIaRqnEiB58dxXmZXc59m7MgW25fAKUVUbNOt1BgCSg6Xli5MzeMejaN5le/yPBtGgxTh9yJMgpoZ8oP2ieIPiraoWUd0tywflKEFypN3z1olD77FytSrND1zKtsEO/24RZpB1WavVNbhv8JZlvQuGIxcuX+fYHMXuDB7yHBoaaR8k3qTbQwPyokmV3Mzk83rjbAJMZGz+d5oZB9gEvMjknBFv/Mya4DYyD2d0O35ETXA7PAFnDXjq7JlAMG7YDbH0t2YA1uaRtSvDRIrie6X9bAkkq/ovbjdsUw==
+sidebar_class_name: "get api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"장바구니에 담긴 상품 개수 가져오기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/cart/count"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+로그인된 유저의 장바구니에 담긴 상품 개수를 조회하기 위한 API 입니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"count":{"type":"number","description":"회원의 총 Cart 상품수","example":1}},"description":"","title":"cart-1843750990"},"examples":{"get-cart-count":{"value":"{\"count\":1}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

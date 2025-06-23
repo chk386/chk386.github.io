@@ -1,0 +1,77 @@
+---
+id: put-recurring-payments-gifts
+title: "정기 결제 사은품 변경"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "정기 결제 사은품 변경"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVm1v20Qc/yon700q2U2TDoryrq0qqARL1HbwoonQJbk0XhOfOV/KQhSpgxSidLB1NG0GzeSJCo3SSaEPKEjlC8Xn78Cd7TbO8xTEO/Iitu/+d//f//lXkijcMqTIprSGUgVCVG0rBot5pFEpIUtpZKSIqlMVa1JEimv37gHrz91Oa5dVTq2zPWC1ngG79hdrXrGvz+3627jGzHqn3QKdixYzTwBfZc1d+0WVNSuAVRt81643rNohWIytAvZqz9qvWvuns3GNn7w+YVdV0HfBvsku3vIHf62Y9jdNu26Ki/jZKjuuWt83ujoAOz1gx89ZZZhs7dqnyjp7Y/1oeqpcTazZ6ENb+aNzec3MJ+zkxnp9AqzL3c7F3w6S8Nz9gIaXsUa5m2YAax5Y+9fijNVq2C8bdv03T5ckS1hHBAr/raa5B/UCVcitnxXddbShbKkZanBhHRKYRxQREZCSpPEPfuhT/i0CIEuqiEIWwTQiUn9whEOtiwozK3yLoC8KKkFcJSUFJEtGKovyUIqUJFrUxZ0GFQiksiyhxzCv58RaaHaOL9ypTeVUDo7DHq+XfXdj1w+ssxawn1xZzRuRC0dtu9YGrF7hH9bh4bSAKDKo4sJQ1LQfm56DNINJfgK2fkT24VPr1e/2sxsQiC3L4JPo0urHK59/trIkg8XougxWo+sz04KNLfsB5qC2VYBbaJLzjtrs6AoEeBpal23Qab2IgG3ciyEDc8a7gtjGfhAwlUKGsYG30aTksX96yn5+DtjxAau0We0U2N+a9pPW1DicyLnqFero98Faz2JdWSoqiwWaxUT9yimPSY6qv+5BFohCfjoM+Ir9w8vpHbaEIEEEDMGbcK/kG0s4XRTXpNyCF69Q13NqygEefGQIhKVBfTj5CKWoKGsiugBVkSF2SV+fXU0bvkOQEFgcNN/XqXiVV+1GG1i/ngvra23Jb9Bmt72EwvP330sIx1KUd3RgDUUzTmvphSiC460kMc4hqPmX7vx2t6IV8kkepHKizJ2ZIQh9yBtY1AH7AE+2xm2lYhCYp2IW9Fjna+eNa7bXGGVnSAZhGcz/1/aV+8FzfVSlDoZRnXzhg/n3QwuhhbAv1xx8Y9s/39+BuYK4uBQfliVxbplvw41vnI/p+GAMhGxIDsvzibJULjtmEGToWDNcJHyEiUevaWJRSPIRlMXeuHKmEs3yj+Ag8uDt4DIQ2bmdWgWSE3VMqW5EgkFDFDvU1VmkaCl9NoXzTmmJolnrltfKbVxHlMfQtB6SeL60KIuGksFOMnrxwoS3FkUgGkhJwH65sc7bAUdkBnSudi3zDRCigql0iQo/uOON44g0N8tHprL+YDG2/lF0Q2jUsUHz0GkHXrMbwYc8OtGPw9dk/mdbU7Atr34pekyDnCOoos7dhCx5abw5pGr5QTeReWJmeQSFVKmUhAZ6SHLlsljmmUr4ENjkrzuQqDApEmozwW/3BpbI/LRqiI3uCBoZ28CaN61mQA9vG4p/GxV7WOBtl3A61lQ6342zjQHj44b/Hs2ULG0MPB89nBLeaGI2Rq2P9E2pdjQPG6O2l+ZNa/BEgjUGwShG14PFFfXqWNkQt3UlBgiVGBJ3cyj2cIPLJj0elsdpZ/rCLwXt4//OUMaOUS7DEmulbjgiknul+P0DBhQzLg==
+sidebar_class_name: "put api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"정기 결제 사은품 변경"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/recurring-payments/gifts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+정기 결제 사은품을 수정하는 API 입니다.
+
+최초 정기 결제 신청 시 선택할 수 있었던 사은품 중에서 선택할 수 있습니다.
+
+모든 정기결제의 사은품을 성공적으로 변경 시 204(noContent) 응답을 반환합니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"recurringPaymentIds":{"type":"array","description":"정기결제 번호 리스트","example":"[recurring-12345]","items":{"oneOf":[{"type":"object"},{"type":"boolean"},{"type":"string"},{"type":"number"}]}},"freeGiftOptionNos":{"type":"array","description":"변경하려는 정기결제 사은품 옵션 리스트","example":"[1, 2, 3]","items":{"oneOf":[{"type":"object"},{"type":"boolean"},{"type":"string"},{"type":"number"}]}}},"description":"","title":"recurring-payments-gifts783617172"},"examples":{"put-recurring-payments-gifts":{"value":"{\"recurringPaymentIds\":[\"recurring-12345\"],\"freeGiftOptionNos\":[1,2,3]}"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

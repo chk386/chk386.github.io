@@ -1,0 +1,75 @@
+---
+id: post-recurring-payments-skip-next
+title: "정기결제 회차 건너뛰기 (bulk)"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "정기결제 회차 건너뛰기 (bulk)"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVuFPIkcU/1cme18wYcXTa++Ob2pMatIWIrb9IKQZYJQ9YGc7u9ijZBNtuNaoqbUV6/XkgqltrPUSzvMamvAXMbP/Q9/srrKAgqHfygdg386893tvfu83r6JYeM1UoivKEsmUGNP0tTguF4luKamwkiVmhmmGpVFdiSpJ/cEDxP/e6DQ3RPWUn79AvLmHnO1/RP1KfHvh1N4kddGodVrNzmVTNI5F/QjxnVNR30XOr7uiecZ/b6PO2yte3eKvmnyvyk/qCDzBHqf2J9/ZgsWTST2p8/Mz/nMD9fvynHQ9AA7Y/rbz7r1obIrjNj859t0hsXOMpqcehXQ6T3ULsplAor7Pd96LehVQHzkvj7ohlbBCDcKwTHMxC4ka1LRUdl0P1fAKYqpmXjNUnTy3YIeBGS4SizBZvIqiwwPs/ByeZbHCiiYrliM4S5jSX8jZ+CLil1XRqMIrRr4qaYxAXIuVSFgxMzlSxEq0olhlQ/o0LYlCscMKeY6LRkHaHk5OgeEmbKagAUDAPjyu+L7t1Pb5eRM5m1e83pbndthytltI1KrwwA8OxgVkESiZB0PVskFsRgFbq5QVR2DrR+Qc7PLXfzl7bRSKz4fRJ7G5xY8XvvxiYS6MZmOJMFqMJSbGBRufDwIsYH2thNfIqOIdtsThFQoBJfm7Fuo0f4qiPO3FsIoL5n1B5GkQBM5kiGku0zwZRR7ZBa9+ROKXfVFtie1T5HzXcDabY+NwT84Lr1pu/ACsRI4a6lxZnS1ZOcq0b9weGVWo2kkPslAMw+5pBBbnh5fjF2yOYEYYugVvynMJL+ZotizdZLyul3+xYRS0jAs88syUCCuD8Wj6Gcm4bc2kFFgaMeVb1qeJi1kzsAkzhsuD6QdUC3SoIS7f8Mst56iF+B8XsgbbLSWY1kpXaB5Ozzz6IIy6hg8fP3k6lZL1tkjRDU11Elt1FacXuTwz35KmtECwHjTdlPPGopeKaTg7O2Xbdn8GEM/SLBfcMBFUp6emn8w8fjoz8yhwUC7K0QIKi9ZxoSRjVJK31TkJSQZeeLVJKuGgzS1PUknZim27eTBiGlQ3PRCg//KnNzdplCtBunP0WutdObdy8BQZBB2RoCO+6puErV9LfokVZBNYlmFGIxFTdgo2tEmi6hljMkOLLi8l45a63Fy4PvY7uHUfNtiy/VapS0T/mCiDRlQlhAE6IvFbm1+0Qu6SCdS52uCNMySXIriGxOsX3Utw3b+8osrUJFwwauLT2Xjio9iyjCjLVMRu8/jS0MPzgau51UShdKmQn+gHFOjN//NA4beZBbSJwA2oyXb0GFPxubZyS3NJhgHb4MflG/AnJ+kJayuVNDbJZ6xg29IMhGIgdCvwdx0zDaclDVZSEMMXZUnQrGbKF12ZvfMgQku+Ik+gntnk1izypNwz6Vz3sSsvY8W831wyBExg/vnvaMacRIbAC4xAY8K7e/gYEjYw2IwZ9u5ZY0jY3lFm3IRHDhFDENw1tfRg8Zb63awuS2/dFQNDg9TymzsjHkssw+K0P2wUada9K/HXcraBb/cKpW5W3hghbZXueUQVz6f8/Av/s361
+sidebar_class_name: "post api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"정기결제 회차 건너뛰기 (bulk)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/recurring-payments/skip/next"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+정기결제의 다음 회차를 건너뛰도록 설정합니다.
+
+모든 정기결제의 회차 건너뛰가 성공적으로 설정 시 204(noContent) 응답을 반환합니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"recurringPaymentIds":{"type":"array","description":"정기결제 신청번호 리스트","example":"[recurring-12345, recurring-67890]","items":{"oneOf":[{"type":"object"},{"type":"boolean"},{"type":"string"},{"type":"number"}]}}},"description":"","title":"recurring-payments-skip-next-2028379334"},"examples":{"post-recurring-payments-skip-next":{"value":"{\"recurringPaymentIds\":[\"recurring-12345\",\"recurring-67890\"]}"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,73 @@
+---
+id: get-app-card-qr-order-no
+title: "[개발중] 앱카드 결제 QR 생성"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "[개발중] 앱카드 결제 QR 생성"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9ld9uG0UUxl9lNL1xpF3/qQBR3zlRBJGgTuMWLtIITdYTe4m9O54dWzWWpRRcqJKKEohDAbsKIheoFMkNFnKkPJF39h04s17H6yS2q62Eb7w7c3bOb86Z+b4GFqTg4PQmzjC2Qngeb2k4Tx2Dm0yYtoXT+KF16xZy/90b9vZk69R99QS5vefI2z+X3b78+rXX/vuh5bX77sE5kn9cuK8H7tlT78VAdl8g2X4jz/vuTx00POvJkw66tyG7LSS/6crWG6/dcQ9O41jDNqOcqGxrechXoEInjOkG0OgVrts8T7lu2RDICCdlKihXxA1swQt84AfcVfOm4mVEFPHVTYTJYJLTStXkFNIJXqUadowiLROcbmBRZ2pNR3DTKuCmhukjUmYlNSaoIyY0Te0S4DMAUmkCgCIlEHMNIbO+htyzljxpRQVIxZPhtEbJpJaAms3PK7+78NqH7qse8h733e6FatvxwNsfQHta8OIeHb1TRUYYupkPs7ESETs2Ly9gu0rkHT1zX/7lPb9AsfUVDX2aXV77ZPWLz1eXNZTJ5jS0ls0tRYVdXwkDlohVqJICXVS844E87qPYcNBz/xmgYe/HNNq1pxl2SMl5W4jdqYNDDIM6zn17ly46PN6vz+RvPyD586FsDeT+KfK+PfEe9yJz+J0bpdeFnz+ElSvaTF+u65mqKNrc/Mq/m4sK1f59iiyWJfD1bQQj3ve/RC/YMiWccnQD75Za0mG25VBHLXI7mVR/01hqUMOGbQk4o2raLEPTEwzSwMs1Anv7S2qIa5uDAWEKn4eRehmWcnSL1GggTk6RUpFKpT5Ipt57/8M7oQ34YDMFDeZqpFRVy97bWLHzFDf9n4ZB5Ip2IIa+7oGkpXFivEqiwhONQPaaMO9QXhuLYpWXVJeEYE46kXBUKwkz41S3DBY37LJfONPa8dOPdzVCUsHX9h6IeswPWULD/p578idSoQgUTb584h48DXS8FuhgGifjoFV67m5mPfdx9r4qCLMdUSaWShqcss1hr+P2OvL0cOsmowhc4ipPY9LM/8GZgmMh6CORAEkz1TUZVbgRNGUTj5sC4RV1L9JjP4I6F2HXKqbR2CYOfcBLzaYarlQpr8M4PNYIN8m2agL0Lm866nlyRWZuPbYR3KYldMXabkQOBolVV20Kzhw87tJ6yECbWxAa3O/IOFM2dyPMKOnENC95lARFK8FbWdwcmJCVvjtNRFObgxdy04h4s31sTtqQR0ZMO9u25qSddsWoG17oR3MIZhngFMsoNAOwTITmJgajhPZSyD9aBRls/geynnnM
+sidebar_class_name: "get api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"[개발중] 앱카드 결제 QR 생성"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/app-card/qr/{orderNo}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+해당 주문번호의 앱카드 결제 QR을 생성한다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"orderNo","in":"path","description":"주문번호","required":true,"schema":{"type":"string"},"example":"test-order-no"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"image/png":{"schema":{"type":"object","description":"","title":"payments-naver-ordersheet1116014589"},"examples":{"get-app-card-qr-order-no":{"value":"QRCode"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

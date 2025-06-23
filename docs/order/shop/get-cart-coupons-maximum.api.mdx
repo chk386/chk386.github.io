@@ -1,0 +1,74 @@
+---
+id: get-cart-coupons-maximum
+title: "장바구니 기준 최대 쿠폰 할인 금액 가져오기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "장바구니 기준 최대 쿠폰 할인 금액 가져오기"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV+9PI0UY/lcme18gaWmPGGP6rSBREgUip364EjNsB7rH/rrZWQLXkID2FDki3oXiqUBKhERPTJq7Ytakif9Pd/Z/8J3d7XV/lLbURPul2Zl33ueZ933nnWeqEsPrllR4KM1iyqSVjFQmlkwVkymGLhWkkn7vHnL/3O00d3nt0n31FLnNI+Qd/MXPWvzLa6/+R0nn51du87hzc+0+20cdp8kvd/lp2704Rfzm1D3cRV69wc8cWIHAjXtw5dVh6u+Gd9REvFF337TcqzbiF03vp0Ov/ht4cZ9dTpV0KSMZJqFYUJkvA5l1wrIy0MzKhm0aupXV8Jai2RoYmphijTBCxV6qkg4fsEAYLxgwrYi9PLYJ3ZaSO4yxd1/vey8dsKHksa1QAqiM2iQjWXKFaFgqVCW2bQrXuq2tEirtZCSyhTVTFWP34fMt9mfARSCE4BWCy2CfRC8uzQNojTdqo4BajCr6egJ0Kh+FlVWF6AzCNRiXf9P26s/dV03k7bXcs7ZI54njHTiI12vw4R4fj0uIEQsy5NPIKuUoN1PFbM2g2hBuSUbe8aF7/rt31EYTS7MZ9PHizPxHc198PjeTQcXF5QyaX1yeHJfs0myUoIr1dRuvk2HBO3H4SQtNQK27bxwo6hcFtGHEOaxh1RqVxIYRJYFlmVjWA2ODDCseOC/85+8R/+E5rzn84BJ5Xze8vebYPPzMBfBZ5uNHaC1XDDM7s50t2qxiUOWJfyyHBap+EWM2sYhh9TSCEe+7H8cP2AzBlFDUh++KcGmJ5kAs4WQ6nxd/cVpiMCPJhs6gRsU0Nk1Vkf0d5R5ZwqaaJmKsPiIyE72GirbElAABvsq2zGaDlhSxx5TiPu3m5pQ39hD/as97sR9rgiKWjGjWcMiyYkEH1FlRY+mOlAKMIgWduOPsQ2ZESGPkF/xEJwM/yB/cBykv85ZlE2i6dyPmNk87zrdh+00Ru6O3nhsNq+pS4Gp0J93l8MtIzGBYff9OAW/U+OtWGGrUi7W4jO5aJZG76T+plTResmJ6uxg90WmvyXT3vI5YhCmXYSlGHI3JrJf8naQ5rGcKU7vKIilDsu9NT0/n77+bfyfSrfwk3CpcYG4Tq7bwWC0lWklJKJlSvIRhLJ8pJU9H31GII4yXpJKUnAoTF66KFIgYgQ5aipZqyCIa13BhPGc9rFSFDABKni5/Igi+OL0ErppQ+Pkaj1XgIycAcmEkcz0JaBG62dV/NlXFrcSYaRVyOUtcXdhUpkhWl80p2dD8i0LR14IaCXNqULjDssI4VSiI/9J2r50J32QSdVq7buNXJEwRKDh+/jQUrbBwM9R9BSk/Bdosu7xQXFr+cPGB39UMi2nYv17CW7WPdu6q5tgBDPuIENC84fCXl2CbZFntXWn/t24Pjx0jWywHqk8RSiJISjVM40O/TvxrOGiJolkHqYTUVCBQwqZaXcUW+ZSqOztiOFDwIsFQTHhVjeiGWyMx8UkoMSZRf6nfl+sG2Y6+H7qH1K+bTUwVAQ5EVsA01D5js4o9AQaQ6T0oemwy40ZiJPk/KDK9Z8a/ZzOm4B9AL/LSGJPe7Rp/AGzk/TAm7O2SfgBs/MUw7oaHavUBDG57HMS4BKZFIGuyyFxKfIsz9rb1fzAHnXPnH85B0Ig=
+sidebar_class_name: "get api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"장바구니 기준 최대 쿠폰 할인 금액 가져오기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/cart/coupons/maximum"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+장바구니 기준으로 최대 할인이 가능한 쿠폰 정보를 조회합니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"cartNo","in":"query","description":"장바구니 번호","required":true,"schema":{"type":"number"},"example":"1"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"productCoupons":{"type":"array","description":"최적 상품쿠폰 정보","items":{"type":"object","properties":{"discountAmt":{"type":"number","description":"상품쿠폰 할인금액"},"productCouponName":{"type":"string","description":"상품쿠폰명"},"productCouponIssueNo":{"type":"number","description":"상품쿠폰 발급번호"},"productCouponNo":{"type":"number","description":"상품쿠폰번호"},"mallProductNo":{"type":"number","description":"상품번호"}}}},"totalDiscountAmt":{"type":"number","description":"전체 할인 금액"},"cartCoupons":{"type":"array","description":"최적 장바구니쿠폰 정보","items":{"type":"object","properties":{"discountAmt":{"type":"number","description":"장바구니쿠폰 할인금액"},"cartCouponIssueNo":{"type":"number","description":"장바구니쿠폰 발급번호"},"cartCouponName":{"type":"string","description":"장바구니쿠폰명"},"cartCouponNo":{"type":"number","description":"장바구니쿠폰 번호"}}}}},"description":"","title":"cart-coupons-maximum-822201604"},"examples":{"get-cart-coupons-maximum":{"value":"{\"productCoupons\":[{\"mallProductNo\":0,\"productCouponNo\":0,\"productCouponName\":\"\",\"productCouponIssueNo\":0,\"discountAmt\":0}],\"cartCoupons\":[{\"cartCouponNo\":0,\"cartCouponName\":\"\",\"cartCouponIssueNo\":0,\"discountAmt\":0}],\"totalDiscountAmt\":0}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

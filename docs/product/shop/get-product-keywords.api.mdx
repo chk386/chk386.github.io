@@ -1,0 +1,79 @@
+---
+id: get-product-keywords
+title: "상품 번호 리스트로 검색어 조회"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "상품 번호 리스트로 검색어 조회"
+hide_title: true
+hide_table_of_contents: true
+api: eJztlltPG0cUx7/KaHkx0a4NlpJKlqoKItQgtRgV0j5gqxrsAS+sdzezY4pjWTIJaRNAzY1bCUQg0UtSorrEqVyJfiHP7HfImd1lvTYEkNu+VN0Xe2bPzvzmzDnnfyoKw7OOkppSxqmVL+WYklWVPHFyVLeZbplKSunrQ/yPWqteE8uH/PUDxOuPkbvyp9hriHtH7sabjIkiT8YU95fcZw/58UN3u8l/PEHut+/cjQYSmw3+fJf/diK2niD+/Hd+sMef7KLWcU3cfyRfgqk4qLs7a+7GNl9ZR0Pjo0i8fMBXH/LVw3jGhH36gCU9dHvyVhKJerP1dv+U4BqaSuMSKyTlV9lYgTHbSSUSeSvnxJ2CZU+X4zkrPk8Tn5SoEbepXsS0PIaL5GP5VaIv4a+asC2HaZa3ksaseWL2I4/r3pHYeQVcYusIzrPvLtXF3jJ4YrfVfMTrL8ReDQ7yl9ipq5Kl1ayLgwbCuRxxnEm5DOJrNbG6jyaARRsua0Owg0X1u1j6GPGDXSQ2DsRyU6wcRtYX+8t8FQ7YEBsn7sar0BPXEFns/8BaKTRMMCUUMQJH8RH8o2RMRVUsm1DPcDQPVztLmGb7967Nk/I3Fs07YGRjCq5hhMrAqCgmDMA4MByzpIkuI+NOidCy0h0v/v0jPwDgLSV3SjolsB+jJaIqTq5AilhJVRRWtuXCZqk4TahSVRWyiIu2IecGB+SjIu93EN6FGF8CltwoYCgQnIePuyFk8PDjZfDgVQgcRnVztosgPhDdNmfoxGTgtYv3Fd/BTT3lr+vIXWrwvROZJZtNd6UJF7wMA76+3iuQd6E+hqbno2y2gdmMRYuXsHUTuetr/OWv7uOT2PhNFX2eHh79bOTrr0aGVTSUnlDRaHqiv1fW8ZtRPgObsyU8Sy7z3WYT6gCKQfrwt81W/VkKzVsqEj/XxIsnKQRZpCGxvQQ2Kpqz5WDvBAy98d2CHB8+bb17A+N+FDNLhoGnDdJ5hBlsOFc9AzGjZ4gk82Vu3lkDXiS2nnYkdCwoUDDjfv/DP0L4oUxXqlm5pGNbpkMcuUhyYED+dILKSVXJWSaDkJKvsW0bes4rD4k5R9pUzoJgSvHZpJc+YaToRAyt6TkCeqLKwgFVh+k+SlhnLlsyVAYleuapcHpQbYtHMhsFsEySnvFKVyeKvM5gZtqyDILN6FTo4TOFKVutqu3yd7ZynV8BwwIYwvtFrSpXYzozIkXV0Ry4y1whrMLJ5I1k8vr1j25Ebtw727klG+YXsFHy/FPJtFEzp3uqmdDvMDeVaTt3MKOokWEyo2SrWaXqPaoCKlCwAqXwhIEVYJA4pU741ImIdjiELpwKB2itTJNAjKUOa9jW40QzczbocdGLU92c8V3a6RFNmp/xLPJdGwuM+luNGt//BUlbqfztdgG+XAiEIqUMxAfig9rE2ND4xK30pPSo1Pki9gI8yO8O1UL8pyOZpytNKc2hc4L+pJuq0s6h/5ul/1KzFGQ5I4ssARqry3LhB3UlSIWpMIG90JfJAH/CdIDwLoCTpF2lMo0dcpsa1aqc9lsnmSR53ZEq0C79H4yt2BeBSvSj7h7rXFLA6G7bTquEl3kLmOpya8DIgnkgZz0zdbRcFwC1G7g2jdqrH67Ubl0AE2nr/j5Nbw3WRXfXbux6pPvXeqoLqCPtXo/UvbRQFwB19m4dTL7BEBjYLPLuTCck8yUUw09HQESq7wFIrTq9
+sidebar_class_name: "get api-method"
+info_path: docs/product/shop/product-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"상품 번호 리스트로 검색어 조회"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/products/search/keywords"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+            
+상품번호를 통해 어드민에 등록된 검색어를 조회하는 API 입니다.
+
+ ### OAUTH2 참고사항
+* [Oauth2 API](https://docs.shopby.co.kr/?url.primaryName=auth/#/OAUTH2/post-oauth2-token) 를 사용하여 토큰을 발급받은 경우,
+* 기존 accessToken 대신 Shop-By-Authorization 로 액세스 토큰을 전달해야합니다.
+* ex) Shop-By-Authorization : Bearer test-access-token
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"productNos","in":"query","description":"상품 번호","required":true,"schema":{"type":"number"},"example":"100000, 100001"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼(PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko, 지원: en - 영어, jp - 일본어, zh - 중국어) (nullable)","required":false,"schema":{"type":"string"},"example":"en"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰(Oauth2 스펙) (nullable)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"array","description":"","items":{"type":"object","properties":{"keywords":{"type":"array","description":"검색어","example":"[검색어1, 검색어2]","items":{"oneOf":[{"type":"object"},{"type":"boolean"},{"type":"string"},{"type":"number"}]}},"productNo":{"type":"number","description":"상품번호","example":100000}}},"title":"products-search-keywords226225576"},"examples":{"get-product-keywords":{"value":"[{\"productNo\":100000,\"keywords\":[\"검색어1\",\"검색어2\"]}]"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

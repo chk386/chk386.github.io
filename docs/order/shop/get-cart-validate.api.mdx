@@ -1,0 +1,74 @@
+---
+id: get-cart-validate
+title: "장바구니에 저장된 모든 상품 구매 가능 여부 확인하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "장바구니에 저장된 모든 상품 구매 가능 여부 확인하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVV1PG0cU/SujyYuRdm2DWhH5zSDUILU1qtP0AaNqWA/2hvXuZnaMQleWIHXayImaj9qQtAG5KqgRpZLV0sqV/IuY2f/QO8sS1hhstH0JL2bu3L333I85x8ecVDycW8bzhHG8ouEy9Qxmutx0bJzDJfvWLST+2TrtbcnmgTh6jETvOQpa/8q9E/noOOj8UbLl/qHotU//PhZPn8jdF0h2t5TpxVskjt6JH7tIfrsdvHoi914j5fTbAYJoonWI5O4xhBaHAxS86ci9ftB5LVptlF9aRHL/MUQTTw/SJRtr2HEpIwrSYhlAVSjXDYCrbxDLLBNOwcMljNQop0wV42MbDuB5D86qEA2bqpoqJWXK8OUiVULxZ1N2m3DF6IO6ySjk4axONewZVVojOOdjvumqmB5npl3BDQ3Th6TmWso2nc6C4X1awzKpzQHr+Lzy+0HQeSmOeijYPhF7A9XTnX7Q6iPZacJBtNtJAXHqQY9CGLpZjmNzLcLXHFabgO0yoqD9TOz/HjwfoNTSvIY+K8wtfrrw9VcLcxrKF4oaWiwUp5KCXZqPA7SIXamTCp3UvJ2+3DlBqdN+T/zVh5V6lUPrzjCGNWJ5NwWx7sRBEMOgnnfXWaeTlif46Zn8GZZ+96Vs9mXrAAXfdYPtXmIc4eTO0us8zB+DVaw6rj63qefrvOow85vwTUxqVOeXIWSpAoGvZxBYgh/eJG/YHCWMMnQF3hUV0nMd26OeCjKTzaqfYVjKqGHDsTnsqLomrmuZRlhR5r6nfPxRIM7qfWpw9d6Z4gRunmWAdHWLx/xWHceixB5pxlUEhGNVhQ1oNC5/Bi7c5GHZQ8Qz/fHs9Ee3Z2ezM7HehIhGOQqM8H9dxfBLEeLSeUbcCP80DBxWdSKSC2mNV+GQUaEyMbrzKNs457o6s9T0OXe9XCbjqRUhrpmmum24acOphQMx7TUn7E9UhsNgV3TlPNIjJH8diON+KnSZQqcnW6L7DilXRc0XzAwfbkT8msPZNHCgXvw8v1S8U7iruuE6Hq+RcIzR9t5QKK5UiQuJgAd/GbJ/sUcfimJFe8jpQ54ByjXVMz6blB8NdTlcJdXE87HCmKrQNHXl+6vEo18yq9FQ5gd1yjbBvqK8mUlW1QyXVyBk9OjVHpRNT11cPONre5T6InrxU2hI+64EvU43h5T0fIlDXkqU82a6NwZMTF//P5qESjcGXkxiE8K7XtzGpI0JZ8K012vZmLTDUpm04IkiNQbBdao4hOXMNQ9gXR67G1EdRZbvSfiTBaCyxn/PS4Ac
+sidebar_class_name: "get api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"장바구니에 저장된 모든 상품 구매 가능 여부 확인하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/cart/validate"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+장바구니에 저장된 모든 상품의 구매 가능 여부를 확인하는 API 입니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"result":{"type":"boolean","description":"구매 가능 여부","example":false}},"description":"","title":"cart-validate1571487702"},"examples":{"get-cart-validate":{"value":"{\"result\":false}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

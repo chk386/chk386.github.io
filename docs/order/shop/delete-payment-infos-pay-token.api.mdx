@@ -1,0 +1,74 @@
+---
+id: delete-payment-infos-pay-token
+title: "등록된 결제수단 삭제하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "등록된 결제수단 삭제하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1lW1PE0sUx7/KZHxTkm6LD29s4gvAGjFoq+VekyvEjNuBbtgnZ6ZobUjQ1HsVzBWV4lMxGHnhY1KVmJrwibqz38Ez2wV2kRbdm/uqme2ZOb9zzsz/X8eCzHKcu4LP14qkhqfTuEy5zgxXGI6Nc3jKPnIEed8Wu+1F2dj03t9FXvsh8pe+y/Uteeej3/w0ZXtPPnuv172VFup+acuNlrz3zFt+K9cbSN75BGu/+c5bvuctb2ambJzGjksZUcePlyFBmZpUUM0lNYvaQjPsGYerlSacOarCXcKIBSFMYdaxDQvYBhGTYYChOK9XKavh/fQACZnlcksubcqnK7LRAvyWv3bfb7ZQKZ8/jW7AQTuZGL1eNRgFKsGqNI25XqEWwbk6FjVXJeWCGfYsXkhjepNYrqm+TUwcz588eeKibt0qnTk7fG7M+Ktw5sapUxC1C/snwCugkLVCSZmyn2BHiuPI+9KQG42kLEczw9G0umlAS6HLg/PKf7b95iPvfRv5t7e89W012bWOv9RBstlQHVxdTQokKBdaD0MzylE21yRixmHWIWz7ifzVB96rD/7DbZQqjqXR+cLo+ET+6uX8aBqNFEppNF4oDSWFLY5FAU1iz1bJLD2seWsdubaFUt1O2/vaQd324xyac+IMM8Tkvwox50QhiK5TzmMXvV+jXjyQL1eQfPpINjpw25H/94Z/u52YI5hcL334EiNYpYrjaqM1baQqKg4zbgWv+bBGNV/HyFIFAruPIfji//s8ecNGKWGUoQN4p9WR3HVsTrk65NjwCfUTx1IfF+BAUJiKs6dHge6ICqyzVk3JUTYmUPA3p2x+R5OqzFSFC+HyXDbLVXeIa2SoZutuRnesgEVtDGoxRADuMGiTpoJ/6hWSb7a9j51UEDKEuluL3sZbpEIRiIR8dTeUU9g4H0pLDg9n4PlrpQsjxdLZwqRqkutwYRFbJQ0Hd7BS78r0M7jF+2HqWHdsAZX/P2YQTlbQmyILmmCoe9brZz2cwBXcm0AwkugMoKcVqFBF1OvXCKd/MHNhQX3umYGaTNng5JoZuVN9a0tdCq/fEPo91ziwgjlai5vUPDGrKiy4CvOEGQoLEKchOHwxiXljxjEAZ8+G9mjSSXv0S6YxACZiTv+dJqFNDBrdnj8lxOvvDAPSRlwnYdr+RjAgbdxnkhZ8qMIPIOhnKbF3syvSp/MT+ck8CPcPOP9BuQ==
+sidebar_class_name: "delete api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"등록된 결제수단 삭제하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/my-pay/payment-infos"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+등록된 결제수단을 삭제합니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"payToken","in":"query","description":"이니시스에서 발행한 SEED wpaytoken","required":true,"schema":{"type":"string"},"example":"LL3E994QcmzSFH0JCiZOFw=="},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"204"}}}
+>
+  
+</StatusCodes>
+
+
+      

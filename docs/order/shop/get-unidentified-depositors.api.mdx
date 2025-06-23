@@ -1,0 +1,74 @@
+---
+id: get-unidentified-depositors
+title: "[샵바이프로 전용] 미확인 입급자 조회하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "[샵바이프로 전용] 미확인 입급자 조회하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vm1PG0cQ/iurzRdAPnO2wU38jQBqkcqLStIqwqg67MW+cG+5W6NQyxI0oBKImr7YlCJAoFK1oanqUjdyJP8i9u4/dPZ8ts/vlkP95Xyzc/s8OzM782QxlVIWjq3gx5qcJBqV12WSnCGGbslUNy28GsBJYiVM2aCyruEYjmv37iH2bvu2uG3vXrHrPcSKr5Fz8N4+K9lfv3UKf8Y19lfZ+blgn5WRfb53W963z79jv1aQfVl0Tl45hWN2kEdTS3N8lR3us8OrYFzDAawbxJQ4zFwSgFKEChkfKSHZYBXAhmRKKqHE5OSzWIMX+EaVFGVBh2WZU32WIeYWbj2A/U3FKXzProuI3ew7x2VwMMmzjGwSQKVmhgSwlUgTVcKxLKZbBt/XoqaspXAugMlzSTUUbgvBax3Y4/ZETfYBr8bjrDIs6hP4CfPzwsyMH959DAIMibjeGxabEov6UQ0p1QfV+faYl8Vv216s0UgIccOLndE7CbslfzUoA3b4HrG9sv3uFN0WT+3942EJREQ/g8+hAjmSRyJNpCQx21jwYmc3u/bF7tDHDjbBJhQZ7sVcsg9uo9adnRI7q/BQHJWdA7iYhV14Yfn8hxSDUKUhyMmmslAkuq6bah9urYyc/Ct2/ofzuoJGlqYDaH7x4dyns19+MfswgKYWlwNobnF56KJZmvYTVCQtlfHVbrfgHZXtoxIauS0X2T9lqJofYmhDb+awLinWoCQ2dJxb5R9bhq5ZxOLuYVHkj2ZgbgzghK5RCC5flgxDkRNuaxx/anGfbDukvvaUJChvjSZvpFSuInjbWD5PyTSl9pvSoWkjdv2GXZ7xOFGiWv3BfG2wLRa9WmGX/oY13bePllHXOqSpzrvR4mp9vb5tCPZak7SNwVltO0cvq62ywc0+vHAKp9U1zs4kKdmCETSVVGVtYRCqP/4N4bRPSvbxDvBsZVgtzwEZ1jq5j97pFbvJ2z+VODdJpYNuxXcrXDZtFRJF0X9CSOgA23nH65pRlE7HVDVmWTgHvwCmOpWUaT2j0f6hC3FCuVYruFGZujCZjvolHAqH74cnP5q477uLbqn2khewvCkpGb5tNu6jGcexiBiI1+9UnGuPOFQp/AmBnScQ/sYbqYhjMPPKc81jY9Xica2QIdcYGhsbcw2Ny+Paw2JYFMRJITzprrYUm4foT1Dtq0lBjAqh6KNQNCZGYxPRYHQiEn0QeRCJxKEB5dzg81CCfErrntJyFRVNw8t450CCg0XMzZreypgKb5yUGlZsfNxK64YgGXKQCFrCCCZ01e10srZevRReinQT2qzAndvSi+xfKuxtecR1GUW3pW128TvirlwoNnQifLjpTdwYFoMwFYXlhaml5U8WH/EEA1uqSm5/9Hr9iv3iX1bMw5hx8rvs8hTBDLZP3qyilnb3kre7ukCFlt9KMdtoyP+nBvZuASXP6TgMUphPcCw32lkvQytdSp1L9TScn3tks2uSRR6bSi7HzVVpxPOWlC1pTfFNrq5nHPnMG3KjqINi7khzg2z5NXjtCrmjdzhg34jogdgkvu8MtdZgewB7svvDIXvr5B4MPAl+hww66eQeBDwF3iCwyl9MmTOAilsFR09eDV1+TeK5B5WGFL+DGhhIOPcg4xPod5Cc4aRyr7ppaPQh6XVXxz1gfcq7Cba6OpVIEIP61tp0L6+u+tj6eBZ6fu4/hRuIag==
+sidebar_class_name: "get api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"[샵바이프로 전용] 미확인 입급자 조회하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/unidentifiedDepositors"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+미확인 입금자를 조회하는 API 입니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"mallNo","in":"query","description":"쇼핑몰 번호","required":true,"schema":{"type":"string"},"example":"1"},{"name":"depositYmd","in":"query","description":"입금일","required":true,"schema":{"type":"string"},"example":"YYYY-MM-DD"},{"name":"name","in":"query","description":"입금자명","required":true,"schema":{"type":"string"},"example":"test"},{"name":"page","in":"query","description":"페이지 번호 (1 이상)","required":true,"schema":{"type":"string"},"example":"1"},{"name":"size","in":"query","description":"페이지당 노출 개수","required":true,"schema":{"type":"string"},"example":"30"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"contents":{"type":"array","description":"미확인 입금자 목록","items":{"type":"object","properties":{"depositYmd":{"type":"string","description":"입금일","example":"YYYY-MM-DD"},"no":{"type":"number","description":"미확인입금자번호","example":1},"bank":{"type":"string","description":"입금은행명","example":"신한은행"},"registerAdminNo":{"type":"number","description":"등록운영자","example":1},"name":{"type":"string","description":"입금자명","example":"윤범열"},"amt":{"type":"string","description":"입금금액","example":"1000"},"registerYmdt":{"type":"string","description":"등록일","example":"YYYY-MM-DD hh:mm:ss"}}}},"totalCount":{"type":"number","description":"100"}},"description":"","title":"unidentifiedDepositors2122825748"},"examples":{"get-unidentified-depositors":{"value":"{\"totalCount\":30,\"contents\":[{\"no\":1,\"name\":\"윤범열\",\"bank\":\"**은행\",\"amt\":\"1***\",\"depositYmd\":\"2020-05-25\",\"registerAdminNo\":1,\"registerYmdt\":\"2025-06-16T16:06:46.643693933\"}]}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

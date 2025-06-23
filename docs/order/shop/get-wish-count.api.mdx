@@ -1,0 +1,74 @@
+---
+id: get-wish-count
+title: "위시리스트 개수 가져오기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "위시리스트 개수 가져오기"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1ld1OG0cUx19lNLkx0q5tSMmF70yEWqS2RnXSXGBUDevB3rDe3cyMacjKkmmdFhnUfAgT2kJEVFJVKZWs1q1cyU/Ezr5D56wNrA22o43KjZkzs3N+cz7+x8OClDjOrOAHJi/jVQ0XKTeY6QrTsXEGF+xbt5D/T/28XZeNU//dU+S3n6Gg+a887shvzoLWHwVbHjXk7pH/65lsngbNLjpvH8mdQ/9tD8k37eCnvaB16Df3UXZ5CcnXT/3dHX/3NFmwsYYdlzICnpaKyleJCv1rRaEbTtUWatsljFSooAwAPWyrhTr2pVoDnIZNICxTUqQMj4KDN//PhjxpqC1GH1VNRpUTwapUw9wo0wrBGQ+LLRfu5IKZdgnXNEwfk4prgW02mVaGS7eGZVJbKNDJfuX3vaD1wn/XRsF2xz/uQZwOuhAW2Wqohb+/HxdIUC70PoZuFqNsrkXEusMqU9hGiYL9Pf/178GzHkos39XQZ7mFpU8Xv3qwuKChbC6voaVcfiYu7PLdKKBF7FKVlOi04B105UEHJc67bf8vKKSXGbThDDOsE4u/L8SGE4UghkE5v+ds0GnFo4pW/vwcyVcvZKOrqhoF350E2+3YHGHm+u51EfqPYOXLjqsvbOnZqig7zHwSNsS0QLXeDJElckR9PYegA3/4MX7AFihhlKEbeFfhSu46NqccLplLp+FnGAuMGjYcW6gahW3iupZphC9KPeRwxrsO4qw9pEbY7wwEQZh9D30VuDpmVytrY3Mljw+R7BwjUDEkv90OXu4oDUIJ+feRv1dHs+m0UiVVUHW/+RbCc/nk2Vpt9Ea1LUwRxgPk6M78/PxHt+/cTkdCFQKO6JWybBKrCp95hT59AWfmargW/mlYSVnZGQhdqG6irBYpuCJ1IXmcss0LvasyCypACJdnUikOZUJcM0l123CThlMJk2La604YpAGxw1S96HD4WqSQ/KXnn3UT4ZEZdN6p+ye/ITgK2nwlzerDzYHGZnA6qXRQz3+eXc5/krsHIXAdLiokTOWggm8eABBtedKVh6eqnUdhvKsq+Z9nzKB6BH0sUkonTei9fmi9QQpWwjSHhQtJUEEtqyeC3fPWCKf3mVWrgflRlbItZVf/bhJmkjWI+Mqqum/QppC1oslh46rxxr478cWgR2fQ0LS6kXiDbg3NvotSC5Ukls/3m1QTYCIT8cNpYs6mCXiRoRgTb/w4muA2Mupiuh0/fSa4HR5ucR88daxMIBg3x4ZY+kezCtYVkb1rcwKk7VIvP15UwlP7D2p/Nd8=
+sidebar_class_name: "get api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"위시리스트 개수 가져오기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/wish/count"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+위시리스트 개수를 조회하는 API 입니다.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"count":{"type":"number","description":"회원의 총 Wish 상품수 (최대 100개 가능)","example":1}},"description":"","title":"wish655543630"},"examples":{"get-wish-count":{"value":"{\"count\":2}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

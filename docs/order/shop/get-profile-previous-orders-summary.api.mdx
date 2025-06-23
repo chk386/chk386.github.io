@@ -1,0 +1,74 @@
+---
+id: get-profile-previous-orders-summary
+title: "마이페이지용 이전주문 수량 조회하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "마이페이지용 이전주문 수량 조회하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVu9P20YY/ldO1y9BiklgqrTlG7RoQxoLGt2mqqDpcA7i4tju3Rk1iyJRFDYWUFsmwjIaGKxMjI5JUZttmZT9Q7nz/7A72xCHHwlNt0/zF9vn9973ed97/L5PATK0SGHqAZzKp0kGEzgXhxlMdWI4zLAtmIK3bgH+x0q7viJKR/zVGuD1Z8Ar/yX2GmL11Kv8NmuJjZrY3xJ7LSB+WuMvN/2n1VNlsVcF6nZQEi9b/LQJxHqV//it2CsBcVj3dje9SpWXt8HY9CQQ+2t8Y51vHA3PWhGf7TcRt/5GaXfws9wojleAqJRFrcVPGkD8Xmv/2QLvtes18WL72sCNMDB/fhJGg3FoO5ggle5kRia8iJnmEHvBMLG842XDdqlmq+JQjbq5HCJ5ucdBBOUwk4uyegVoyRe5lzJE2P1cRhoYqniPXOxbd5c0gADOc4zl5aVNTWmZzFAcWK5pir0maL/+W+zWzzICMhfAVw/EcY0f1sIspGeCH7kGwRL4AjIpjkOqZ3EOwVQBsrwTYCKGtQiLcYgfo5xjqrX78lIB796V6+fosZW5MfazI+mJXVSPeLn6X8P+XB6CAhfizmKkiHwRuOIYf12SZewKz4h70+gjw8loWN00sMUmM33iim9aXmWLv6oD70mDKw43xE7TK0tOVkryhW9vDwqIYcq0AIZmZKLYHBOxBZvk+mC7iMjb3uT7v3rPWiA2fScOptLjkx9PfPnFxHgcjKVn4mAyPTM0KNjpO1GAJrIWXbSI+xVvpyl2GiDWbtb5G0mr+ncpsGQPDUygJTsKAuk6pvSevYT7kUeSVrx4DsT3W6LUFOUj4H194D2pD4zDP7kgvMb8+BFYM1nb0cbz2pjLsjYxvvJbU79CVQ67kMXSSO4eBXLFe/rD4AUbx4hgAq7AO6dcUse2KKbKyWgyqW7dsNRiHOq2xSRH1WfkOKah+xklHlJlU7gMxJ5/iHWmmixRrZkZQQTddgMnoZnl5uavKoXf6mEki2SxeNFIfmYG81Ps0+u1keTt2x+Mvj96ezRSGh/QTSaFNFtGpqsCFWaDFGZhaqQIi/4Vh3KIZO1w7vhzhWXlSyL0m7jgN9GZQBST5bPx4xJTcYMxh6YSCaoIhBxjGGuW7gzrds4/LsNasP3yhYn7HjVlfKmGIBibMd9kCLQbK/zgF6BM1azujGq5cTnsvimYHJYdUpv5ZGx65qP0PVUsx6Ysh/xDDrnNj9dlu/GeVlXTOV4RuydXzemOOpA//kVwhQ6f/g/iJCQ7w49ZQrZ1Q7WK4LwLIVkenFHY/2O66KJoEhJGEiArj0OZFwrziOLPiFksquVg0CsaZQyK5s1Ij7i28P+mhLkywyWc79ZTZ3+R3ynfHug76pUeGM9VUwfhnHohhoIo6zonTcO2/XZFjn0a9uwh0KVeeoDpaKEB6xWJeTPl0gNMRCG9O5oBtUoPeBGRNCi5rpUnPcJGpM+AYa9XIz3CdoudQRPuKzN6ILhO13RhCUzHJFiHRb5d0g3qHzsfnR9OyHFT/AeahzQu
+sidebar_class_name: "get api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"마이페이지용 이전주문 수량 조회하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/profile/previous-orders/summary"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+시작일 종료일 사이의 이전주문 수량을 조회하는 API 입니다.
+
+시작일과 종료일을 입력하지 않으면 최근 3개월의 이전주문 수량이 조회됩니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"startYmd","in":"query","description":"조회 시작일(yyyy-MM-dd), null인 경우 3개월 전 날짜로 조회","required":false,"schema":{"type":"string"},"example":"YYYY-MM-DD"},{"name":"endYmd","in":"query","description":"조회 종료일(yyyy-MM-dd), null인 경우 오늘 날짜로 조회","required":false,"schema":{"type":"string"},"example":"YYYY-MM-DD"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰","required":false,"schema":{"type":"string"},"example":"test-access-token"},{"name":"Shop-By-Authorization","in":"header","description":"액세스 토큰(Oauth2 스펙)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"count":{"type":"number","description":"수량","example":0}},"description":"","title":"profile-previous-orders-summary-1055928252"},"examples":{"get-profile-previous-orders-summary":{"value":"{\"count\":1}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,73 @@
+---
+id: get-app-card-inst-plan
+title: "[개발중] 앱카드 할부정보 조회"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "[개발중] 앱카드 할부정보 조회"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVm1v2lYU/itXt18SyUAS2k3jG42iDK0daNnLB0CTMRdwA7Z7fYkaIaS0o1uURuvaQVRtJKJaKk1dJrGWTVRifwhf/4edaxvHQAKMaSpfjO89Ps9z3k8NM7lo4lgaxw1jU6Z5nJVwnpgKVQ2m6hqO4Yx24way/joYdg9449x6/RhZ3afIPnrHT3v80YXd+j2j8e8GduuZ9brLT18g3vqDv+tZP7aR3erAh7zTst72rFcDxF927Z+O7VbbenIexhLWDUJlAZPIA1CRsJBsGCEFaIRUzWQhoyxrIGbIVK4QRqggWsMavIC4XNGrGoNrVbC8XyV0H09y5988tJ8fDvuHvPUSLim5X1UpAbCCXDaJhE2lRCoyjtUw2zeEUq1ayRGK6xImD+SKURZnt9bgB0c+8pfAROj3oEtEzsM3k9jxVAJZbxq80xhDZrR6FbDJqKoVx4HXw2OwSlklGgNXzcb1Y4Hshz3rdCDCdNK3j/oQmAa8WM3msoQYgaC4NEJqPsgNIsUKOq3M4TbJyG4eW2e/2U8HaCW1KaG7yduJO1tff7V1W0Lx5I6EEsmd1WXJpjaDBCGTilW5SOY576TPT3poZdjvWm/7aNh9HkO7+upCuXMViV0d17PiY9PQNZOYQnwDsgke48DiUMKKrjFwrriGSiirilMdkXumkKlNQ+q5e0QRNWBQUUtMdRGM4jStKUudWkSpbQRFjKCscZD3J9sJYYiowoRW0APqZErl6UILVrpwMSMVcz7PAiUkARB3VJPNhbAueiJxzn5wsSA2B9bRK3i0+c9NxA9fjBmQXpfQhoSi2SAbXSPJgtNDxnmJPPFOcrpeJtB1Akd+XKe6RLYOPhoZcVfVphvJgkbwP9v822O/T/lmrHkxWEj3YiqdbgZqRZfd1PNkfqYMuw37+/7wTZd32sjt7CJl+N9N+DfmdEjim6O0WSimPuX3GkPxm2QGkExlDo3pmRSK3vzw1gfR6MZHgWp32F0zw+BmTy5XhbZaBsozg2MZUWMZLGX8IssIqzJ+YBwZ4VFHKJBlcLEWOBGOFp+uSxtSNOvpc8WcWHsn42JgNh4ZDqO1pHsD2Jm2rAQvkZEZkeAoNgndG83hKi2LRsqYYcYiEbOkG2C6GiYhTTHCil5xOp866h6eM3UKbTckhKeSAfFfBtZFf8URWUXD3oHV+RUJUQSzlJ89tp4ceovDnjeBY3gtDFMytPNpPLXzcfJzEQ5DN1nF9bnX+9OQXxak2Pmz7DXLibeZTFKqXTbk/3MN8jKSkQcsAn5WRea63q150Uj7SYjd6nLjAf4t6aLM0rhWy8km+YKW63Vx7K5DIkp51ZRz5cDcutbCiWXpSla7ZD+4eo2S2gn1nkxVAQWwWRD1Juy/47DymTdmV9HY/jSDzOU2dslGWhJzsd1pBpnAjvbf2Sy5Lc2gF1jTlqR3/YI0AzawfI3BurdxRSFGMJumVh+RXX6X2t6CMq//A3Pi+jQ=
+sidebar_class_name: "get api-method"
+info_path: docs/order/shop/order-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"[개발중] 앱카드 할부정보 조회"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/app-card/inst-plan"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+## 부가설명 및 특이사항
+쇼핑몰의 앱카드 할부정보를 조회한다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"amount","in":"query","description":"상품금액","required":false,"schema":{"type":"number"},"example":"50000"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본 값: ko)","required":false,"schema":{"type":"string"},"example":"ko"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"object","properties":{"pg":{"type":"string","description":"조회 PG 사 명","example":"KGI"},"instInfo":{"type":"array","description":"할부정보","items":{"type":"object","properties":{"freeInstList":{"type":"array","description":"무이자할부 가능 개월 수","example":"[1, 2, 3]","items":{"oneOf":[{"type":"object"},{"type":"boolean"},{"type":"string"},{"type":"number"}]}},"freeInstMin":{"type":"number","description":"무이자할부 가능 최소금액","example":0},"instMin":{"type":"number","description":"할부 가능 최소금액","example":50000},"cardCode":{"type":"string","description":"간편결제 카드사 코드","example":"2004"},"instList":{"type":"array","description":"할부 개월 수","example":"[1, 2, 3]","items":{"oneOf":[{"type":"object"},{"type":"boolean"},{"type":"string"},{"type":"number"}]}}}}}},"description":"","title":"app-card-inst-plan-347563329"},"examples":{"get-app-card-inst-plan":{"value":"{\"pg\":\"KGI\",\"instInfo\":[{\"cardCode\":\"2004\",\"freeInstMin\":0,\"freeInstList\":[1,2,3],\"instMin\":50000,\"instList\":[1,2,3]}]}"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

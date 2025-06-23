@@ -1,0 +1,79 @@
+---
+id: get-product-extra-infos
+title: "상품 번호 리스트로 추가 정보 조회"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "상품 번호 리스트로 추가 정보 조회"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVt1OG0cUfpXRcmNHu7ZxVKWyVFUmQg1Si1Eg7QVG1WAPeGG9u5kdoziWJZM4LQXUlAgTSkJkJPqTlEgWOJEr0Rfyzr5Dz+yu7TUGE7ntTdS9sWfmzJnv/H3nlCSGly0pMS/NUCNbyDBpQZayxMpQ1WSqoUsJaWwM2e8r7UaFV4/tN0+Q3XiKnM0/+WGTPzpxam/TOgp8aZ0/XneebdinG85+y/7lHDnfvXNqTUQeMIqn9CUjxN/vCm31mn3WDAsJftRwDrad2r69uYuSM1OIv3pib23YW8eRtA7qxwBCKnlv7k4c8UarfVbvPHwDzadwgeXi4tZCKMeYaSWi0ayRsSJWzjAXi5GMEVml0c8LVIuYVM1jWpzGefKZuBUdi3pao6ZhMcVwNSnMWCV6GLm4Hp3wg9eAiz8/ATPqznqDH1bBAS/brR/sxgt+WEHt07/4QUMWWNqtBj9qIpzJEMuaE2qQvV3hW3U0C1iUiaKShBcMqj7EwrXIPnqJeO2IV1t88zign9er9hYY2OS1c6f2uuuJG+DD8BW6EmiCYEooYgRM8SB4pqR1SZYMk1BXcCoLEV0mTDG9cCvdsFggZmIKzmGEiowoSTosQNwXnXZFVJES9wuEFqWLieIFHnmRh1NK7hdUSuBFRgtElqxMjuSxlChJrGgKxRajqr4slWWJPMB5UxN74zH3G5f9P3E47iL5GpCJt3wYOYKzhA7gEBlkn1bBjSODiMSCz2Y0legMXDf8Xf49hGvHftNAznrTPjwXFbLXcjZbEOUqLOzd3VEBuVH1YChqNojN1DBbMmj+GmwXETm72/arP5yn56GZ2zL6KjUx9eXkt99MTsgomZqV0VRqNjwq1pnbQXwa1pcLeJlc57u9Ft9rohDUkH3WajeeJdCqISP+W4W/+CmBoJQUxPfXQUZGK6ZYHJ6DoLt+mBPr4532u7ewDqOQXtA0vKiRfhOWsGZ9qA1ED9oQqOjr3HywDXgRf77TV9Uhn6Vgx/nx538F4VXlLpUXhErLNHSLWEJJPBYTP/1AxaYsZQydQUqJY2yamppxOSK6YgmZ0iAQTCkerHvhE0byVkDQWFwh0EtkwR1APUz1oHSZJCCqF/KLlyVEoItIAcM7/OA6w6euQVcNaAu0nKC2voNxqVwGtUxlWoD2rB5F3rz1yaexWzfjsUAoXLuuIFQ4WcNaQSibL6V71qd7Zsjpnhmwne4HlBZZeOnF+NCLcbi4IKxxDQJGzxk+77skz3KwiHbsi/b8CLlH6FqH/qFnikz3m6ropwo21QhR9IwJfTXvppra8X+/1xQhPhAG5EU15AuF282KXf8dCVnRwXttH26u+VyfkGKRWGRcmZ1OzszeSc0J34t+ncdujvol2td7kP3riSi1zZbbYl3HIM8z/qxxEVmpVwr/zzsfwbzjswGDIEShQ6qCzr18Lvn5P9+tbynIJJDROXCOOC+VFrFF7lGtXBbb3swj6iKrWoK7e4R9ZSqF7vrcHkYXh6NLEa6S4sV5q0MgbrGtYaqKpwHGAoj7TWhkTH2D0hBAvbGrh0Ye1Q8fNCQNARMYxv45mtHGomGx641jI6L7zyahIagDQ9qIqEcZfIYA6p+4+jB5AkkQMFngbGB+EfXS7XxfTELfKP8NwagV8w==
+sidebar_class_name: "get api-method"
+info_path: docs/product/shop/product-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"상품 번호 리스트로 추가 정보 조회"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/products/extraInfo"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+            
+상품번호를 통해 extraInfo(추가정보)를 조회하는 API 입니다.
+
+ ### OAUTH2 참고사항
+* [Oauth2 API](https://docs.shopby.co.kr/?url.primaryName=auth/#/OAUTH2/post-oauth2-token) 를 사용하여 토큰을 발급받은 경우,
+* 기존 accessToken 대신 Shop-By-Authorization 로 액세스 토큰을 전달해야합니다.
+* ex) Shop-By-Authorization : Bearer test-access-token
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"productNos","in":"query","description":"상품 번호","required":true,"schema":{"type":"string"},"example":"10000001,10000002"},{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼(PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko, 지원: en - 영어, jp - 일본어, zh - 중국어) (nullable)","required":false,"schema":{"type":"string"},"example":"en"},{"name":"accessToken","in":"header","description":"회원 엑세스 토큰(Oauth2 스펙) (nullable)","required":false,"schema":{"type":"string"},"example":"Bearer test-access-token"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"array","description":"","items":{"type":"object","properties":{"productNo":{"type":"number","description":"상품번호","example":10000001},"extraInfo":{"type":"string","description":"추가정보","example":"추가정보1"}}},"title":"products-extraInfo375807320"},"examples":{"get-product-extraInfos":{"value":"[{\"productNo\":10000001,\"extraInfo\":\"추가정보1\"},{\"productNo\":10000002,\"extraInfo\":\"추가정보2\"}]"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,72 @@
+---
+id: get-malls-ssl
+title: "현재 도메인의 보안서버정보 조회하기"
+description: "## 부가설명 및 특이사항"
+sidebar_label: "현재 도메인의 보안서버정보 조회하기"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VW1rG0cQ/ivL5osMJ8luG5fqS3GMKYamNnXafrBMWZ/W0sX3lt2ViFEFSqtQYwdMysm4wVJdcE2TuiASUVRw/5D37j905+4s3UmJI1ToJ2ln5maeeXumjgUpc1zYxPeJaeItDZco15nhCsOxcQHfuYPkX83rXtNvnctXT5HsHaHg4G+/0/e/vwzafxbt4KTldy+RPGrJl57fGfidEyTf9P32vt86la9b/llbPeVvV8j/tRe8eBa0T+SBh5bWV/3uU3m4Lw/Pc1jDjksZgaCrJRW2TEXWUoB4lnNTaV3CiEUFZQC1jm31UFZfqzfA1LABWCuUlCjD4ymoSCjE0VIqRh9VDUZVDMGqVMNcr1CL4EIdiz0XfHLBDLuMGxqmj4nlmiBbyM0rwTCsbhrUFgrn7XH9H6+C9nP5qoeCJ33ZuYKaHQ+CgwHy2y31kJ43KyBBuchGMLJGKYnNNYnYcZj1HmzjiALvmez+ERxdocz6sobur91b/Xzl229W7mloaW1DQ6trG3Ozgl1fTgI0iV2ukjJ9X/GOB/5xH2WuBz35ZnDd+6mAdp00hB1i8mkx7Dq4sQUfc9exOeVg/sH8PPyk44JQw7pjC1VbUBPXNQ09nMz8Qw429cmQhDGyN5EDpCioxROGzvZDqgsYaAYDL4wISonWDJ0+CG3G8xj3qsZG9jxo3cF58ENTLRGeqDYuORYx7Cmc3WxtygchJKc7uV0GrmANv3ASruyqtf2WjqlBl6/3g5OUqwXlQI0KFxuUmFPASfAGAi656KgH8r0egmyfXMqLf2BcM3bVNMm2SedSuIeRspFT3GhAfEOE2iGfZD+5++HiR4sf311MDEnYhzTtKEGNmFX4dhPVizZCxbgaRYwKaEGLRFGtQ1FxVLoijtVDULHFOMih4WgIYsv15SIu2g20BXmEqSgKrDgxP4asKCrqkQ8h5yOm5JTVbmiyykzYMCFcXsjnecVxs8Q1cjRr665CaYU7Ydg7UXfjMpGSZdhZMJ5oz3cIxEDdsttEn6IEw3kt+UsvZJKfPfmyj/yzU7/73D88RYEiuxde0D5NU77KOdptFB0IdN1vyovLTBh+Lnyd/T6MlzoVtZj2b4gZuw4XFgnHPWaZ6Y7S6CIpKOPZ1kcs8P9dwXg9BH0s8orK1Qqr9MI21uNub0ZzDJ3m4b2uqORBXK9vE06/YmajAeJHVcr2lFz9rRFmwLLAS7mLGRcGpGRwUIzI9J0VyHwZ8+4cSt3TtwLepXup63yzReEdmCnmdLf0FjCJm/3f0cx4PW+BlzjbM8J758G8JWriFqeiRtolXaeuSOgmTiHQx5CSPlt5oHjqX9TVLOc=
+sidebar_class_name: "get api-method"
+info_path: docs/admin/shop/admin-shop
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"현재 도메인의 보안서버정보 조회하기"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/malls/ssl"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## 부가설명 및 특이사항
+현재 도메인의 보안서버정보를 조회하는 API입니다.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"Version","in":"header","description":"API 버전","required":true,"schema":{"type":"string"},"example":"1.0"},{"name":"clientId","in":"header","description":"쇼핑몰 클라이언트 아이디","required":true,"schema":{"type":"string"},"example":"test-client-id"},{"name":"platform","in":"header","description":"클라이언트 플랫폼 (PC, MOBILE_WEB, AOS, IOS)","required":true,"schema":{"type":"string"},"example":"PC"},{"name":"language","in":"header","description":"언어 (기본값: ko)","required":false,"schema":{"type":"string"},"example":"ko"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"200","content":{"application/json":{"schema":{"type":"array","description":"","items":{"type":"object","properties":{"deviceType":{"type":"string","description":"디바이스타입","example":"PC"},"domain":{"type":"string","description":"도메인","example":"aaa.co.kr"},"mallNo":{"type":"number","description":"몰번호","example":1},"trustSeal":{"type":"string","description":"보안서버 인증서 씰 스크립트 (nullable)","example":"trustSeal-script"}}},"title":"malls-ssl-953646756"},"examples":{"get-malls-ssl":{"value":"[ {\n  \"mallNo\" : 1,\n  \"domain\" : \"aaa.co.kr\",\n  \"trustSeal\" : \"trustSeal-script\",\n  \"deviceType\" : \"PC\"\n} ]"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
