@@ -7,20 +7,22 @@ tags:
   - 문서화
 ---
 
-# Swagger UI교체 : Docusaurus
+# Docusaurus OpenAPI 문서화
 
 - 에이전시 개발사, 인하우스 개발사에서 Swagger UI로 제공중인 문서화 기능에 불만이 많음
 - 현재 외부로 제공중인 api 엔드포인트는 Server API와 Shop API가 있으며 API의 갯수는 약 300개 이상임
 - 마이크로 서버(도메인) 단위로 OAS yaml파일을 생성하며 특정 API를 확인하려면 어떤 도메인에 속해 있는지 사용자가 인지 하고 있어야 함 -> 매우 불편
 - 특히 검색이 안됨 -> 강성 클레임
 
-## **AS-IS** : Swagger UI
+## Web UI
+
+### **AS-IS** : Swagger UI
 
 [Shopby API Documentation](https://docs.shopby.co.kr/?url.primaryName=product/#/Product/get-products-product)
 
 ![shopby-docs](/img/wiki/swagger-ui.png)
 
-## **TO-BE** : Docusaurus Openapi
+### **TO-BE** : Docusaurus Openapi
 
 [https://docusaurus-openapi.tryingpan.dev/](https://docusaurus-openapi.tryingpan.dev/)
 
@@ -28,19 +30,19 @@ tags:
 
 ## Docusaurus OpenAPI vs Swagger UI - 주요 장점
 
-### 1. 통합 문서화
+### 통합 문서화
 
 - **API 문서와 가이드, 튜토리얼을 한 곳에서 관리**
 - Swagger UI는 API 스펙만 보여주지만, Docusaurus는 사용법, 예제, 개념 설명 등을 함께 제공
 - 개발자가 API 이해부터 실제 구현까지 원스톱으로 학습 가능
 
-### 2. 더 나은 사용자 경험
+### 더 나은 사용자 경험
 
 - **검색 기능, 다크모드, 반응형 디자인** 등 현대적인 웹 경험
 - 사이드바 네비게이션으로 API 탐색이 더 직관적
 - Swagger UI보다 **로딩 속도가 빠르고** 인터페이스가 깔끔
 
-### 3. 커스터마이징과 확장성
+### 커스터마이징과 확장성
 
 - **브랜딩, 테마, 레이아웃을 자유롭게 커스터마이징**
 - React 컴포넌트로 대화형 예제나 코드 스니펫 추가 가능
@@ -258,10 +260,10 @@ yarn serve # 웹 서빙
 
 ![sidebar](/img/wiki/docu-sidebar.png)
 
-**yml->mdx로 변경될 때 label 셋팅 원리**
-[소스](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs/blob/main/packages/docusaurus-plugin-openapi-docs/src/sidebars/index.ts)
+### label 노출하기
 
 docusaurus-plugin-openapi-docs 에서 tag에 x-displayName이 존재하면 해당 값으로 쓰고 아니면 tag.name 을 사용한다.
+[원본소스 바로가기](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs/blob/main/packages/docusaurus-plugin-openapi-docs/src/sidebars/index.ts)
 
 ```typescript
 return {
@@ -276,13 +278,13 @@ return {
 };
 ```
 
-test/resources/tags.yml에 아래와 같이 세팅되어 있고, build.gradle에서 tagDescriptionsPropertiesFile = "src/test/resources/tags.yml" 와 같이 세팅하게 되면  openapi 로 생성되는 yml에 tag가 name, desciption 항목이 생성되게 된다.
+test/resources/tags.yml에 아래와 같이 세팅되어 있고, build.gradle에서 tagDescriptionsPropertiesFile = "src/test/resources/tags.yml" 와 같이 세팅하게 되면  openapi 로 생성되는 yml에 tag가 name, desciption 항목이 생성된다.
 ![tag](/img/wiki/docu-tag.png)
 
 여기서 tags에 x-displayName을 세팅해줘야한다.
 build.gradle에 openapi 테스크가 진행될 때 x-displayName을 세팅해서 넣어줄 수 있도록 한다.
 
-```groovy
+```kotlin
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
@@ -334,7 +336,8 @@ afterEvaluate {
 }
 ```
 
-**OAS yaml**에 x-displayName 추가
+### x-displayName 추가
+
 ![x-display](/img/wiki/docu-tag-x-dis.png)
 
 ## Swagger UI - Authorize 대체
@@ -349,7 +352,7 @@ afterEvaluate {
 npm install swagger-ui-react swagger-ui
 ```
 
-### 리액트 버전을 18 다운그래이드 (swagger 플러그인 의존성!)
+### React 18 다운그레이드 (swagger 플러그인 의존성!)
 
 ```typescript
 // package.json
@@ -403,4 +406,4 @@ security:
 
 ## 결과물
 
-![링크](https://ch386.github.com/docs/product/shop/get-products-product)
+![링크](https://chk386.github.io/docs/category/product-api/)

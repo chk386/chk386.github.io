@@ -64,7 +64,7 @@ const config: Config = {
         items: [
           {
             type: "doc",
-            docId: "intro",
+            docId: "About",
             position: "left",
             label: "Wiki",
           },
@@ -89,7 +89,7 @@ const config: Config = {
             items: [
               {
                 label: "Wiki",
-                to: "/docs/intro",
+                to: "/docs/About",
               },
             ],
           },
@@ -116,7 +116,7 @@ const config: Config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} 아윤이사랑해, Inc. Built with Docusaurus.`,
       },
       prism: {
         additionalLanguages: [
