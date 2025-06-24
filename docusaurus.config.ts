@@ -59,7 +59,7 @@ const config: Config = {
         title: "아윤이 아빠 놀이터",
         logo: {
           alt: "My Site Logo",
-          src: "img/logo.svg"
+          src: "img/golf.png"
         },
         items: [
           {
