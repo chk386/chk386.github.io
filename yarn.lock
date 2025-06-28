@@ -1802,7 +1802,7 @@
     utility-types "^3.10.0"
     webpack "^5.88.1"
 
-"@docusaurus/plugin-content-pages@3.8.1":
+"@docusaurus/plugin-content-pages@3.8.1", "@docusaurus/plugin-content-pages@^3.8.1":
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-pages/-/plugin-content-pages-3.8.1.tgz#41b684dbd15390b7bb6a627f78bf81b6324511ac"
   integrity sha512-a+V6MS2cIu37E/m7nDJn3dcxpvXb6TvgdNI22vJX8iUTp8eoMoPa0VArEbWvCxMY/xdC26WzNv4wZ6y0iIni/w==

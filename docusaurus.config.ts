@@ -33,13 +33,50 @@ const config: Config = {
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         blog: {
+          path: 'blog',
+          // Simple use-case: string editUrl
+          // editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          // Advanced use-case: functional editUrl
+          editUrl: ({locale, blogDirPath, blogPath, permalink}) =>
+            `https://github.com/facebook/docusaurus/edit/main/website/${blogDirPath}/${blogPath}`,
+          editLocalizedFiles: false,
+          blogTitle: 'Blog title',
+          blogDescription: 'Blog',
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: '전체 포스트',
+          routeBasePath: 'blog',
+          include: ['**/*.{md,mdx}'],
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+          ],
+          postsPerPage: 10,
+          blogListComponent: '@theme/BlogListPage',
+          blogPostComponent: '@theme/BlogPostPage',
+          blogTagsListComponent: '@theme/BlogTagsListPage',
+          blogTagsPostsComponent: '@theme/BlogTagsPostsPage',
+          // remarkPlugins: [require('./my-remark-plugin')],
+          rehypePlugins: [],
+          beforeDefaultRemarkPlugins: [],
+          beforeDefaultRehypePlugins: [],
+          truncateMarker: /<!--\s*(truncate)\s*-->/,
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          onInlineAuthors: "ignore",
-          onUntruncatedBlogPosts: "ignore",
+          feedOptions: {
+            title: '',
+            description: '',
+            copyright: '',
+            language: undefined,
+            createFeedItems: async (params) => {
+              const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+              return defaultCreateFeedItems({
+                // keep only the 10 most recent blog posts in the feed
+                blogPosts: blogPosts.filter((item, index) => index < 10),
+                ...rest,
+              });
+            },
+          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -68,7 +105,7 @@ const config: Config = {
             position: "left",
             label: "Wiki",
           },
-          // { to: "/blog", label: "Blog", position: "left" },
+          { to: "/blog", label: "Blog", position: "left" },
           {
             label: "API 문서(테스트)",
             position: "left",
@@ -218,6 +255,15 @@ const config: Config = {
         highlightSearchTermsOnTargetPage: true,
       },
     ],
+    // [
+    //   '@docusaurus/plugin-content-pages',
+    //   {
+    //     path: 'src/pages', // 페이지 폴더 경로 (기본값)
+    //     // 추가 옵션 (선택 사항)
+    //     // include: ['*.js', '*.jsx', '*.md', '*.mdx'],
+    //     // exclude: ['**/_*.{js,jsx,ts,tsx}', '**/_*/**', '**/.{git,svn}/**', '**/node_modules/**'],
+    //   },
+    // ],
   ],
 
   themes: ["docusaurus-theme-openapi-docs"],

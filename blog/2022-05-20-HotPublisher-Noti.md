@@ -1,4 +1,21 @@
+---
+title: Reactor 활용한 Notification 구축 POC
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: Notification 구현
+sidebar_position: 1
+keywords:
+  - reactor
+  - kafka
+authors: [haekyu]
+tags: [reactor, kafka]
+image: /img/my_picture.jpg
+slug: /notification
+---
+
 # Reactor 활용한 Notification 구축 제안
+
+**팀내 공유 자료**
 
 ## 배경
 

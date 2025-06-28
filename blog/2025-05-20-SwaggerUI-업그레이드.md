@@ -1,13 +1,23 @@
 ---
+title: Swagger UI 교체 (Docusaurus OpenAPI)
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: Docusaurus OpenAPI 문서화
 sidebar_position: 1
-tags:
-  - API
+keywords:
+  - docs
+  - OpenAPI
   - Swagger
   - Docusaurus
-  - 문서화
+authors: [haekyu]
+tags: [openapi, swagger, docs]
+image: /img/my_picture.jpg
+slug: /openapi
 ---
 
 # Docusaurus OpenAPI 문서화
+
+**Swagger UI에 대한 내,외부 불만**
 
 - 에이전시 개발사, 인하우스 개발사에서 Swagger UI로 제공중인 문서화 기능에 불만이 많음
 - 현재 외부로 제공중인 api 엔드포인트는 Server API와 Shop API가 있으며 API의 갯수는 약 300개 이상임
@@ -90,27 +100,13 @@ plugins: [
             sidebarOptions: {
               groupPathsBy: "tag",
             },
-         },
-         orderShop: {
-            specPath: "https://docs.shopby.co.kr/spec/order-shop-public.yml ",
-            outputDir: "docs/order/shop",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-            },
-         },
-        adminShop: {
-            specPath: "https://docs.shopby.co.kr/spec/admin-shop-public.yml ",
-            outputDir: "docs/admin/shop",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-            },
-         },
+         }
         } satisfies Plugin.PluginOptions,
       },
     ],
 ```
 
-**specPath**: open api 빌드 후 추출된 yaml파일을 docusaurus 형식에 맞게 변환시킬 yml path
+**specPath**: open api 빌드 후 추출된 yaml파일을 docusaurus 형식에 맞게 변환시킬 yml path <br/>
 **outputDir**: OAS yaml 파일을 해당 위치로 변환하여 저장
 
 4. open api build후 나오는 yml을 위의 specPath에 복사
@@ -406,4 +402,4 @@ security:
 
 ## 결과물
 
-![링크](https://chk386.github.io/docs/category/product-api/)
+[링크](https://chk386.github.io/docs/product/shop/get-products-product)

@@ -1,3 +1,19 @@
+---
+title: Coroutine
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: Coroutine 소개
+sidebar_position: 5
+keywords:
+  - Coroutine
+  - kotlin
+  - async
+authors: [haekyu]
+tags: [kotlin, async, coroutine]
+image: /img/my_picture.jpg
+slug: /coroutine
+---
+
 # 코루틴 이란?
 
 - Co + Routine
@@ -333,7 +349,7 @@ Completed in 1018 ms // 비동기 처리
   - 그렇기때문에 가장 마지막에있던 `println("Two coroutines have been launched")` 가 먼저 실행된것
 - 코루틴의 동시성은 **같은 스코프**끼리 비동기적으로 동작한다. (너무 많이 반복하는것같지만 가장 중요하다 생각)
 
-## 2) 비선점 멀티테스킹
+## 비선점 멀티테스킹
 
 - 코루틴의 동시성은 **비선점** 방식이다.
   - 선점 :  기존의 Task가 실행중에 있어도 스케줄러가 강제 중지하고 다른 Task를 실행할수있음
@@ -447,7 +463,7 @@ Second coroutine end after 160ms // 100ms 가 아닌 160ms 가 소요됨
   - `launch(accessContext)` => `withContext(accessContext)`
   - ![co15](/img/wiki/co15.png)
 
-## 헷갈리는 개념
+## 미묘한 차이점
 
 ### runBlocking과 coroutinScope의 차이
 

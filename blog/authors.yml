@@ -1,3 +1,16 @@
+haekyu:
+  name: Haekyu Cho
+  title: Software Engineer
+  url: https://github.com/chk386
+  image_url: /img/my_picture.jpg
+
+ayun:
+  name: Ayun Cho
+  title: 사랑하는 딸
+  url: https://github.com/chk386
+  image_url: https://w7.pngwing.com/pngs/299/417/png-transparent-tooth-fairy-free-content-fairy-s-child-hand-toddler.png
+
+
 endi:
   name: Endilie Yacop Sucipto
   title: Maintainer of Docusaurus
