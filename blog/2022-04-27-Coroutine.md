@@ -314,7 +314,7 @@ Completed in 1018 ms // 비동기 처리
 
 ## 예시
 
-공부할 당시 코루틴에대해 확실히 이해하기 어려웠는데 아래 자료를 많이 참고함
+공부할 당시 코루틴에 대해 확실히 이해하기 어려웠는데 아래 자료를 많이 참고함
 [https://silica.io/understanding-kotlin-coroutines/5/](https://silica.io/understanding-kotlin-coroutines/5/)
 
 ### 싱글 스레드에서의 비동기 실행
