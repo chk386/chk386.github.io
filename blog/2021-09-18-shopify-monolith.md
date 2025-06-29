@@ -36,7 +36,7 @@ Shopify는 성공을 위한 기업가들에게 상점을 런칭하는것을 도�
 2015년 이전 Operations and Performance team이 있었다. 이때 우리는 팀을 합쳐서 production engineering 부서를 만들기로 결정했다. 이 부서는 나머지 product 개발팀들의 코드 실행을 가능하게 하는 공통 인프라스트럭처를 유지하고 만들기 위한 책임을 가진다.
 
 Production Engineering 그리고 모든 product 개발팀 둘다 end user applications에서 진행중인 작업에 대한 책임감을 가진다. 모든 기술적인 역할은 모니터링과 사고 대응을 공유하고 문제가 발생할 경우 서비스 복원에 필요한 스킬셋을 제공하기 위해 측면에서 에스컬레이션 한다.
-<br>
+<br />
 
 ## Initial architecture and stack
 
@@ -67,7 +67,7 @@ Shopify코어 앱은 Rails 모놀리스로 유지하지만 조직 전체에 수�
 ![image](https://img.stackshare.io/featured_posts/shopify/shopify-servicesdb.jpg)
 
 ServiceDB는 각각의 앱(ownership, uptime, logs, on-call rotation, exception reporting, and gem security updates)에 대한 체크리스트를 관리한다. 만약 하나라도 문제가 있으면 ServicesDB는 github issue를 열고 앱 소유자에게 주소를 요청한다. ServicesDB는 또한 인프라를 쉽게 쿼리할수 있고 다음과 같은 질문에 답을 받알수 있다. "Rails 4.2앱이 몇개야? gem x의 oudated version이 몇개? 이 소비스를 호출하는 앱이 뭐야?"
-<br>
+<br/>
 
 ## Our current stack
 
@@ -121,7 +121,7 @@ Shopfy monolith는 약 10만개 유닛테스트를 가지고 있다. 무거운 O
 ![image](https://img.stackshare.io/featured_posts/shopify/shopify-github.png)
 
 Shipit과 k8s--deploy둘다 오픈소스이고 우리의 flow를 채택한 회사들로부터 몇몇 성공 스토리를 들었다. (역자주 : 깨알자랑)
-<br>
+<br/>
 
 ## Next Challenges
 
@@ -135,7 +135,7 @@ Semian과 Toxiproxy와 같은 툴과 함께 높은 안정성과 회복력을 향
 
 이런 기술스택을 들어본적 있나? shopify는 채용 중이다. 모두를 위한 더 나은 커머스를 만들수 있게 우릴 도와줘. 또는 production engineering에 합류하여 우리 Shopify에서 세상 어떤곳보다 더 좋은 커머스를 만드는 기술스텍을 지속적으로 진화할수 있게 도와줘.
 
-![image.png](/wikis/1387695807353831424/files/3100445004699825057)
+![image.png](/img/shopify.png)
 
 [Shopify stackshare](https://stackshare.io/shopify/shopify)
 <br />
