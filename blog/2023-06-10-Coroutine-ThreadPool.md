@@ -1,23 +1,39 @@
-# Kotlin Coroutine ThreadPool 분리를 통한 성능 최적화
-
-- ThreadPool을 분리해야 한다. 왜? 기존에는 `Dispatchers.IO`를 활용해 IO 작업을 처리하고 있었으나, 아래와 같은 문제가 발생하면서 **ThreadPool을 용도별로 커스텀하여 분리**하는 방향으로 개선
-
+---
+title: Coroutine Dispatcher 분리
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: Coroutine Dispatcher 분리
+sidebar_position: 1
+keywords:
+  - Coroutine
+  - Dispatcher
+  - 장애
+authors: [haekyu]
+tags: [장애, Coroutine, Dispatcher]
+image: /img/my_picture.jpg
+slug: /coroutine-dispatcher
 ---
 
-## ⚠️ 문제 1: 타임 이벤트 시 API 호출 폭주로 인한 서버 지연
+ThreadPool을 분리해야 한다. 왜? 기존에는 `Dispatchers.IO`를 활용해 IO 작업을 처리하고 있었으나, 아래와 같은 문제가 발생하면서 **ThreadPool을 용도별로 커스텀하여 분리**하는 방향으로 개선
 
-### 📌 상황
+<!-- truncate -->
+
+# Coroutine ThreadPool 분리를 통한 성능 최적화
+
+## 문제 1: 타임 이벤트 시 API 호출 폭주로 인한 서버 지연
+
+### 상황
 
 - 이벤트 발생 시 **API 호출이 급격히 증가**하면서 서버 응답이 느려지는 현상이 발생
 - 슬로우 쿼리나 명확한 장애 원인이 로그에 나타나지 않음
 
-### 🔍 추정 원인
+### 추정 원인
 
 - 모든 IO 작업을 `Dispatchers.IO`에 위임
 - 요청이 많아지면서 **가용 가능한 모든 IO 스레드가 점유**
 - 그 결과, **신규 요청이 큐에 쌓이며 병목 발생**
 
-### 🛠️ 조치
+### 조치
 
 - ThreadPool을 역할별로 분리하여 관리
   - openFeign 호출용
@@ -28,9 +44,9 @@
 
 ---
 
-## ⚠️ 문제 2: 로그인 지연 및 ReadTimeout 발생
+## 문제 2: 로그인 지연 및 ReadTimeout 발생
 
-### 📌 상황
+### 상황
 
 - 전체 쇼핑몰 중 40% 쇼핑몰은 **외부 회원 연동**을 통해 로그인 처리
 - 나머지 쇼핑몰은 **내부 DB**를 통해 로그인 처리
@@ -38,13 +54,13 @@
 
 ![auth](/img/wiki/s-auth.png)
 
-### 🔍 문제점
+### 문제점
 
 - 외부 API가 응답을 늦게 반환함
 - `Dispatchers.IO` 스레드가 모두 외부 API 응답 대기로 점유됨
 - 내부 DB 로그인 요청조차 대기 상태로 밀림 → 결국 **ReadTimeout 발생**
 
-### 🛠️ 조치
+### 조치
 
 - 로그인 처리용 ThreadPool을 **용도별로 분리**:
   - 외부 연동 로그인용 ThreadPool
@@ -88,7 +104,7 @@ Dispatchers.IO는 일반적으로 "비동기 작업 처리"와 관련된 컨텍�
 
 Kotlin에서 제공하는 Coroutine Dispatcher 중 하나로, 입출력(IO) 작업을 효율적으로 처리하기 위해 설계된 스레드 풀입니다.
 
-✅ 주요 특징
+* 주요 특징
 I/O 작업에 최적화
 예: 파일 시스템 접근, 데이터베이스 쿼리, 네트워크 요청 등 블로킹 I/O 작업.
 
@@ -98,7 +114,7 @@ I/O 작업에 최적화
 스레드 효율성 향상
 코루틴이 Dispatchers.IO에서 실행될 경우, 블로킹 작업으로 인한 전체 앱의 성능 저하를 방지합니다.
 
-🎯 언제 사용하나요?
+* 언제 사용하나요?
 다음과 같은 상황에서 사용합니다:
 
 REST API 호출
@@ -115,7 +131,7 @@ REST API 호출
 <br/>
 우리 파드 하나당 Dispather.IO가 사용가능한 쓰레드풀을 계산하면
 
-### ✅ 1. `Dispatchers.IO`의 기본 동작
+### `Dispatchers.IO`의 기본 동작
 
 - **최소 스레드 수**: `Dispatchers.IO`는 기본적으로 필요에 따라 스레드를 생성
 - **최대 스레드 수**:
@@ -135,7 +151,7 @@ REST API 호출
 
 ---
 
-### ✅ 결론: 파드에서의 `Dispatchers.IO` 스레드 수
+### 결론: 파드에서의 `Dispatchers.IO` 스레드 수
 
 | 항목                       | 값                                                     |
 | -------------------------- | ------------------------------------------------------ |
@@ -242,7 +258,7 @@ class ThreadPoolComponent(dataSourceProperties: DataSourceProperties) {
 
 ---
 
-## ✅ 커스텀 `ThreadPoolComponent` 사용
+## 커스텀 `ThreadPoolComponent` 사용
 
 ### 🔹 장점
 
@@ -267,9 +283,9 @@ class ThreadPoolComponent(dataSourceProperties: DataSourceProperties) {
 
 ---
 
-## ✅ `Dispatchers.IO` 사용
+## `Dispatchers.IO` 사용
 
-### 🔹 장점
+### 장점
 
 - **간편함**
   - 별도 설정 없이 `withContext(Dispatchers.IO)`로 바로 사용 가능
@@ -278,7 +294,7 @@ class ThreadPoolComponent(dataSourceProperties: DataSourceProperties) {
 - **유지보수 용이**
   - Kotlin/Coroutine 라이브러리 업데이트에 따라 자동 최적화 수혜
 
-### 🔻 단점
+### 단점
 
 - **세밀한 제어 불가**
   - 풀 크기나 종료 정책 등을 **직접 조정하기 어려움**
@@ -287,7 +303,7 @@ class ThreadPoolComponent(dataSourceProperties: DataSourceProperties) {
 
 ---
 
-## 📌 정리
+## 정리
 
 | 선택 기준                           | 추천 방식                    |
 | ----------------------------------- | ---------------------------- |
