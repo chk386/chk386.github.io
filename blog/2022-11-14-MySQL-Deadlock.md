@@ -18,7 +18,6 @@ slug: /mysql/deadlock
 **재고 Summary 테이블의 데드락 해결 경험** <br />
 
 - MySQL의 격리 수준(Isolation Level), 데드락 발생한 원인과 해결 방법에 대한 설명
-- 결론부터 말하자면 해결 방법은 `격리 수준 변경`이였음.
 
 <!-- truncate -->
 
@@ -155,19 +154,19 @@ TRANSACTION 1417301239, ACTIVE 0 sec starting index read
 *** WE ROLL BACK TRANSACTION (1)
 ```
 
-- 간추린 로그도 보기에는 어지럽지만, 추후 데드락이 났을 때 이걸 참고해서 보시면 이해가 빠를 것 같아서 첨부
-- 위에서 간추린 로그를 해석해서 단순히 글로 정리하면 아래와 같습니다.
+- 보기 어렵지만 추후 데드락이 났을 때 이걸 참고해서 보시면 이해가 빠를 것 같아서 첨부
+- 위에서 간추린 로그를 해석해 보면..
   Transaction 1: heap no 76 보유? → heap no 28 S Lock 대기
   Transaction 2: heap no 28 X Lock 보유 → heap no 76 S Lock 대기
 
 Transaction 1 (1417301238)
 
-- 대기 중: pd_mall_product_option 테이블의 heap no 28 레코드에 S Lock(공유락) 요청
+- 대기 중: 옵션 테이블의 heap no 28 레코드에 S Lock(공유락) 요청
 - 상태: 락을 얻지 못해 대기
 
 Transaction 2 (1417301239)
 
-- 보유 중: pd_mall_product_option 테이블의 heap no 28 레코드에 X Lock(배타락) 보유
+- 보유 중: 옵션 테이블의 heap no 28 레코드에 X Lock(배타락) 보유
 - 대기 중: 같은 테이블의 heap no 76 레코드에 S Lock(공유락) 요청
 
 | 데드락 예시 | Transaction 1417301238 (1번 트랜잭션)             | Transaction 1417301239 (2번 트랜잭션)             | 설명     |
@@ -193,4 +192,5 @@ Transaction 2 (1417301239)
 
 **결과적으로 재고 요약 테이블의 데드락을 해결하는 방법은 간단하였다**
 
-- mysql의 기본 격리 수준인 REPEATABLE-READ을 사용하지 않고, READ-COMMITTED을 적용하도록 하여 데드락이 발생하지 않는 것을 확인
+- mysql의 기본 격리 수준인 REPEATABLE-READ을 사용하지 않고, READ-COMMITTED을 적용하도록 하여 데드락이 발생하지 않는 것을 확인함
+- 비지니스 로직상 여러명의 유저가 같은 옵션, 재고를 수정하는것이 아니여서 격리 수준 변경이 비지니스에 영향을 미치지 않는 다고 판단함

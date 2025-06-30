@@ -155,7 +155,6 @@ repo : https://github.com/chk386/notifications
 - container : docker-compose (zookeeper, kafka, kafka-ui)
 - build tool : gradle kotlin DSL
 - dockerizing : spring boot maven plugin (bootBuildImage)
-- nhn public cloud : http://133.186.247.62:8080/sse.html
 
 ## 핵심 키워드 : hot
 
@@ -193,7 +192,147 @@ The Sinks categories are:
 
 ![구성도](https://raw.githubusercontent.com/chk386/notifications/master/assets/diagram.png)
 
-## 코드 설명
+## 코드
+
+```kotlin
+// 메인 클래스
+@SpringBootApplication
+@EnableWebFlux
+class NotificationsApplication {
+
+  @Bean
+  fun coRoute(sseHandler: SseHandler): RouterFunction<ServerResponse> {
+    return coRouter {
+      GET("/notifications", sseHandler::httpStream)
+      GET("/produce", sseHandler::produce)
+    }
+  }
+
+  /**
+   * @see <a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux-websocket-server-handler">참고</a>
+   */
+  @Bean
+  fun handlerMapping(websocketHandler: WebsocketHandler, sampleHandler: SampleHandler): HandlerMapping {
+    val map = mapOf(
+      "/ws" to websocketHandler, "/ws2" to sampleHandler
+    )
+    val order = -1 // before annotated controllers
+
+    return SimpleUrlHandlerMapping(map, order)
+  }
+
+  @Bean
+  fun handlerAdapter() = WebSocketHandlerAdapter()
+
+    @Bean
+  @Profile("default")
+  fun run(producer: ReactiveKafkaProducerTemplate<String, String>): ApplicationRunner {
+    return ApplicationRunner {
+      while (true) {
+        println("메세지를 입력해주세요.")
+        producer.send(Topic.NOTIFICATIONS, GenericMessage(readLine()!!)).subscribe()
+      }
+    }
+  }
+}
+```
+
+1. 웹소켓 핸들러를 router에 등록, 엔드포인트는 "/ws", "/ws2"로 등록
+2. 테스트 용으로 터미널에서 표준 입력(키보드)시 카프카로 토픽 전송 (메세지 전파)
+
+```kotlin
+// 웹소켓 핸들러 구현
+@Component
+class WebsocketHandler(
+  private val producer: ReactiveKafkaProducerTemplate<String, String>,
+  private val multicaster: Sinks.Many<String>
+) : WebSocketHandler {
+
+  override fun handle(session: WebSocketSession): Mono<Void> {
+    val input = session
+      .receive()
+      .doOnNext {
+        producer.send(Topic.NOTIFICATIONS, it.payloadAsText).subscribe()
+      }.then()
+
+    val output = session
+      .send(multicaster
+        .asFlux()
+        .filter { it.contains("all:") || it.startsWith(getId(session.handshakeInfo.uri)) }
+        .map(session::textMessage)
+      )
+
+    return Mono.zip(input, output).then()
+  }
+
+  private fun getId(uri: URI): String {
+    return UriComponentsBuilder
+      .fromUri(uri)
+      .build()
+      .queryParams["id"].orEmpty()[0]
+  }
+}
+```
+
+1. WebSocketHandler를 상속받아 handle 구현
+2. 웹소켓은 양방향 통신이기 때문에 input, output을 정의해야 한다.
+3. input에서는 전달 받은 payload text를 카프카 토픽으로 발행 한다.
+4. output에서는 kafka에서 받은 메세지들을 flux로 변환 후 구독자에게 메세지를 브로드 캐스트한다.
+
+```kotlin
+// kafka config
+@Configuration
+@EnableKafka
+class KafkaConfiguration(private val kafkaProperties: KafkaProperties) {
+
+  @Bean
+  fun multicaster(): Sinks.Many<String> {
+    val multicaster = Sinks.many()
+      .multicast()
+      .onBackpressureBuffer<String>()
+
+    multicaster.asFlux()
+      .subscribe { println("consumer -> Sinks.many().multicast() => $it") }
+
+    consume(multicaster)
+
+    return multicaster
+  }
+
+  @Bean
+  fun produce(): ReactiveKafkaProducerTemplate<String, String> {
+    return ReactiveKafkaProducerTemplate(
+      SenderOptions.create(
+        kafkaProperties.buildProducerProperties()
+      )
+    )
+  }
+
+  private fun consume(multicaster: Sinks.Many<String>) {
+    ReactiveKafkaConsumerTemplate(
+      ReceiverOptions
+        .create<String, String>(kafkaProperties.buildConsumerProperties())
+        .subscription(listOf(Topic.NOTIFICATIONS))
+    )
+      .receive()
+      .doOnNext { it.receiverOffset().acknowledge() }
+      .subscribe { multicaster.tryEmitNext(extractMessage(it)) }
+  }
+
+  private fun extractMessage(it: ReceiverRecord<String, String>) =
+    if (it.value().contains(":")) {
+      it.value()
+    } else {
+      "all:${it.value()}"
+    }
+}
+
+object Topic {
+  const val NOTIFICATIONS = "BACKOFFICE-NOTIFICATIONS"
+}
+```
+
+- 메세지 전달(토픽 발생)과 메세지 컨슘(메세지를 multicaster에게 전달)
 
 ### local
 

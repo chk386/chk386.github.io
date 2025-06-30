@@ -1,3 +1,24 @@
+---
+title: Coroutine Scope 공유 문제
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: Coroutine Scope 공유 문제
+sidebar_position: 1
+keywords:
+  - kotlin
+  - coroutine
+  - scope
+  - spring
+authors: [haekyu]
+tags: [kotlin, coroutine, scope, spring]
+image: /img/my_picture.jpg
+slug: /coroutine-scope
+---
+
+코루틴 Scope 공유로 인한 이벤트 간 상호 취소 문제 해결 경험
+
+<!-- truncate -->
+
 # 코루틴 Scope 공유로 인한 이벤트 간 상호 취소 문제 해결
 
 **아래 수정 FIXME**
@@ -9,7 +30,7 @@ https://nhnent.dooray.com/wiki/2328769003387573566/3549279974993722566
 
 ## 문제 분석
 
-### 1. 같은 코루틴 스코프에서 코루틴 생성 시 문제점
+### 1. 동일한 코루틴 스코프에서 코루틴 생성 시 문제점
 
 `OptionEventListener.kt` 파일의 기존 코드:
 
