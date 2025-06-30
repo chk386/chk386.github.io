@@ -8,7 +8,7 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
   title: "아윤이 아빠",
-  tagline: "개발 블로그",
+  tagline: "기술 블로그",
   url: "https://chk386.github.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
