@@ -486,6 +486,11 @@ Second coroutine end after 160ms // 100ms 가 아닌 160ms 가 소요됨
 - 요약
   - scope를 새롭게 만들지 아니면 이전의 scope에 이어서 구조적으로 사용하냐의 차이
 
+### Coroutine Diagram
+
+**직접 그려본 다이어그램**
+![diagram](/img/coroutine-diagram.svg)
+
 ## 마무리
 
 - DB 통신이던 network 통신이던 한 scope에서 여러번 호출이 필요하다면 코루틴을 통한 비동기 통신은 효과적
