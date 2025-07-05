@@ -28,7 +28,7 @@ slug: /arch
 ![NCP아키텍처](/img/NHN/ncp1.png)
 
 - REST API는 StoreFront를 서빙하기 위한 엔드포인트 서버이고 Admin은 JSP로 구현했다
-- Spring 4.x 버전대로 구축하였으며 초기에는 Java Configuration 방식으로 프로젝트를 구성하였으나 SpringBoot 1.X로 중간에 포팅했다
+- Spring 4.x 버전으로 구축하였으며 초기에는 Java Configuration 방식으로 프로젝트를 구성하였으나 SpringBoot 1.X로 중간에 포팅했다
 - 이 시기에 간단한 CRUD성 게시판 같은 기능들을 JPA와 QueryDSL을 도입하였다
 - 모니터링 툴은 이때 혜성처럼 등장한 오픈소스인 Scouter를 적용하였으며 성능테스트 병목, 운영 모니터링에 큰 도움이 되었다
 - 사내 인프라(VM) 장비에 셋팅하였으며 젠킨스 빌드 스크립트를 이용하여 jar로 빌드 후 TCD라는 사내 배포시스템으로 jar를 배포 서버로 복사하고 톰캣을 재구동하는 형태로 배포를 수행했다
@@ -90,7 +90,7 @@ MSA로 전환 시점에 동료들과 협의했던 기술스택이다.
 ![Shopby](/img/NHN/ncp-search2.png)
 
 - 상품 전체 색인, 일배치
-- 2021년 시점엔 상품 수가 라이브 상품이 30만 건 정도밖에 안 되었으나 25년 3천만 건 서빙 중
+- 2021년 시점엔 상품 수가 라이브 상품이 30만 건 정도였으나 현재 25년 3천만 건 서빙 중
 
 ![Shopby](/img/NHN/ncp-search1.png)
 
@@ -108,7 +108,7 @@ MSA로 전환 시점에 동료들과 협의했던 기술스택이다.
 
 ![Shopby](/img/NHN/ncp13.png)
 
-- Tekton은 커뮤니티 성숙도와 DevOps 파트의 의견을 고려하여 ArgoCD 도입
+- 커뮤니티 성숙도와 DevOps 파트의 의견을 고려하여 Tekton 대신 ArgoCD 도입
 - 컨테이너 배포를 Ansible에서 ArgoCD 전환
 - 컨테이너 레지스트리를 Nexus에서 Harbor 전환
 
@@ -127,6 +127,67 @@ MSA로 전환 시점에 동료들과 협의했던 기술스택이다.
 
 - Fluentd를 활용한 EFK(Elasticsearch, Fluentd, Kibana) 애플리케이션 로깅 구축
 - ES의 고비용 문제로 드랍, Loki로 대체
+
+## Spring Cloud Kubernetes
+
+**쿠버네티스 전 MSA 구조**
+![SpringCloud](/img/NHN/springcloud.png)
+
+**Kubernate Native 전환을 위한 의존성 매트릭스 정리**
+![SpringCloud](/img/NHN/springcloud-k8s.png)
+
+- 애플리케이션(스프링 클라우드)에서 구현한 MSA 구성요소와 쿠버네티스 리소스 매핑
+- API G/W의 경우 Ingress로 전환이 가능은 하였으나 Gateway단에 kotlin으로 구현된 auth filter들과 log구현체등을 lua스크립트로 옮기고 추후 운영까지 고려했을때 반대 의견이 많이 나왔음
+- 서비스 레지스트리와 중앙 프로퍼티 관리는 쿠버네티스 리소스 활용하기로 결정 (Service, ConfigMap, Secret)
+
+**서비스 레지스트리 전환**
+![SpringCloud](/img/NHN/k8s-service.png)
+
+- openFeign의 주소를 \{service-name}.\{namesspace}.svc.cluster.local로 변경(CoreDNS)
+
+**결과**
+![SpringCloud](/img/NHN/k8s-deployment.png)
+
+## 쿠버네티스 배포 프로세스
+
+**ArgoCD & Helm 도입**
+![SpringCloud](/img/NHN/argoCD.png)
+
+### Rolling 배포
+
+![SpringCloud](/img/NHN/deploy-rolling.gif)
+
+- Kubernetes Deployment 기본
+- 하나씩 버전을 업그레이드하여 배포
+
+### Blue-Green 배포
+
+![SpringCloud](/img/NHN/bluegreen-deploy.gif)
+
+- 배포후 블루 존을 삭제 하지 않고 서비스 상태 확인 후 정상 확인되면 그때 삭제함
+- 인프라 비용 증가
+
+![SpringCloud](/img/NHN/bluegreen-finish.gif)
+
+![SpringCloud](/img/NHN/bluegreen-rollback.gif)
+
+- 빠른 롤백 가능 (svc의 트래픽 방향만 blue로 전환하기 때문)
+
+### Canary 배포
+
+![SpringCloud](/img/NHN/deploy-canary1.gif)
+
+- 일부만 신규 버전으로 배포한 후 모니터링 한 다음 문제가 없다면 나머지도 배포하는 방식
+- 2단계 배포 (Canary 배포 -> 실배포 or 롤백)
+- 배포할 대상 앱의 replicas를 1(또는 기존 보다 작게) 설정
+
+![SpringCloud](/img/NHN/deploy-canary2.gif)
+
+- 카나리 서비스에 문제가 없다고 판단되면 전체 배포(롤링 배포와 동일)
+
+![SpringCloud](/img/NHN/canary-rollback.gif)
+
+- 카나리 Deploy의 replicas를 0으로 변경
 
 ## k8s 무중단 이관
 
