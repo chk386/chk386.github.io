@@ -157,14 +157,14 @@ MSA로 전환 시점에 동료들과 협의했던 기술스택이다.
 
 ![SpringCloud](/img/NHN/deploy-rolling.gif)
 
+- 그림에서 rs는 replicaset을 의미하며 deployment에서 정의한 build-number를 기준으로 rs를 하나 더 띄워서 순차 적으로 배포
 - Kubernetes Deployment 기본
-- 하나씩 버전을 업그레이드하여 배포
 
 ### Blue-Green 배포
 
 ![SpringCloud](/img/NHN/bluegreen-deploy.gif)
 
-- 배포후 블루 존을 삭제 하지 않고 서비스 상태 확인 후 정상 확인되면 그때 삭제함
+- 배포 직후 블루 존을 삭제 하지 않고 서비스 상태 확인 후 정상 확인되면 그때 삭제함
 - 인프라 비용 증가
 
 ![SpringCloud](/img/NHN/bluegreen-finish.gif)
