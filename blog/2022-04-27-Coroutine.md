@@ -147,7 +147,13 @@ sysctl -n hw.ncpu
 ```
 
 - 아래의 코드로 default 스레드풀의 스레드를 출력하면 코어개수와 동일한것을 볼수있다.
-  - `repeat(50) {CoroutineScope(Dispatchers.Default).launch {         println(Thread.currentThread().name)     }}`
+
+````kotlin
+repeat(50) {
+  CoroutineScope(Dispatchers.Default).launch {         
+    println(Thread.currentThread().name)
+  }
+}```
 
 #### `Dispatcher.IO`
 
@@ -201,7 +207,7 @@ suspend fun second(): Int {
     println("second end")
     return 29
 }
-```
+````
 
 **나의 착각**
 
