@@ -167,14 +167,14 @@ repeat(50) {
 
 예시)
 
-**![co3](/img/wiki/co3.png) **
+![co3](/img/wiki/co3.png
 
 #### suspend fun
 
 - 일시 중단이 가능한 함수
   - 원하는 지점에서 중단후, 나중에 다시 실행을 진행할 수 있다.
 - suspend 함수는 무조건 중단 되는게 아닌 **중단점을 만나야 중단**이 된다. (ex. delay(), WebClient 통신시..)
-- suspend fun 만으로는 비동기 처리가 안됨.
+- suspend fun 만으로는 비동기 처리 X
   - suspend fun은 코루틴 내부에 있어야하고, 그 코루틴은 해당 스코프에서 비동기 처리를함
   - 비동기에서 중요한점은 **해당 스코프에서 코루틴을 생성**해야한다는 것이다.
 - coroutine의 suspend 함수는 thread를 block 하지않는다.
@@ -288,6 +288,7 @@ Completed in 1018 ms // 비동기 처리
 - first()와 second() 는 각각 async로 만든 코루틴 내부에 생기기 때문에 비동기 처리가 가능하다.
   - `println("first")` 보다 `println("between")` 이 먼저 출력된것은 **async를 call** 하기 때문이다.
 - 비동기 처리로 인해 소요시간은 1000ms를 조금 넘는다.
+- **비동기 세상에서는 가장 긴 실행시간이 전체 수행 시간이다!**
 
 #### 6) withContext
 
@@ -320,18 +321,17 @@ Completed in 1018 ms // 비동기 처리
 
 ## 예시
 
-공부할 당시 코루틴에 대해 확실히 이해하기 어려웠는데 아래 자료를 많이 참고함
+첫 학습 시 코루틴에 대해 확실히 이해하기 어려웠는데 아래 자료를 많이 참고함
 [https://silica.io/understanding-kotlin-coroutines/5/](https://silica.io/understanding-kotlin-coroutines/5/)
 
 ### 싱글 스레드에서의 비동기 실행
 
-처음 코루틴을 공부할때 **코루틴**과 **멀티 스레드**에대한 개념이 섞여 코루틴을 이해하기가 더 어려웠습니다.
-코루틴을 이해하기 위해 먼저 멀티 스레드가 아닌 단일 스레드에서 진행하면서 코루틴을 이해하고 이후 예시에서 멀티 스레드를 다루겠습니다.
+코루틴을 이해하기 위해 먼저 멀티 스레드가 아닌 단일 스레드에서 진행하면서 코루틴을 이해하고 이후 예시에서 멀티 스레드를 다루겠다.
 
-(현재 스레드 의 출력하는 부분은 코드상 생fㅑㄱ)
+(현재 스레드 의 출력하는 부분은 코드상 생략)
 ![co7](/img/wiki/co7.png)
 
-- 결과값을 보면 아래와 같은 순서로 출력됩니다.
+- 결과값을 보면 아래와 같은 순서로 출력
 
 ```
 [Test worker]                Starting a coroutine block...    // [Thread 종류 @코루틴번호] 출력,
@@ -345,7 +345,7 @@ Completed in 1018 ms // 비동기 처리
 ```
 
 <br/>
-###### **"Two coroutine have been launched" 가 "1/  Firsit \~" 와 "2/ Second \~" 보다 왜 먼저 출력될까요?**
+'Two coroutine have been launched' 가 `1/  First` 와 `2/ Second` 보다 왜 먼저 출력될까?
 <br/>
 
 ![sshot](https://www.silica.io/wp-content/uploads/2020/07/example_1.png)
@@ -388,7 +388,7 @@ Second coroutine end after 160ms // 100ms 가 아닌 160ms 가 소요됨
 
 - 코루틴이 **비선점형 멀티태스킹**이라는것을 보여주는 예시
 - 첫번째 코루틴에서 `Thread.sleep(100)` 으로 스레드를 독점함 (delay와 달리 thread가 blocking된다.)
-  - 원래 두번째 코루틴은 100ms 만 delay 해야하지만 스레드 자체가 blocking 되어 실제로 150ms 가 걸림
+  - 원래 두번째 코루틴은 100ms 만 delay 해야하지만 스레드 자체가 blocking 되어 실제로 150ms 소요
 - **즉 코루틴에 Blocking 작업은 비효율적이다.**
 - 단일 스레드에서 코루틴은 `Webclient` 같은 **non-Blocking 작업에 효과**적이지만,  **Blocking 방식의 RDBMS** 작업은 효과적이지 않다 라는 결론.
 
@@ -432,8 +432,7 @@ Second coroutine end after 160ms // 100ms 가 아닌 160ms 가 소요됨
 
 - `Thread.sleep`을 총 100 + 50 = 150ms 를 했지만 실제 결과들은 그것보다 짧음
   - 그 이유는 `DefaultDispatcher`를 이용해 다른 스레드들(worker-2, worker-3)에서 각각 100ms, 50ms 작업을 했기때문이다.
-- 같은 작업을 했지만 첫번째(133ms) 보다 두번째(106ms) 가 더 빠른 이유는 첫번째 때 `defaultDispatcher-worker` 라는 스레드들을 생성해야하기때문이다.
-  - 두번째는 이러한 스레드 생성이라는 오버헤드 없이 빠르게 작업가능
+- 같은 작업을 했지만 첫번째(133ms) 보다 두번째(106ms) 가 더 빠른 이유는 첫 실행시 `defaultDispatcher-worker` 스레드 풀을 생성 비용 때문
 - 주의 해야할점은 **여러 스레드에서 동작을 시키므로 동시성 문제**를 신경써야한다.
   - 코루틴은 **동시성문제에 대해서는 보장하지않음**
 
@@ -464,7 +463,7 @@ Second coroutine end after 160ms // 100ms 가 아닌 160ms 가 소요됨
 
 - `accessContext` 라는 하나의 스레드에서 리소스에 접근한다.
 - 새로운 스레드를 생성하려면 `newSingleThreadContext()` 만 사용하면된다.
-- 만약 "First coroutine end" 보다 "First coroutine reporting reulst = \~ " 를 더 빨리 출력하기 원하면 `withContext`를 사용하면 된다.
+- 만약 "First coroutine end" 보다 "First coroutine reporting result = \~ " 를 더 빨리 출력하기 원하면 `withContext`를 사용하면 된다.
   - withContext는 **순차적인 실행을 보장**한다.
   - `launch(accessContext)` => `withContext(accessContext)`
   - ![co15](/img/wiki/co15.png)
@@ -476,7 +475,8 @@ Second coroutine end after 160ms // 100ms 가 아닌 160ms 가 소요됨
 - [https://www.baeldung.com/kotlin/coroutines-runblocking-coroutinescope](https://www.baeldung.com/kotlin/coroutines-runblocking-coroutinescope)
 - 요약
   - **coroutineScope**
-    - 일시중단 가능
+    - 스레드를 블로킹하지 않음
+    - suspend 함수 내에서만 호출 가능
     - 코루틴 범위 밖에서 호출 불가능
     - launch로 job을 반환 받아 코루틴 취소가 가능
   - **runBlocking**
@@ -489,8 +489,8 @@ Second coroutine end after 160ms // 100ms 가 아닌 160ms 가 소요됨
 
 - [https://stackoverflow.com/questions/59368838/difference-between-coroutinescope-and-coroutinescope-in-kotlin](https://stackoverflow.com/questions/59368838/difference-between-coroutinescope-and-coroutinescope-in-kotlin)
 - [https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/coroutine-scope.html](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/coroutine-scope.html)
-- 요약
-  - scope를 새롭게 만들지 아니면 이전의 scope에 이어서 구조적으로 사용하냐의 차이
+- CoroutineScope(인터페이스): 코루틴을 실행할 수 있는 범위/컨텍스트
+- coroutineScope(함수): 모든 자식 코루틴이 완료될 때까지 대기(구조적 동시성), suspend 함수내에서 사용
 
 ### Coroutine Diagram
 
